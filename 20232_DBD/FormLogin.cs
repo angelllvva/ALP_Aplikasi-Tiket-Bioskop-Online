@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _20232_DBD
 {
-    
+
     public partial class FormLogin : Form
     {
         public FormLogin()
@@ -91,9 +91,22 @@ namespace _20232_DBD
             }
             else
             {
+                tBox_username.Text = "";
+                tBox_password.Text = "";
+
                 FormViewData fView = new FormViewData(myConn);
                 fView.ShowDialog();
             }
+        }
+
+        private void btn_signUp_Click(object sender, EventArgs e)
+        {
+            tBox_username.Text = "";
+            tBox_password.Text = "";
+
+            // Masuk ke Menu Sign Up
+            FormSignUp fSignUp = new FormSignUp(myConn);
+            fSignUp.ShowDialog();
         }
     }
 }
