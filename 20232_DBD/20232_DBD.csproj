@@ -109,5 +109,8 @@
   <ItemGroup>
     <None Include="Resources\Logo Tiket.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background Login Page.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

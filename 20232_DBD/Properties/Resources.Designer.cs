@@ -63,6 +63,16 @@ namespace _20232_DBD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Background_Login_Page {
+            get {
+                object obj = ResourceManager.GetObject("Background Login Page", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_Tiket {
             get {
                 object obj = ResourceManager.GetObject("Logo Tiket", resourceCulture);
