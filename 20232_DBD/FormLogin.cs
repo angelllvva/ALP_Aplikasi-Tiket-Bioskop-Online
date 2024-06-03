@@ -24,6 +24,8 @@ namespace _20232_DBD
         public MySqlConnection myConn;
         public SshClient client;
 
+        public static string username_login;
+
         MySqlCommand sqlCommand;
         MySqlDataAdapter sqlDataAdapter;
         string sqlQuery;
@@ -49,6 +51,12 @@ namespace _20232_DBD
             myConn = new MySqlConnection("SERVER=127.0.0.1;PORT=3306;UID=indramar_group9;PASSWORD=1ffl6]?A9uyx;DATABASE=indramar_20232_dbd_9");
             myConn.Open();
 
+            // Membuat teks yang diinput pada textbox menjadi password character
+            tBox_password.UseSystemPasswordChar = true;
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
             // Mengambil data username dan password dari tabel PENGGUNA di DATABASE
             dt_pengguna = new DataTable();
             sqlQuery = "SELECT username_pengguna, password_pengguna FROM PENGGUNA";
@@ -56,12 +64,6 @@ namespace _20232_DBD
             sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
             sqlDataAdapter.Fill(dt_pengguna);
 
-            // Membuat teks yang diinput pada textbox menjadi password character
-            tBox_password.UseSystemPasswordChar = true;
-        }
-
-        private void btn_login_Click(object sender, EventArgs e)
-        {
             // Pengecekan apakah inputan username dan password sudah tersimpan dan ada pada database
             int countUsername = 0;
             for (int i = 0; i < dt_pengguna.Rows.Count; i++)
@@ -91,11 +93,13 @@ namespace _20232_DBD
             }
             else
             {
+                username_login = tBox_username.Text;
+
                 tBox_username.Text = "";
                 tBox_password.Text = "";
 
-                FormViewData fView = new FormViewData(myConn);
-                fView.ShowDialog();
+                FormHome fHome = new FormHome(myConn);
+                fHome.ShowDialog();
             }
         }
 

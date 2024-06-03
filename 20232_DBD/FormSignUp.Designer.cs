@@ -54,12 +54,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.lb_login = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_signUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_ticket)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_firstName
@@ -137,6 +134,7 @@
             // tBox_password
             // 
             this.tBox_password.Location = new System.Drawing.Point(45, 322);
+            this.tBox_password.MaxLength = 16;
             this.tBox_password.Name = "tBox_password";
             this.tBox_password.Size = new System.Drawing.Size(317, 26);
             this.tBox_password.TabIndex = 16;
@@ -267,7 +265,7 @@
             this.lb_garis.AutoSize = true;
             this.lb_garis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_garis.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.lb_garis.Location = new System.Drawing.Point(542, 449);
+            this.lb_garis.Location = new System.Drawing.Point(542, 447);
             this.lb_garis.Name = "lb_garis";
             this.lb_garis.Size = new System.Drawing.Size(99, 20);
             this.lb_garis.TabIndex = 36;
@@ -311,22 +309,11 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.label19.Location = new System.Drawing.Point(541, 99);
+            this.label19.Location = new System.Drawing.Point(558, 99);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(114, 25);
             this.label19.TabIndex = 40;
             this.label19.Text = "fresh start.";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Transparent;
-            this.label17.Location = new System.Drawing.Point(705, 38);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(59, 22);
-            this.label17.TabIndex = 41;
-            this.label17.Text = "count";
             // 
             // lb_login
             // 
@@ -339,16 +326,8 @@
             this.lb_login.TabIndex = 42;
             this.lb_login.Text = "Login here";
             this.lb_login.Click += new System.EventHandler(this.lb_login_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(420, 198);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(366, 150);
-            this.dataGridView1.TabIndex = 43;
+            this.lb_login.MouseEnter += new System.EventHandler(this.lb_login_MouseEnter);
+            this.lb_login.MouseLeave += new System.EventHandler(this.lb_login_MouseLeave);
             // 
             // FormSignUp
             // 
@@ -358,9 +337,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(869, 518);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lb_login);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -393,7 +370,6 @@
             this.Load += new System.EventHandler(this.FormSignUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBox_signUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_ticket)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,8 +402,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lb_login;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
