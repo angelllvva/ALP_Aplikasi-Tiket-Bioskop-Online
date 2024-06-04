@@ -366,6 +366,7 @@
             this.Controls.Add(this.lb_garis);
             this.MaximumSize = new System.Drawing.Size(891, 574);
             this.Name = "FormSignUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
             this.Load += new System.EventHandler(this.FormSignUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBox_signUp)).EndInit();

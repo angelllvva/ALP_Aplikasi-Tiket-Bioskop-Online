@@ -203,6 +203,7 @@
             this.Controls.Add(this.lb_easyTix);
             this.MaximumSize = new System.Drawing.Size(891, 574);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBox_square)).EndInit();

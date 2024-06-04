@@ -28,71 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip_home = new System.Windows.Forms.MenuStrip();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_kiri = new System.Windows.Forms.Button();
             this.btn_kanan = new System.Windows.Forms.Button();
             this.btn_more = new System.Windows.Forms.Button();
             this.lb_filmName = new System.Windows.Forms.Label();
-            this.pBox_filmPoster = new System.Windows.Forms.PictureBox();
             this.lb_user = new System.Windows.Forms.Label();
             this.lb_hello = new System.Windows.Forms.Label();
             this.lb_nowShowing = new System.Windows.Forms.Label();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip_home = new System.Windows.Forms.MenuStrip();
+            this.pBox_filmPoster = new System.Windows.Forms.PictureBox();
             this.menuStrip_home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPoster)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip_home
-            // 
-            this.menuStrip_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.menuStrip_home.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip_home.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip_home.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
-            this.historyToolStripMenuItem,
-            this.profileToolStripMenuItem,
-            this.logOutToolStripMenuItem});
-            this.menuStrip_home.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip_home.Name = "menuStrip_home";
-            this.menuStrip_home.Size = new System.Drawing.Size(869, 30);
-            this.menuStrip_home.TabIndex = 28;
-            this.menuStrip_home.Text = "menuStrip1";
-            // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(73, 28);
-            this.homeToolStripMenuItem.Text = "Home";
-            // 
-            // historyToolStripMenuItem
-            // 
-            this.historyToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.historyToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(82, 28);
-            this.historyToolStripMenuItem.Text = "History";
-            // 
-            // profileToolStripMenuItem
-            // 
-            this.profileToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(77, 28);
-            this.profileToolStripMenuItem.Text = "Profile";
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(90, 28);
-            this.logOutToolStripMenuItem.Text = "Log Out";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // btn_kiri
             // 
@@ -105,6 +56,7 @@
             this.btn_kiri.TabIndex = 36;
             this.btn_kiri.Text = "<<";
             this.btn_kiri.UseVisualStyleBackColor = false;
+            this.btn_kiri.Click += new System.EventHandler(this.btn_kiri_Click);
             // 
             // btn_kanan
             // 
@@ -117,13 +69,14 @@
             this.btn_kanan.TabIndex = 35;
             this.btn_kanan.Text = ">>";
             this.btn_kanan.UseVisualStyleBackColor = false;
+            this.btn_kanan.Click += new System.EventHandler(this.btn_kanan_Click);
             // 
             // btn_more
             // 
             this.btn_more.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btn_more.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_more.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.btn_more.Location = new System.Drawing.Point(368, 458);
+            this.btn_more.Location = new System.Drawing.Point(361, 458);
             this.btn_more.Name = "btn_more";
             this.btn_more.Size = new System.Drawing.Size(132, 35);
             this.btn_more.TabIndex = 34;
@@ -132,21 +85,13 @@
             // 
             // lb_filmName
             // 
-            this.lb_filmName.AutoSize = true;
             this.lb_filmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_filmName.Location = new System.Drawing.Point(378, 430);
+            this.lb_filmName.Location = new System.Drawing.Point(278, 429);
             this.lb_filmName.Name = "lb_filmName";
-            this.lb_filmName.Size = new System.Drawing.Size(104, 22);
+            this.lb_filmName.Size = new System.Drawing.Size(298, 25);
             this.lb_filmName.TabIndex = 33;
             this.lb_filmName.Text = "Film Name";
-            // 
-            // pBox_filmPoster
-            // 
-            this.pBox_filmPoster.Location = new System.Drawing.Point(318, 121);
-            this.pBox_filmPoster.Name = "pBox_filmPoster";
-            this.pBox_filmPoster.Size = new System.Drawing.Size(225, 300);
-            this.pBox_filmPoster.TabIndex = 32;
-            this.pBox_filmPoster.TabStop = false;
+            this.lb_filmName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_user
             // 
@@ -170,14 +115,71 @@
             // 
             // lb_nowShowing
             // 
-            this.lb_nowShowing.AutoSize = true;
             this.lb_nowShowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_nowShowing.Location = new System.Drawing.Point(357, 86);
+            this.lb_nowShowing.Location = new System.Drawing.Point(318, 82);
             this.lb_nowShowing.Name = "lb_nowShowing";
-            this.lb_nowShowing.Size = new System.Drawing.Size(143, 25);
+            this.lb_nowShowing.Size = new System.Drawing.Size(225, 31);
             this.lb_nowShowing.TabIndex = 29;
             this.lb_nowShowing.Text = "Now Showing";
             this.lb_nowShowing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(73, 32);
+            this.homeToolStripMenuItem.Text = "Home";
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.historyToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
+            this.historyToolStripMenuItem.Text = "History";
+            // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(77, 32);
+            this.profileToolStripMenuItem.Text = "Profile";
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(90, 32);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
+            // menuStrip_home
+            // 
+            this.menuStrip_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.menuStrip_home.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip_home.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip_home.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
+            this.historyToolStripMenuItem,
+            this.profileToolStripMenuItem,
+            this.logOutToolStripMenuItem});
+            this.menuStrip_home.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip_home.Name = "menuStrip_home";
+            this.menuStrip_home.Size = new System.Drawing.Size(869, 30);
+            this.menuStrip_home.TabIndex = 28;
+            this.menuStrip_home.Text = "menuStrip1";
+            // 
+            // pBox_filmPoster
+            // 
+            this.pBox_filmPoster.Location = new System.Drawing.Point(318, 120);
+            this.pBox_filmPoster.Name = "pBox_filmPoster";
+            this.pBox_filmPoster.Size = new System.Drawing.Size(225, 300);
+            this.pBox_filmPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_filmPoster.TabIndex = 32;
+            this.pBox_filmPoster.TabStop = false;
             // 
             // FormHome
             // 
@@ -195,6 +197,7 @@
             this.Controls.Add(this.lb_nowShowing);
             this.MaximumSize = new System.Drawing.Size(891, 574);
             this.Name = "FormHome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHome";
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.menuStrip_home.ResumeLayout(false);
@@ -206,12 +209,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip_home;
-        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.Button btn_kiri;
         private System.Windows.Forms.Button btn_kanan;
         private System.Windows.Forms.Button btn_more;
@@ -220,5 +217,10 @@
         private System.Windows.Forms.Label lb_user;
         private System.Windows.Forms.Label lb_hello;
         private System.Windows.Forms.Label lb_nowShowing;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip_home;
     }
 }

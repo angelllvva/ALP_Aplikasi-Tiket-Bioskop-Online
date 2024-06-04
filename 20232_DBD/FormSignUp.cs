@@ -194,6 +194,9 @@ namespace _20232_DBD
 
                     // Kembali ke Menu Login
                     this.Hide();
+
+                    FormLogin fLogin = new FormLogin();
+                    fLogin.ShowDialog();
                 }
             }
         }

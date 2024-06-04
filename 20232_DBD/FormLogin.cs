@@ -45,6 +45,7 @@ namespace _20232_DBD
 
             // Connector/Net can now connect to 127.0.0.1:3306 to connect to the remote MySQL host.
             ForwardedPortLocal forwardedPortLocal = new ForwardedPortLocal("127.0.0.1", 3306, "127.0.0.1", 3306);
+            forwardedPortLocal.Stop();
             client.AddForwardedPort(forwardedPortLocal);
             forwardedPortLocal.Start();
 
@@ -98,6 +99,7 @@ namespace _20232_DBD
                 tBox_username.Text = "";
                 tBox_password.Text = "";
 
+                // Masuk ke menu Home
                 FormHome fHome = new FormHome(myConn);
                 fHome.ShowDialog();
             }
@@ -108,9 +110,11 @@ namespace _20232_DBD
             tBox_username.Text = "";
             tBox_password.Text = "";
 
-            // Masuk ke Menu Sign Up
+            // Masuk ke menu Sign Up
             FormSignUp fSignUp = new FormSignUp(myConn);
             fSignUp.ShowDialog();
+
+            
         }
     }
 }

@@ -124,5 +124,65 @@
   <ItemGroup>
     <None Include="Resources\Sign Up.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AGAK LAEN.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ARGYLLE.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DUNE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IRON MAN.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMAGINARY.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\INTERSTELLAR.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KELUARGA CEMARA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KULARI KE PANTAI.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LASKAR PELANGI.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MOANA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MADAME WEB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NO ESCAPE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NO WAY UP.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PARASITE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PEMANDI JENAZAH.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PANGGONAN WINGIT.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\THE DARK KNIGHT.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\THE MATRIX.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\THE SHAWSHANK REDEMPTION.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZOOTOPIA.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
