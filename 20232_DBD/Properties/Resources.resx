@@ -154,14 +154,17 @@
   <data name="KULARI KE PANTAI" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KULARI KE PANTAI.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LASKAR PELANGI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LASKAR PELANGI.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IRON MAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IRON MAN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="THE DARK KNIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\THE DARK KNIGHT.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LASKAR PELANGI" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LASKAR PELANGI.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Arrow 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arrow 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AGAK LAEN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AGAK LAEN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,6 +178,9 @@
   <data name="NO ESCAPE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NO ESCAPE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="THE SHAWSHANK REDEMPTION" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\THE SHAWSHANK REDEMPTION.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,7 +193,7 @@
   <data name="PANGGONAN WINGIT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PANGGONAN WINGIT.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Arrow 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Arrow 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Profile Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Profile Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

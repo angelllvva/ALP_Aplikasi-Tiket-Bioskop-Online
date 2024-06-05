@@ -40,10 +40,8 @@
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_home = new System.Windows.Forms.MenuStrip();
             this.btn_more = new System.Windows.Forms.Button();
-            this.pBox_filmPoster = new System.Windows.Forms.PictureBox();
             this.pnl_more = new System.Windows.Forms.Panel();
             this.lb_filmInformation = new System.Windows.Forms.Label();
-            this.pBox_backFilmInformation = new System.Windows.Forms.PictureBox();
             this.btn_buyTicket = new System.Windows.Forms.Button();
             this.lb_genreText = new System.Windows.Forms.Label();
             this.lb_durationText = new System.Windows.Forms.Label();
@@ -54,20 +52,46 @@
             this.lb_duration = new System.Windows.Forms.Label();
             this.lb_genre = new System.Windows.Forms.Label();
             this.lb_filmNameInformation = new System.Windows.Forms.Label();
-            this.pBox_filmPosterInformation = new System.Windows.Forms.PictureBox();
-            this.pBox_backHistory = new System.Windows.Forms.PictureBox();
             this.lb_transactionHistory = new System.Windows.Forms.Label();
             this.dgv_transactionHistory = new System.Windows.Forms.DataGridView();
             this.lb_doubleClick = new System.Windows.Forms.Label();
             this.pnl_history = new System.Windows.Forms.Panel();
+            this.pnl_profile = new System.Windows.Forms.Panel();
+            this.btn_editProfile = new System.Windows.Forms.Button();
+            this.tBox_phoneNumber = new System.Windows.Forms.TextBox();
+            this.lb_phoneNumber = new System.Windows.Forms.Label();
+            this.tBox_email = new System.Windows.Forms.TextBox();
+            this.lb_email = new System.Windows.Forms.Label();
+            this.tBox_name = new System.Windows.Forms.TextBox();
+            this.lb_name = new System.Windows.Forms.Label();
+            this.tBox_username = new System.Windows.Forms.TextBox();
+            this.lb_username = new System.Windows.Forms.Label();
+            this.lb_profile = new System.Windows.Forms.Label();
+            this.pBox_profileIcon = new System.Windows.Forms.PictureBox();
+            this.pBox_square = new System.Windows.Forms.PictureBox();
+            this.pBox_profilePicture = new System.Windows.Forms.PictureBox();
+            this.pBox_backProfile = new System.Windows.Forms.PictureBox();
+            this.pBox_backHistory = new System.Windows.Forms.PictureBox();
+            this.pBox_backFilmInformation = new System.Windows.Forms.PictureBox();
+            this.pBox_filmPosterInformation = new System.Windows.Forms.PictureBox();
+            this.pBox_filmPoster = new System.Windows.Forms.PictureBox();
+            this.pnl_editProfile = new System.Windows.Forms.Panel();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.menuStrip_home.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPoster)).BeginInit();
             this.pnl_more.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmInformation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_transactionHistory)).BeginInit();
             this.pnl_history.SuspendLayout();
+            this.pnl_profile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_profileIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_square)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_profilePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmInformation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPoster)).BeginInit();
+            this.pnl_editProfile.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_kiri
@@ -161,6 +185,7 @@
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
             this.profileToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.profileToolStripMenuItem.Text = "Profile";
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -183,7 +208,7 @@
             this.logOutToolStripMenuItem});
             this.menuStrip_home.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_home.Name = "menuStrip_home";
-            this.menuStrip_home.Size = new System.Drawing.Size(869, 36);
+            this.menuStrip_home.Size = new System.Drawing.Size(869, 30);
             this.menuStrip_home.TabIndex = 28;
             this.menuStrip_home.Text = "menuStrip1";
             // 
@@ -199,15 +224,6 @@
             this.btn_more.Text = "More";
             this.btn_more.UseVisualStyleBackColor = false;
             this.btn_more.Click += new System.EventHandler(this.btn_more_Click);
-            // 
-            // pBox_filmPoster
-            // 
-            this.pBox_filmPoster.Location = new System.Drawing.Point(318, 120);
-            this.pBox_filmPoster.Name = "pBox_filmPoster";
-            this.pBox_filmPoster.Size = new System.Drawing.Size(225, 300);
-            this.pBox_filmPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_filmPoster.TabIndex = 32;
-            this.pBox_filmPoster.TabStop = false;
             // 
             // pnl_more
             // 
@@ -239,17 +255,6 @@
             this.lb_filmInformation.TabIndex = 45;
             this.lb_filmInformation.Text = "Film Information";
             this.lb_filmInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pBox_backFilmInformation
-            // 
-            this.pBox_backFilmInformation.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
-            this.pBox_backFilmInformation.Location = new System.Drawing.Point(29, 14);
-            this.pBox_backFilmInformation.Name = "pBox_backFilmInformation";
-            this.pBox_backFilmInformation.Size = new System.Drawing.Size(29, 23);
-            this.pBox_backFilmInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_backFilmInformation.TabIndex = 44;
-            this.pBox_backFilmInformation.TabStop = false;
-            this.pBox_backFilmInformation.Click += new System.EventHandler(this.pBox_backFilmInformation_Click);
             // 
             // btn_buyTicket
             // 
@@ -360,26 +365,6 @@
             this.lb_filmNameInformation.Text = "FILM NAME";
             this.lb_filmNameInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pBox_filmPosterInformation
-            // 
-            this.pBox_filmPosterInformation.Location = new System.Drawing.Point(83, 60);
-            this.pBox_filmPosterInformation.Name = "pBox_filmPosterInformation";
-            this.pBox_filmPosterInformation.Size = new System.Drawing.Size(225, 300);
-            this.pBox_filmPosterInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_filmPosterInformation.TabIndex = 33;
-            this.pBox_filmPosterInformation.TabStop = false;
-            // 
-            // pBox_backHistory
-            // 
-            this.pBox_backHistory.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
-            this.pBox_backHistory.Location = new System.Drawing.Point(39, 40);
-            this.pBox_backHistory.Name = "pBox_backHistory";
-            this.pBox_backHistory.Size = new System.Drawing.Size(29, 23);
-            this.pBox_backHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_backHistory.TabIndex = 48;
-            this.pBox_backHistory.TabStop = false;
-            this.pBox_backHistory.Click += new System.EventHandler(this.pBox_backHistory_Click);
-            // 
             // lb_transactionHistory
             // 
             this.lb_transactionHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -424,9 +409,249 @@
             this.pnl_history.Controls.Add(this.pBox_backHistory);
             this.pnl_history.Location = new System.Drawing.Point(-10, 12);
             this.pnl_history.Name = "pnl_history";
-            this.pnl_history.Size = new System.Drawing.Size(900, 530);
+            this.pnl_history.Size = new System.Drawing.Size(900, 519);
             this.pnl_history.TabIndex = 48;
             this.pnl_history.Visible = false;
+            // 
+            // pnl_profile
+            // 
+            this.pnl_profile.Controls.Add(this.pnl_editProfile);
+            this.pnl_profile.Controls.Add(this.pBox_profileIcon);
+            this.pnl_profile.Controls.Add(this.btn_editProfile);
+            this.pnl_profile.Controls.Add(this.tBox_phoneNumber);
+            this.pnl_profile.Controls.Add(this.lb_phoneNumber);
+            this.pnl_profile.Controls.Add(this.tBox_email);
+            this.pnl_profile.Controls.Add(this.lb_email);
+            this.pnl_profile.Controls.Add(this.tBox_name);
+            this.pnl_profile.Controls.Add(this.lb_name);
+            this.pnl_profile.Controls.Add(this.tBox_username);
+            this.pnl_profile.Controls.Add(this.lb_username);
+            this.pnl_profile.Controls.Add(this.pBox_square);
+            this.pnl_profile.Controls.Add(this.pBox_profilePicture);
+            this.pnl_profile.Controls.Add(this.lb_profile);
+            this.pnl_profile.Controls.Add(this.pBox_backProfile);
+            this.pnl_profile.Location = new System.Drawing.Point(-10, 12);
+            this.pnl_profile.Name = "pnl_profile";
+            this.pnl_profile.Size = new System.Drawing.Size(925, 486);
+            this.pnl_profile.TabIndex = 52;
+            this.pnl_profile.Visible = false;
+            // 
+            // btn_editProfile
+            // 
+            this.btn_editProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_editProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editProfile.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.btn_editProfile.Location = new System.Drawing.Point(248, 382);
+            this.btn_editProfile.Name = "btn_editProfile";
+            this.btn_editProfile.Size = new System.Drawing.Size(132, 35);
+            this.btn_editProfile.TabIndex = 91;
+            this.btn_editProfile.Text = "Edit";
+            this.btn_editProfile.UseVisualStyleBackColor = false;
+            this.btn_editProfile.Click += new System.EventHandler(this.btn_editProfile_Click);
+            // 
+            // tBox_phoneNumber
+            // 
+            this.tBox_phoneNumber.Enabled = false;
+            this.tBox_phoneNumber.Location = new System.Drawing.Point(248, 330);
+            this.tBox_phoneNumber.MaxLength = 13;
+            this.tBox_phoneNumber.Name = "tBox_phoneNumber";
+            this.tBox_phoneNumber.Size = new System.Drawing.Size(300, 26);
+            this.tBox_phoneNumber.TabIndex = 90;
+            this.tBox_phoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBox_phoneNumber_KeyPress);
+            // 
+            // lb_phoneNumber
+            // 
+            this.lb_phoneNumber.AutoSize = true;
+            this.lb_phoneNumber.BackColor = System.Drawing.Color.AliceBlue;
+            this.lb_phoneNumber.ForeColor = System.Drawing.Color.Black;
+            this.lb_phoneNumber.Location = new System.Drawing.Point(244, 302);
+            this.lb_phoneNumber.Name = "lb_phoneNumber";
+            this.lb_phoneNumber.Size = new System.Drawing.Size(115, 20);
+            this.lb_phoneNumber.TabIndex = 89;
+            this.lb_phoneNumber.Text = "Phone Number";
+            // 
+            // tBox_email
+            // 
+            this.tBox_email.Enabled = false;
+            this.tBox_email.Location = new System.Drawing.Point(248, 262);
+            this.tBox_email.Name = "tBox_email";
+            this.tBox_email.Size = new System.Drawing.Size(300, 26);
+            this.tBox_email.TabIndex = 88;
+            // 
+            // lb_email
+            // 
+            this.lb_email.AutoSize = true;
+            this.lb_email.BackColor = System.Drawing.Color.AliceBlue;
+            this.lb_email.ForeColor = System.Drawing.Color.Black;
+            this.lb_email.Location = new System.Drawing.Point(244, 234);
+            this.lb_email.Name = "lb_email";
+            this.lb_email.Size = new System.Drawing.Size(53, 20);
+            this.lb_email.TabIndex = 87;
+            this.lb_email.Text = "E-mail";
+            // 
+            // tBox_name
+            // 
+            this.tBox_name.Enabled = false;
+            this.tBox_name.Location = new System.Drawing.Point(248, 194);
+            this.tBox_name.Name = "tBox_name";
+            this.tBox_name.Size = new System.Drawing.Size(300, 26);
+            this.tBox_name.TabIndex = 86;
+            // 
+            // lb_name
+            // 
+            this.lb_name.AutoSize = true;
+            this.lb_name.BackColor = System.Drawing.Color.AliceBlue;
+            this.lb_name.ForeColor = System.Drawing.Color.Black;
+            this.lb_name.Location = new System.Drawing.Point(244, 166);
+            this.lb_name.Name = "lb_name";
+            this.lb_name.Size = new System.Drawing.Size(51, 20);
+            this.lb_name.TabIndex = 85;
+            this.lb_name.Text = "Name";
+            // 
+            // tBox_username
+            // 
+            this.tBox_username.Enabled = false;
+            this.tBox_username.Location = new System.Drawing.Point(248, 126);
+            this.tBox_username.Name = "tBox_username";
+            this.tBox_username.Size = new System.Drawing.Size(300, 26);
+            this.tBox_username.TabIndex = 84;
+            // 
+            // lb_username
+            // 
+            this.lb_username.AutoSize = true;
+            this.lb_username.BackColor = System.Drawing.Color.AliceBlue;
+            this.lb_username.ForeColor = System.Drawing.Color.Black;
+            this.lb_username.Location = new System.Drawing.Point(244, 98);
+            this.lb_username.Name = "lb_username";
+            this.lb_username.Size = new System.Drawing.Size(83, 20);
+            this.lb_username.TabIndex = 83;
+            this.lb_username.Text = "Username";
+            // 
+            // lb_profile
+            // 
+            this.lb_profile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_profile.Location = new System.Drawing.Point(88, 36);
+            this.lb_profile.Name = "lb_profile";
+            this.lb_profile.Size = new System.Drawing.Size(269, 31);
+            this.lb_profile.TabIndex = 81;
+            this.lb_profile.Text = "Profile";
+            this.lb_profile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pBox_profileIcon
+            // 
+            this.pBox_profileIcon.Image = global::_20232_DBD.Properties.Resources.Profile_Icon;
+            this.pBox_profileIcon.Location = new System.Drawing.Point(608, 80);
+            this.pBox_profileIcon.Name = "pBox_profileIcon";
+            this.pBox_profileIcon.Size = new System.Drawing.Size(237, 274);
+            this.pBox_profileIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_profileIcon.TabIndex = 93;
+            this.pBox_profileIcon.TabStop = false;
+            // 
+            // pBox_square
+            // 
+            this.pBox_square.Image = global::_20232_DBD.Properties.Resources.Background_Login_Page;
+            this.pBox_square.Location = new System.Drawing.Point(226, 80);
+            this.pBox_square.Name = "pBox_square";
+            this.pBox_square.Size = new System.Drawing.Size(345, 401);
+            this.pBox_square.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_square.TabIndex = 92;
+            this.pBox_square.TabStop = false;
+            // 
+            // pBox_profilePicture
+            // 
+            this.pBox_profilePicture.Image = global::_20232_DBD.Properties.Resources.Profile;
+            this.pBox_profilePicture.Location = new System.Drawing.Point(93, 80);
+            this.pBox_profilePicture.Name = "pBox_profilePicture";
+            this.pBox_profilePicture.Size = new System.Drawing.Size(100, 100);
+            this.pBox_profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_profilePicture.TabIndex = 82;
+            this.pBox_profilePicture.TabStop = false;
+            // 
+            // pBox_backProfile
+            // 
+            this.pBox_backProfile.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
+            this.pBox_backProfile.Location = new System.Drawing.Point(39, 40);
+            this.pBox_backProfile.Name = "pBox_backProfile";
+            this.pBox_backProfile.Size = new System.Drawing.Size(29, 23);
+            this.pBox_backProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_backProfile.TabIndex = 80;
+            this.pBox_backProfile.TabStop = false;
+            // 
+            // pBox_backHistory
+            // 
+            this.pBox_backHistory.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
+            this.pBox_backHistory.Location = new System.Drawing.Point(39, 40);
+            this.pBox_backHistory.Name = "pBox_backHistory";
+            this.pBox_backHistory.Size = new System.Drawing.Size(29, 23);
+            this.pBox_backHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_backHistory.TabIndex = 48;
+            this.pBox_backHistory.TabStop = false;
+            this.pBox_backHistory.Click += new System.EventHandler(this.pBox_backHistory_Click);
+            // 
+            // pBox_backFilmInformation
+            // 
+            this.pBox_backFilmInformation.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
+            this.pBox_backFilmInformation.Location = new System.Drawing.Point(29, 14);
+            this.pBox_backFilmInformation.Name = "pBox_backFilmInformation";
+            this.pBox_backFilmInformation.Size = new System.Drawing.Size(29, 23);
+            this.pBox_backFilmInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_backFilmInformation.TabIndex = 44;
+            this.pBox_backFilmInformation.TabStop = false;
+            this.pBox_backFilmInformation.Click += new System.EventHandler(this.pBox_backFilmInformation_Click);
+            // 
+            // pBox_filmPosterInformation
+            // 
+            this.pBox_filmPosterInformation.Location = new System.Drawing.Point(83, 60);
+            this.pBox_filmPosterInformation.Name = "pBox_filmPosterInformation";
+            this.pBox_filmPosterInformation.Size = new System.Drawing.Size(225, 300);
+            this.pBox_filmPosterInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_filmPosterInformation.TabIndex = 33;
+            this.pBox_filmPosterInformation.TabStop = false;
+            // 
+            // pBox_filmPoster
+            // 
+            this.pBox_filmPoster.Location = new System.Drawing.Point(318, 120);
+            this.pBox_filmPoster.Name = "pBox_filmPoster";
+            this.pBox_filmPoster.Size = new System.Drawing.Size(225, 300);
+            this.pBox_filmPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_filmPoster.TabIndex = 32;
+            this.pBox_filmPoster.TabStop = false;
+            // 
+            // pnl_editProfile
+            // 
+            this.pnl_editProfile.Controls.Add(this.btn_cancel);
+            this.pnl_editProfile.Controls.Add(this.btn_save);
+            this.pnl_editProfile.Location = new System.Drawing.Point(234, 365);
+            this.pnl_editProfile.Name = "pnl_editProfile";
+            this.pnl_editProfile.Size = new System.Drawing.Size(178, 100);
+            this.pnl_editProfile.TabIndex = 94;
+            this.pnl_editProfile.Visible = false;
+            // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.btn_save.Location = new System.Drawing.Point(14, 17);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(132, 35);
+            this.btn_save.TabIndex = 92;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_cancel.Location = new System.Drawing.Point(14, 58);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(132, 35);
+            this.btn_cancel.TabIndex = 93;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // FormMain
             // 
@@ -434,6 +659,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 518);
             this.Controls.Add(this.menuStrip_home);
+            this.Controls.Add(this.pnl_profile);
             this.Controls.Add(this.pnl_history);
             this.Controls.Add(this.pnl_more);
             this.Controls.Add(this.btn_kiri);
@@ -451,15 +677,22 @@
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.menuStrip_home.ResumeLayout(false);
             this.menuStrip_home.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPoster)).EndInit();
             this.pnl_more.ResumeLayout(false);
             this.pnl_more.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmInformation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_transactionHistory)).EndInit();
             this.pnl_history.ResumeLayout(false);
             this.pnl_history.PerformLayout();
+            this.pnl_profile.ResumeLayout(false);
+            this.pnl_profile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_profileIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_square)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_profilePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmInformation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPoster)).EndInit();
+            this.pnl_editProfile.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,5 +731,23 @@
         private System.Windows.Forms.DataGridView dgv_transactionHistory;
         private System.Windows.Forms.Label lb_doubleClick;
         private System.Windows.Forms.Panel pnl_history;
+        private System.Windows.Forms.Panel pnl_profile;
+        private System.Windows.Forms.Button btn_editProfile;
+        private System.Windows.Forms.TextBox tBox_phoneNumber;
+        private System.Windows.Forms.Label lb_phoneNumber;
+        private System.Windows.Forms.TextBox tBox_email;
+        private System.Windows.Forms.Label lb_email;
+        private System.Windows.Forms.TextBox tBox_name;
+        private System.Windows.Forms.Label lb_name;
+        private System.Windows.Forms.TextBox tBox_username;
+        private System.Windows.Forms.Label lb_username;
+        private System.Windows.Forms.PictureBox pBox_profilePicture;
+        private System.Windows.Forms.Label lb_profile;
+        private System.Windows.Forms.PictureBox pBox_backProfile;
+        private System.Windows.Forms.PictureBox pBox_square;
+        private System.Windows.Forms.PictureBox pBox_profileIcon;
+        private System.Windows.Forms.Panel pnl_editProfile;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_save;
     }
 }

@@ -29,17 +29,20 @@ namespace _20232_DBD
         DataTable dt_judulFilm;
         DataTable dt_informasiFilm;
         DataTable dt_riwayatTransaksi;
+        DataTable dt_profilUser;
 
         public FormMain(MySqlConnection conForm)
         {
             InitializeComponent();
             sqlConnect = conForm;
+
+            tBox_phoneNumber.KeyPress += new KeyPressEventHandler(tBox_phoneNumber_KeyPress);
         }
 
         private void FormHome_Load(object sender, EventArgs e)
         {
             // Cek username yang login dan mengambil data nama user dari database
-            sqlQuery = "SELECT id_pengguna, username_pengguna, nama_pengguna FROM PENGGUNA";
+            sqlQuery = "SELECT id_pengguna, username_pengguna, nama_pengguna, email_pengguna FROM PENGGUNA";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             dt_pengguna = new DataTable();
             sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
@@ -119,6 +122,7 @@ namespace _20232_DBD
         {
             pnl_more.Visible = true;
             pnl_history.Visible = false;
+            pnl_profile.Visible = false;
 
             // Menampilkan gambar poster film yang dipilih
             System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmName.Text}") as System.Drawing.Bitmap;
@@ -141,8 +145,9 @@ namespace _20232_DBD
 
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnl_history.Visible = true;
             pnl_more.Visible = false;
+            pnl_history.Visible = true;
+            pnl_profile.Visible = false;
 
             // Query untuk menampilkan riwayat transaksi pengguna berdasarkan ID pengguna
             sqlQuery = $@"SELECT DISTINCT t.id_transaksi_booking AS 'Order ID', f.judul_film AS 'Judul Film',
@@ -166,30 +171,141 @@ namespace _20232_DBD
             dgv_transactionHistory.DataSource = dt_riwayatTransaksi;
             dgv_transactionHistory.ClearSelection();
 
+            // Membuat lebar kolom data grid view menyesuaikan dengan lebar data grid view secara keseluruhan
             dgv_transactionHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
         private void dgv_transactionHistory_DoubleClick(object sender, EventArgs e)
         {
+            // Menampilkan detail transaksi
             FormTransactionDetail fTransactionDetail = new FormTransactionDetail(sqlConnect);
             fTransactionDetail.ShowDialog();
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnl_more.Visible = false;
+            pnl_history.Visible = false;
+            pnl_profile.Visible = true;
+            pnl_editProfile.Visible = false;
+
+            //Mengambil data milik user yang sedang login
+            sqlQuery = $@"SELECT username_pengguna, nama_pengguna, email_pengguna, nomor_telepon_pengguna
+                          FROM PENGGUNA
+                          WHERE id_pengguna = '{idPengguna}'";
+
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            dt_profilUser = new DataTable();
+            sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dt_profilUser);
+
+            //Menampilkan data user
+            tBox_username.Text = dt_profilUser.Rows[0][0].ToString();
+            tBox_name.Text = dt_profilUser.Rows[0][1].ToString();
+            tBox_email.Text = dt_profilUser.Rows[0][2].ToString();
+            tBox_phoneNumber.Text = dt_profilUser.Rows[0][3].ToString();
+        }
+
+        private void btn_editProfile_Click(object sender, EventArgs e)
+        {
+            // Membuka akses edit
+            tBox_name.Enabled = true;
+            tBox_email.Enabled = true;
+            tBox_phoneNumber.Enabled = true;
+
+            pnl_editProfile.Visible = true;
+        }
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            // Pengecekan apakah ada email yang sama di dalam database
+            int countEmail = 0;
+            for (int i = 0; i < dt_pengguna.Rows.Count; i++)
+            {
+                if (tBox_email.Text == dt_pengguna.Rows[i][3].ToString())
+                {
+                    countEmail++;
+                    break;
+                }
+            }
+
+            // Pengecekan agar setiap textbox tidak kosong
+            if (tBox_username.Text == string.Empty || tBox_email.Text == string.Empty || tBox_phoneNumber.Text == string.Empty)
+            {
+                MessageBox.Show("Please fill all field");
+            }
+            else if (countEmail != 0)
+            {
+                MessageBox.Show("Please choose another email");
+            }
+            else
+            {
+                //Memastikan pengeditan
+                DialogResult dr = MessageBox.Show("Do you want to save all changes?", "Confirm", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    //Update data pengguna di database
+                    sqlQuery = $@"UPDATE PENGGUNA
+                                  SET nama_pengguna = UPPER('{tBox_name.Text}'),
+                                      email_pengguna = LOWER('{tBox_email.Text}'),
+                                      nomor_telepon_pengguna = '{tBox_phoneNumber.Text}'
+                                  WHERE id_pengguna = '{idPengguna}'";
+
+                    sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
+
+                    tBox_name.Enabled = false;
+                    tBox_email.Enabled = false;
+                    tBox_phoneNumber.Enabled = false;
+
+                    pnl_editProfile.Visible = false;
+                }
+            }
+        }
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            //Mengembalikan ke data lama pengguna (sebelum edit)
+            tBox_username.Text = dt_profilUser.Rows[0][0].ToString();
+            tBox_name.Text = dt_profilUser.Rows[0][1].ToString();
+            tBox_email.Text = dt_profilUser.Rows[0][2].ToString();
+            tBox_phoneNumber.Text = dt_profilUser.Rows[0][3].ToString();
+
+            tBox_username.Enabled = false;
+            tBox_email.Enabled = false;
+            tBox_phoneNumber.Enabled = false;
+
+            pnl_editProfile.Visible = false;
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnl_more.Visible = false;
             pnl_history.Visible = false;
+            pnl_profile.Visible = false;
         }
 
         private void pBox_backFilmInformation_Click(object sender, EventArgs e)
         {
             pnl_more.Visible = false;
             pnl_history.Visible = false;
+            pnl_profile.Visible = false;
         }
 
         private void pBox_backHistory_Click(object sender, EventArgs e)
         {
             pnl_more.Visible = false;
             pnl_history.Visible = false;
+            pnl_profile.Visible = false;
+        }
+
+        private void tBox_phoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Memeriksa apakah karakter adalah angka
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Jika karakter bukan angka, batalkan input
+                e.Handled = true;
+            }
         }
     }
 }
