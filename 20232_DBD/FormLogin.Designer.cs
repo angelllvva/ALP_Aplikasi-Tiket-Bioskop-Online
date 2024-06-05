@@ -41,6 +41,8 @@
             this.lb_easyTix = new System.Windows.Forms.Label();
             this.pBox_square = new System.Windows.Forms.PictureBox();
             this.pBox_ticket = new System.Windows.Forms.PictureBox();
+            this.lb_usernameNotFound = new System.Windows.Forms.Label();
+            this.lb_passwordIncorrect = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_square)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_ticket)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +50,7 @@
             // btn_signUp
             // 
             this.btn_signUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_signUp.Location = new System.Drawing.Point(496, 363);
+            this.btn_signUp.Location = new System.Drawing.Point(496, 370);
             this.btn_signUp.Name = "btn_signUp";
             this.btn_signUp.Size = new System.Drawing.Size(132, 35);
             this.btn_signUp.TabIndex = 25;
@@ -59,7 +61,7 @@
             // btn_login
             // 
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_login.Location = new System.Drawing.Point(496, 313);
+            this.btn_login.Location = new System.Drawing.Point(496, 324);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(132, 35);
             this.btn_login.TabIndex = 24;
@@ -69,14 +71,14 @@
             // 
             // tBox_password
             // 
-            this.tBox_password.Location = new System.Drawing.Point(533, 248);
+            this.tBox_password.Location = new System.Drawing.Point(533, 255);
             this.tBox_password.Name = "tBox_password";
             this.tBox_password.Size = new System.Drawing.Size(161, 26);
             this.tBox_password.TabIndex = 23;
             // 
             // tBox_username
             // 
-            this.tBox_username.Location = new System.Drawing.Point(533, 201);
+            this.tBox_username.Location = new System.Drawing.Point(533, 191);
             this.tBox_username.Name = "tBox_username";
             this.tBox_username.Size = new System.Drawing.Size(161, 26);
             this.tBox_username.TabIndex = 22;
@@ -99,7 +101,7 @@
             this.lb_username.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lb_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_username.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lb_username.Location = new System.Drawing.Point(432, 211);
+            this.lb_username.Location = new System.Drawing.Point(432, 194);
             this.lb_username.Name = "lb_username";
             this.lb_username.Size = new System.Drawing.Size(83, 20);
             this.lb_username.TabIndex = 20;
@@ -111,7 +113,7 @@
             this.lb_login.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lb_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_login.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lb_login.Location = new System.Drawing.Point(477, 155);
+            this.lb_login.Location = new System.Drawing.Point(477, 149);
             this.lb_login.Name = "lb_login";
             this.lb_login.Size = new System.Drawing.Size(173, 20);
             this.lb_login.TabIndex = 19;
@@ -123,7 +125,7 @@
             this.lb_welcome.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lb_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_welcome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lb_welcome.Location = new System.Drawing.Point(461, 107);
+            this.lb_welcome.Location = new System.Drawing.Point(461, 101);
             this.lb_welcome.Name = "lb_welcome";
             this.lb_welcome.Size = new System.Drawing.Size(207, 46);
             this.lb_welcome.TabIndex = 18;
@@ -182,12 +184,40 @@
             this.pBox_ticket.TabIndex = 15;
             this.pBox_ticket.TabStop = false;
             // 
+            // lb_usernameNotFound
+            // 
+            this.lb_usernameNotFound.AutoSize = true;
+            this.lb_usernameNotFound.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lb_usernameNotFound.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_usernameNotFound.ForeColor = System.Drawing.Color.Red;
+            this.lb_usernameNotFound.Location = new System.Drawing.Point(530, 222);
+            this.lb_usernameNotFound.Name = "lb_usernameNotFound";
+            this.lb_usernameNotFound.Size = new System.Drawing.Size(140, 17);
+            this.lb_usernameNotFound.TabIndex = 26;
+            this.lb_usernameNotFound.Text = "Username not found!";
+            this.lb_usernameNotFound.Visible = false;
+            // 
+            // lb_passwordIncorrect
+            // 
+            this.lb_passwordIncorrect.AutoSize = true;
+            this.lb_passwordIncorrect.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lb_passwordIncorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_passwordIncorrect.ForeColor = System.Drawing.Color.Red;
+            this.lb_passwordIncorrect.Location = new System.Drawing.Point(530, 286);
+            this.lb_passwordIncorrect.Name = "lb_passwordIncorrect";
+            this.lb_passwordIncorrect.Size = new System.Drawing.Size(131, 17);
+            this.lb_passwordIncorrect.TabIndex = 27;
+            this.lb_passwordIncorrect.Text = "Password incorrect!";
+            this.lb_passwordIncorrect.Visible = false;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(869, 518);
+            this.Controls.Add(this.lb_passwordIncorrect);
+            this.Controls.Add(this.lb_usernameNotFound);
             this.Controls.Add(this.btn_signUp);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.tBox_password);
@@ -228,5 +258,7 @@
         private System.Windows.Forms.PictureBox pBox_ticket;
         private System.Windows.Forms.Label lb_team9;
         private System.Windows.Forms.Label lb_easyTix;
+        private System.Windows.Forms.Label lb_usernameNotFound;
+        private System.Windows.Forms.Label lb_passwordIncorrect;
     }
 }

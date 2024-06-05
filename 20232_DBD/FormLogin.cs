@@ -58,6 +58,9 @@ namespace _20232_DBD
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            lb_usernameNotFound.Visible = false;
+            lb_passwordIncorrect.Visible = false;
+
             // Mengambil data username dan password dari tabel PENGGUNA di DATABASE
             dt_pengguna = new DataTable();
             sqlQuery = "SELECT username_pengguna, password_pengguna FROM PENGGUNA";
@@ -83,13 +86,17 @@ namespace _20232_DBD
             }
             else if (countUsername == 0)
             {
-                MessageBox.Show("Username not found");
+                lb_usernameNotFound.Visible = true;
+                lb_passwordIncorrect.Visible = false;
+
                 tBox_username.Text = "";
                 tBox_password.Text = "";
             }
             else if (tBox_password.Text != dt_pengguna.Rows[tampung][1].ToString())
             {
-                MessageBox.Show("Password incorrect");
+                lb_usernameNotFound.Visible = false;
+                lb_passwordIncorrect.Visible = true;
+
                 tBox_password.Text = "";
             }
             else
@@ -100,7 +107,7 @@ namespace _20232_DBD
                 tBox_password.Text = "";
 
                 // Masuk ke menu Home
-                FormHome fHome = new FormHome(myConn);
+                FormMain fHome = new FormMain(myConn);
                 fHome.ShowDialog();
             }
         }
@@ -113,8 +120,6 @@ namespace _20232_DBD
             // Masuk ke menu Sign Up
             FormSignUp fSignUp = new FormSignUp(myConn);
             fSignUp.ShowDialog();
-
-            
         }
     }
 }

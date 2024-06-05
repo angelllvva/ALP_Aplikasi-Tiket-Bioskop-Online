@@ -121,11 +121,20 @@
   <data name="INTERSTELLAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\INTERSTELLAR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ZOOTOPIA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ZOOTOPIA.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DUNE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DUNE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IMAGINARY" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMAGINARY.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo Tiket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo Tiket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MADAME WEB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MADAME WEB.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Background Login Page" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background Login Page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,17 +154,11 @@
   <data name="KULARI KE PANTAI" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KULARI KE PANTAI.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PEMANDI JENAZAH" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PEMANDI JENAZAH.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="IRON MAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IRON MAN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="THE DARK KNIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\THE DARK KNIGHT.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ARGYLLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ARGYLLE.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LASKAR PELANGI" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LASKAR PELANGI.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,16 +178,16 @@
   <data name="THE SHAWSHANK REDEMPTION" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\THE SHAWSHANK REDEMPTION.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DUNE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DUNE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ARGYLLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ARGYLLE.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MADAME WEB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MADAME WEB.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PEMANDI JENAZAH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PEMANDI JENAZAH.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PANGGONAN WINGIT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PANGGONAN WINGIT.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ZOOTOPIA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ZOOTOPIA.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Arrow 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arrow 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
