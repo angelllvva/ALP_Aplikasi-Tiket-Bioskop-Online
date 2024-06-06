@@ -6,8 +6,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,12 +26,16 @@ namespace _20232_DBD
         string user = FormLogin.username_login;
         int count = 0;
         public static string idPengguna;
+        string aktor;
+        string tanggal;
 
         DataTable dt_pengguna;
         DataTable dt_judulFilm;
         DataTable dt_informasiFilm;
+        DataTable dt_aktorFilm;
         DataTable dt_riwayatTransaksi;
         DataTable dt_profilUser;
+        DataTable dt_jamTayang;
 
         public FormMain(MySqlConnection conForm)
         {
@@ -112,12 +118,6 @@ namespace _20232_DBD
             }
         }
 
-        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Kembali ke menu Login
-            this.Close();
-        }
-
         private void btn_more_Click(object sender, EventArgs e)
         {
             pnl_more.Visible = true;
@@ -135,17 +135,348 @@ namespace _20232_DBD
             sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
             sqlDataAdapter.Fill(dt_informasiFilm);
 
+            // Query untuk menampilkan nama aktor yang memainkan film
+            sqlQuery = $@"SELECT f.judul_film, a.nama_aktor
+                          FROM MEMERANKAN_FILM mf
+                          JOIN FILM f
+                            ON mf.id_film = f.id_film
+                          JOIN AKTOR a
+                            ON a.id_aktor = mf.id_aktor
+                          WHERE f.judul_film = '{dt_informasiFilm.Rows[0][0].ToString()}'";
+
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            dt_aktorFilm = new DataTable();
+            sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dt_aktorFilm);
+
+            // Mengecek apakah jumlah cast lebih dari 1. Jika Ya, beri koma untuk memisahkan antar cast
+            for (int i = 0; i < dt_aktorFilm.Rows.Count; i++)
+            {
+                if (i == 0)
+                {
+                    aktor = dt_aktorFilm.Rows[i][1].ToString();
+                }
+                else
+                {
+                    aktor += ", " + dt_aktorFilm.Rows[i][1].ToString();
+                }
+            }
+
             // Memasukkan informasi film ke masing-masing label
             lb_filmNameInformation.Text = dt_informasiFilm.Rows[0][0].ToString();
             lb_genreText.Text = dt_informasiFilm.Rows[0][1].ToString();
             lb_durationText.Text = dt_informasiFilm.Rows[0][2].ToString();
+            lb_castText.Text = aktor;
             lb_directorText.Text = dt_informasiFilm.Rows[0][3].ToString();
             lb_descriptionText.Text = dt_informasiFilm.Rows[0][4].ToString();
+        }
+
+        private void btn_buyTicket_Click(object sender, EventArgs e)
+        {
+            // Set warna default masing-masing button tanggal schedule
+            btn_today.BackColor = Color.FromArgb(0, 0, 64);
+            btn_today.ForeColor = Color.NavajoWhite;
+            lb_dateToday.ForeColor = Color.NavajoWhite;
+            lb_dateToday.BackColor = Color.FromArgb(0, 0, 64);
+
+            btn_nextDay.BackColor = Color.NavajoWhite;
+            btn_nextDay.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNextDay.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNextDay.BackColor = Color.NavajoWhite;
+
+            btn_next2Day.BackColor = Color.NavajoWhite;
+            btn_next2Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext2Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext2Day.BackColor = Color.NavajoWhite;
+
+            btn_next3Day.BackColor = Color.NavajoWhite;
+            btn_next3Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext3Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext3Day.BackColor = Color.NavajoWhite;
+
+            btn_next4Day.BackColor = Color.NavajoWhite;
+            btn_next4Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext4Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext4Day.BackColor = Color.NavajoWhite;
+
+            // Memunculkan jadwal tayang film yang dipilih
+            pnl_more.Visible = false;
+            pnl_filmSchedule.Visible = true;
+            pnl_history.Visible = false;
+            pnl_profile.Visible = false;
+
+            lb_filmNameSchedule.Text = lb_filmNameInformation.Text;
+
+            System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmNameSchedule.Text}") as System.Drawing.Bitmap;
+            pBox_filmPosterSchedule.Image = image;
+
+            DateTime today = DateTime.Today;
+
+            // Membuat tanggal berdasarkan tanggal hari ini
+            lb_dateToday.Text = today.ToString("dd MMM");
+            today = today.AddDays(1);
+            lb_dateNextDay.Text = today.ToString("dd MMM");
+            today = today.AddDays(1);
+            lb_dateNext2Day.Text = today.ToString("dd MMM");
+            today = today.AddDays(1);
+            lb_dateNext3Day.Text = today.ToString("dd MMM");
+            today = today.AddDays(1);
+            lb_dateNext4Day.Text = today.ToString("dd MMM");
+
+            // Membuat nama hari berdasarkan hari ini
+            btn_nextDay.Text = today.AddDays(1).DayOfWeek.ToString().ToUpper().Substring(0, 3);
+            btn_next2Day.Text = today.AddDays(2).DayOfWeek.ToString().ToUpper().Substring(0, 3);
+            btn_next3Day.Text = today.AddDays(3).DayOfWeek.ToString().ToUpper().Substring(0, 3);
+            btn_next4Day.Text = today.AddDays(4).DayOfWeek.ToString().ToUpper().Substring(0, 3);
+
+            // Mengubah format tanggal dari 'dd MMM' menjadi 'yyyy-MM-dd'
+                // Parse string ke DateTime dengan format yang sesuai
+                DateTime parsedDate = DateTime.ParseExact(lb_dateToday.Text, "dd MMM", CultureInfo.InvariantCulture);
+
+                // Menambahkan tahun yang diinginkan, misalkan 2024
+                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+
+                // Mengubah format DateTime ke 'yyyy-MM-dd'
+                tanggal = parsedDate.ToString("yyyy-MM-dd");
+
+            jadwalTayang(lb_filmNameSchedule.Text, tanggal);
+        }
+
+        private void btn_today_Click(object sender, EventArgs e)
+        {
+            btn_today.BackColor = Color.FromArgb(0, 0, 64);
+            btn_today.ForeColor = Color.NavajoWhite;
+            lb_dateToday.ForeColor = Color.NavajoWhite;
+            lb_dateToday.BackColor = Color.FromArgb(0, 0, 64);
+
+            btn_nextDay.BackColor = Color.NavajoWhite;
+            btn_nextDay.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNextDay.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNextDay.BackColor = Color.NavajoWhite;
+
+            btn_next2Day.BackColor = Color.NavajoWhite;
+            btn_next2Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext2Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext2Day.BackColor = Color.NavajoWhite;
+
+            btn_next3Day.BackColor = Color.NavajoWhite;
+            btn_next3Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext3Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext3Day.BackColor = Color.NavajoWhite;
+
+            btn_next4Day.BackColor = Color.NavajoWhite;
+            btn_next4Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext4Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext4Day.BackColor = Color.NavajoWhite;
+
+            // Mengubah format tanggal dari 'dd MMM' menjadi 'yyyy-MM-dd'
+            // Parse string ke DateTime dengan format yang sesuai
+            DateTime parsedDate = DateTime.ParseExact(lb_dateToday.Text, "dd MMM", CultureInfo.InvariantCulture);
+
+                // Menambahkan tahun yang diinginkan, misalkan 2024
+                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+
+                // Mengubah format DateTime ke 'yyyy-MM-dd'
+                tanggal = parsedDate.ToString("yyyy-MM-dd");
+
+            jadwalTayang(lb_filmNameSchedule.Text, tanggal);
+        }
+
+        private void btn_nextDay_Click(object sender, EventArgs e)
+        {
+            btn_today.BackColor = Color.NavajoWhite;
+            btn_today.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateToday.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateToday.BackColor = Color.NavajoWhite;
+
+            btn_nextDay.BackColor = Color.FromArgb(0, 0, 64);
+            btn_nextDay.ForeColor = Color.NavajoWhite;
+            lb_dateNextDay.ForeColor = Color.NavajoWhite;
+            lb_dateNextDay.BackColor = Color.FromArgb(0, 0, 64);
+
+            btn_next2Day.BackColor = Color.NavajoWhite;
+            btn_next2Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext2Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext2Day.BackColor = Color.NavajoWhite;
+
+            btn_next3Day.BackColor = Color.NavajoWhite;
+            btn_next3Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext3Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext3Day.BackColor = Color.NavajoWhite;
+
+            btn_next4Day.BackColor = Color.NavajoWhite;
+            btn_next4Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext4Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext4Day.BackColor = Color.NavajoWhite;
+
+            // Mengubah format tanggal dari 'dd MMM' menjadi 'yyyy-MM-dd'
+            // Parse string ke DateTime dengan format yang sesuai
+            DateTime parsedDate = DateTime.ParseExact(lb_dateNextDay.Text, "dd MMM", CultureInfo.InvariantCulture);
+
+                // Menambahkan tahun yang diinginkan, misalkan 2024
+                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+
+                // Mengubah format DateTime ke 'yyyy-MM-dd'
+                tanggal = parsedDate.ToString("yyyy-MM-dd");
+
+            jadwalTayang(lb_filmNameSchedule.Text, tanggal);
+        }
+
+        private void btn_next2Day_Click(object sender, EventArgs e)
+        {
+            btn_today.BackColor = Color.NavajoWhite;
+            btn_today.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateToday.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateToday.BackColor = Color.NavajoWhite;
+
+            btn_nextDay.BackColor = Color.NavajoWhite;
+            btn_nextDay.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNextDay.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNextDay.BackColor = Color.NavajoWhite;
+
+            btn_next2Day.BackColor = Color.FromArgb(0, 0, 64);
+            btn_next2Day.ForeColor = Color.NavajoWhite;
+            lb_dateNext2Day.ForeColor = Color.NavajoWhite;
+            lb_dateNext2Day.BackColor = Color.FromArgb(0, 0, 64);
+
+            btn_next3Day.BackColor = Color.NavajoWhite;
+            btn_next3Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext3Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext3Day.BackColor = Color.NavajoWhite;
+
+            btn_next4Day.BackColor = Color.NavajoWhite;
+            btn_next4Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext4Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext4Day.BackColor = Color.NavajoWhite;
+
+            // Mengubah format tanggal dari 'dd MMM' menjadi 'yyyy-MM-dd'
+            // Parse string ke DateTime dengan format yang sesuai
+            DateTime parsedDate = DateTime.ParseExact(lb_dateNext2Day.Text, "dd MMM", CultureInfo.InvariantCulture);
+
+                // Menambahkan tahun yang diinginkan, misalkan 2024
+                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+
+                // Mengubah format DateTime ke 'yyyy-MM-dd'
+                tanggal = parsedDate.ToString("yyyy-MM-dd");
+
+            jadwalTayang(lb_filmNameSchedule.Text, tanggal);
+        }
+
+        private void btn_next3Day_Click(object sender, EventArgs e)
+        {
+            btn_today.BackColor = Color.NavajoWhite;
+            btn_today.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateToday.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateToday.BackColor = Color.NavajoWhite;
+
+            btn_nextDay.BackColor = Color.NavajoWhite;
+            btn_nextDay.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNextDay.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNextDay.BackColor = Color.NavajoWhite;
+
+            btn_next2Day.BackColor = Color.NavajoWhite;
+            btn_next2Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext2Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext2Day.BackColor = Color.NavajoWhite;
+
+            btn_next3Day.BackColor = Color.FromArgb(0, 0, 64);
+            btn_next3Day.ForeColor = Color.NavajoWhite;
+            lb_dateNext3Day.ForeColor = Color.NavajoWhite;
+            lb_dateNext3Day.BackColor = Color.FromArgb(0, 0, 64);
+
+            btn_next4Day.BackColor = Color.NavajoWhite;
+            btn_next4Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext4Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext4Day.BackColor = Color.NavajoWhite;
+
+            // Mengubah format tanggal dari 'dd MMM' menjadi 'yyyy-MM-dd'
+            // Parse string ke DateTime dengan format yang sesuai
+            DateTime parsedDate = DateTime.ParseExact(lb_dateNext3Day.Text, "dd MMM", CultureInfo.InvariantCulture);
+
+                // Menambahkan tahun yang diinginkan, misalkan 2024
+                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+
+                // Mengubah format DateTime ke 'yyyy-MM-dd'
+                tanggal = parsedDate.ToString("yyyy-MM-dd");
+
+            jadwalTayang(lb_filmNameSchedule.Text, tanggal);
+        }
+
+        private void btn_next4Day_Click(object sender, EventArgs e)
+        {
+            btn_today.BackColor = Color.NavajoWhite;
+            btn_today.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateToday.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateToday.BackColor = Color.NavajoWhite;
+
+            btn_nextDay.BackColor = Color.NavajoWhite;
+            btn_nextDay.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNextDay.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNextDay.BackColor = Color.NavajoWhite;
+
+            btn_next2Day.BackColor = Color.NavajoWhite;
+            btn_next2Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext2Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext2Day.BackColor = Color.NavajoWhite;
+
+            btn_next3Day.BackColor = Color.NavajoWhite;
+            btn_next3Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext3Day.ForeColor = Color.FromArgb(0, 0, 64);
+            lb_dateNext3Day.BackColor = Color.NavajoWhite;
+
+            btn_next4Day.BackColor = Color.FromArgb(0, 0, 64);
+            btn_next4Day.ForeColor = Color.NavajoWhite;
+            lb_dateNext4Day.ForeColor = Color.NavajoWhite;
+            lb_dateNext4Day.BackColor = Color.FromArgb(0, 0, 64);
+
+            // Mengubah format tanggal dari 'dd MMM' menjadi 'yyyy-MM-dd'
+            // Parse string ke DateTime dengan format yang sesuai
+            DateTime parsedDate = DateTime.ParseExact(lb_dateNext4Day.Text, "dd MMM", CultureInfo.InvariantCulture);
+
+                // Menambahkan tahun yang diinginkan, misalkan 2024
+                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+
+                // Mengubah format DateTime ke 'yyyy-MM-dd'
+                tanggal = parsedDate.ToString("yyyy-MM-dd");
+
+            jadwalTayang(lb_filmNameSchedule.Text, tanggal);
+        }
+
+        // Method untuk memanggil jam tayang berdasarkan judul film dan tanggal
+        private void jadwalTayang(string judulFilm, string tanggal)
+        {
+            // Query untuk menampilkan jadwal tayang dari masing-masing film
+            sqlQuery = $@"SELECT f.judul_film, jt.tanggal_jadwal_tayang, jt.jam_jadwal_tayang
+                          FROM FILM f, JADWAL_TAYANG jt
+                          WHERE f.id_film = jt.id_film && f.judul_film = '{judulFilm}' && jt.tanggal_jadwal_tayang = '{tanggal}'";
+
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            dt_jamTayang = new DataTable();
+            sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dt_jamTayang);
+
+            // Mengambil semua button film schedule yang ada di dalam form Designer
+            Button[] buttons = new Button[10] {button1, button2, button3, button4, button5, button6, button7, button8, button9, button10};
+
+            // Mendistribusikan data dari data table ke dalam masing-masing button
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                if (i < dt_jamTayang.Rows.Count)
+                {
+                    buttons[i].Visible = true;
+                    buttons[i].Text = dt_jamTayang.Rows[i][2].ToString().Substring(0, 5);
+                }
+                else
+                {
+                    buttons[i].Visible = false;
+                }
+            }
         }
 
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnl_more.Visible = false;
+            pnl_filmSchedule.Visible = false;
             pnl_history.Visible = true;
             pnl_profile.Visible = false;
 
@@ -185,11 +516,12 @@ namespace _20232_DBD
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnl_more.Visible = false;
+            pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
             pnl_profile.Visible = true;
             pnl_editProfile.Visible = false;
 
-            //Mengambil data milik user yang sedang login
+            // Mengambil data milik user yang sedang login
             sqlQuery = $@"SELECT username_pengguna, nama_pengguna, email_pengguna, nomor_telepon_pengguna
                           FROM PENGGUNA
                           WHERE id_pengguna = '{idPengguna}'";
@@ -199,7 +531,7 @@ namespace _20232_DBD
             sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
             sqlDataAdapter.Fill(dt_profilUser);
 
-            //Menampilkan data user
+            // Menampilkan data user
             tBox_username.Text = dt_profilUser.Rows[0][0].ToString();
             tBox_name.Text = dt_profilUser.Rows[0][1].ToString();
             tBox_email.Text = dt_profilUser.Rows[0][2].ToString();
@@ -215,6 +547,7 @@ namespace _20232_DBD
 
             pnl_editProfile.Visible = true;
         }
+
         private void btn_save_Click(object sender, EventArgs e)
         {
             // Pengecekan apakah ada email yang sama di dalam database
@@ -239,7 +572,7 @@ namespace _20232_DBD
             }
             else
             {
-                //Memastikan pengeditan
+                // Memastikan pengeditan
                 DialogResult dr = MessageBox.Show("Do you want to save all changes?", "Confirm", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
@@ -262,24 +595,32 @@ namespace _20232_DBD
                 }
             }
         }
+
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            //Mengembalikan ke data lama pengguna (sebelum edit)
+            // Mengembalikan ke data lama pengguna (sebelum edit)
             tBox_username.Text = dt_profilUser.Rows[0][0].ToString();
             tBox_name.Text = dt_profilUser.Rows[0][1].ToString();
             tBox_email.Text = dt_profilUser.Rows[0][2].ToString();
             tBox_phoneNumber.Text = dt_profilUser.Rows[0][3].ToString();
 
-            tBox_username.Enabled = false;
+            tBox_name.Enabled = false;
             tBox_email.Enabled = false;
             tBox_phoneNumber.Enabled = false;
 
             pnl_editProfile.Visible = false;
         }
 
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Kembali ke menu Login
+            this.Close();
+        }
+
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnl_more.Visible = false;
+            pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
             pnl_profile.Visible = false;
         }
@@ -287,6 +628,15 @@ namespace _20232_DBD
         private void pBox_backFilmInformation_Click(object sender, EventArgs e)
         {
             pnl_more.Visible = false;
+            pnl_filmSchedule.Visible = false;
+            pnl_history.Visible = false;
+            pnl_profile.Visible = false;
+        }
+
+        private void pBox_backFilmSchedule_Click(object sender, EventArgs e)
+        {
+            pnl_more.Visible = true;
+            pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
             pnl_profile.Visible = false;
         }
@@ -294,8 +644,21 @@ namespace _20232_DBD
         private void pBox_backHistory_Click(object sender, EventArgs e)
         {
             pnl_more.Visible = false;
+            pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
             pnl_profile.Visible = false;
+        }
+
+        private void pBox_backProfile_Click(object sender, EventArgs e)
+        {
+            pnl_more.Visible = false;
+            pnl_filmSchedule.Visible = false;
+            pnl_history.Visible = false;
+            pnl_profile.Visible = false;
+
+            tBox_name.Enabled = false;
+            tBox_email.Enabled = false;
+            tBox_phoneNumber.Enabled = false;
         }
 
         private void tBox_phoneNumber_KeyPress(object sender, KeyPressEventArgs e)
