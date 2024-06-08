@@ -76,6 +76,8 @@ namespace _20232_DBD
             // Menampilkan gambar film default (pertama kali muncul) saat form dibuka
             System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{dt_judulFilm.Rows[0][0].ToString()}") as System.Drawing.Bitmap;
             pBox_filmPoster.Image = image;
+
+            pnl_home.Visible = true;
         }
 
         private void btn_kanan_Click(object sender, EventArgs e)
@@ -120,6 +122,7 @@ namespace _20232_DBD
 
         private void btn_more_Click(object sender, EventArgs e)
         {
+            pnl_home.Visible = false;
             pnl_more.Visible = true;
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
@@ -203,6 +206,7 @@ namespace _20232_DBD
             lb_dateNext4Day.BackColor = Color.NavajoWhite;
 
             // Memunculkan jadwal tayang film yang dipilih
+            pnl_home.Visible = false;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = true;
             pnl_history.Visible = false;
@@ -479,6 +483,7 @@ namespace _20232_DBD
 
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pnl_home.Visible = false;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = true;
@@ -520,6 +525,7 @@ namespace _20232_DBD
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pnl_home.Visible = false;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
@@ -625,6 +631,7 @@ namespace _20232_DBD
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pnl_home.Visible = true;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
@@ -634,6 +641,7 @@ namespace _20232_DBD
 
         private void pBox_backFilmInformation_Click(object sender, EventArgs e)
         {
+            pnl_home.Visible = true;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
@@ -652,6 +660,7 @@ namespace _20232_DBD
 
         private void pBox_backChooseSeat_Click(object sender, EventArgs e)
         {
+            pnl_home.Visible = false;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = true;
             pnl_history.Visible = false;
@@ -661,6 +670,7 @@ namespace _20232_DBD
 
         private void pBox_backHistory_Click(object sender, EventArgs e)
         {
+            pnl_home.Visible = true;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
@@ -670,6 +680,7 @@ namespace _20232_DBD
 
         private void pBox_backProfile_Click(object sender, EventArgs e)
         {
+            pnl_home.Visible = true;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;

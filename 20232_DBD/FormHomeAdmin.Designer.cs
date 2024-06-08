@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_line = new System.Windows.Forms.Label();
-            this.dgv_home = new System.Windows.Forms.DataGridView();
             this.lb_overview = new System.Windows.Forms.Label();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.pnl_numTicketsSold = new System.Windows.Forms.Panel();
@@ -48,12 +46,13 @@
             this.lb_home = new System.Windows.Forms.Label();
             this.lb_admin = new System.Windows.Forms.Label();
             this.lb_hello = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_home)).BeginInit();
+            this.dgv_home = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel.SuspendLayout();
             this.pnl_numTicketsSold.SuspendLayout();
             this.pnl_numIncome.SuspendLayout();
             this.pnl_numFilms.SuspendLayout();
             this.pnl_numUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_home)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_line
@@ -66,53 +65,6 @@
             this.lb_line.Size = new System.Drawing.Size(803, 2);
             this.lb_line.TabIndex = 57;
             this.lb_line.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dgv_home
-            // 
-            this.dgv_home.AllowUserToAddRows = false;
-            this.dgv_home.AllowUserToDeleteRows = false;
-            this.dgv_home.AllowUserToResizeColumns = false;
-            this.dgv_home.AllowUserToResizeRows = false;
-            this.dgv_home.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_home.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.dgv_home.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_home.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_home.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_home.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_home.ColumnHeadersHeight = 50;
-            this.dgv_home.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_home.EnableHeadersVisualStyles = false;
-            this.dgv_home.GridColor = System.Drawing.Color.White;
-            this.dgv_home.Location = new System.Drawing.Point(34, 232);
-            this.dgv_home.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgv_home.MultiSelect = false;
-            this.dgv_home.Name = "dgv_home";
-            this.dgv_home.ReadOnly = true;
-            this.dgv_home.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_home.RowHeadersVisible = false;
-            this.dgv_home.RowHeadersWidth = 40;
-            this.dgv_home.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_home.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgv_home.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(255)))));
-            this.dgv_home.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_home.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgv_home.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgv_home.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_home.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_home.RowTemplate.DividerHeight = 3;
-            this.dgv_home.RowTemplate.Height = 40;
-            this.dgv_home.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_home.Size = new System.Drawing.Size(803, 230);
-            this.dgv_home.TabIndex = 56;
             // 
             // lb_overview
             // 
@@ -310,14 +262,37 @@
             this.lb_hello.TabIndex = 51;
             this.lb_hello.Text = "Hello,";
             // 
+            // dgv_home
+            // 
+            this.dgv_home.AllowUserToAddRows = false;
+            this.dgv_home.AllowUserToDeleteRows = false;
+            this.dgv_home.AllowUserToResizeColumns = false;
+            this.dgv_home.AllowUserToResizeRows = false;
+            this.dgv_home.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_home.BackgroundColor = System.Drawing.Color.GhostWhite;
+            this.dgv_home.ColumnHeadersHeight = 34;
+            this.dgv_home.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_home.Location = new System.Drawing.Point(36, 232);
+            this.dgv_home.MultiSelect = false;
+            this.dgv_home.Name = "dgv_home";
+            this.dgv_home.ReadOnly = true;
+            this.dgv_home.RowHeadersVisible = false;
+            this.dgv_home.RowHeadersWidth = 62;
+            this.dgv_home.RowTemplate.Height = 28;
+            this.dgv_home.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_home.Size = new System.Drawing.Size(803, 230);
+            this.dgv_home.TabIndex = 228;
+            // 
             // FormHomeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 491);
+            this.Controls.Add(this.dgv_home);
             this.Controls.Add(this.lb_admin);
             this.Controls.Add(this.lb_line);
-            this.Controls.Add(this.dgv_home);
             this.Controls.Add(this.lb_overview);
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.lb_home);
@@ -325,12 +300,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHomeAdmin";
             this.Text = "FormHomeAdmin";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_home)).EndInit();
             this.tableLayoutPanel.ResumeLayout(false);
             this.pnl_numTicketsSold.ResumeLayout(false);
             this.pnl_numIncome.ResumeLayout(false);
             this.pnl_numFilms.ResumeLayout(false);
             this.pnl_numUsers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_home)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,7 +314,6 @@
         #endregion
 
         private System.Windows.Forms.Label lb_line;
-        private System.Windows.Forms.DataGridView dgv_home;
         private System.Windows.Forms.Label lb_overview;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Panel pnl_numTicketsSold;
@@ -357,5 +331,6 @@
         private System.Windows.Forms.Label lb_home;
         private System.Windows.Forms.Label lb_admin;
         private System.Windows.Forms.Label lb_hello;
+        private System.Windows.Forms.DataGridView dgv_home;
     }
 }

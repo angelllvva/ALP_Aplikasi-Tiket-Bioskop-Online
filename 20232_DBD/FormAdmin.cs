@@ -37,7 +37,7 @@ namespace _20232_DBD
             pnl_transactionsAdmin.Visible = false;
             pnl_userAdmin.Visible = false;
 
-            fHomeAdmin = new FormHomeAdmin(this);
+            fHomeAdmin = new FormHomeAdmin(this, sqlConnect);
             fHomeAdmin.MdiParent = this;
             this.pnl_homeAdmin.Controls.Add(fHomeAdmin);
             fHomeAdmin.Show();
@@ -54,7 +54,7 @@ namespace _20232_DBD
             childFormClose();
             if (fHomeAdmin == null || fHomeAdmin.IsDisposed)
             {
-                fHomeAdmin = new FormHomeAdmin(this);
+                fHomeAdmin = new FormHomeAdmin(this, sqlConnect);
                 fHomeAdmin.MdiParent = this;
                 this.pnl_homeAdmin.Controls.Add(fHomeAdmin);
                 fHomeAdmin.Show();
@@ -72,7 +72,7 @@ namespace _20232_DBD
             childFormClose();
             if (fFilmAdmin == null || fFilmAdmin.IsDisposed)
             {
-                fFilmAdmin = new FormFilmAdmin(this);
+                fFilmAdmin = new FormFilmAdmin(this, sqlConnect);
                 fFilmAdmin.MdiParent = this;
                 this.pnl_filmAdmin.Controls.Add(fFilmAdmin);
                 fFilmAdmin.Show();
@@ -90,7 +90,7 @@ namespace _20232_DBD
             childFormClose();
             if (fScheduleAdmin == null || fScheduleAdmin.IsDisposed)
             {
-                fScheduleAdmin = new FormScheduleAdmin(this);
+                fScheduleAdmin = new FormScheduleAdmin(this, sqlConnect);
                 fScheduleAdmin.MdiParent = this;
                 this.pnl_scheduleAdmin.Controls.Add(fScheduleAdmin);
                 fScheduleAdmin.Show();
@@ -108,7 +108,7 @@ namespace _20232_DBD
             childFormClose();
             if (fTransactionsAdmin == null || fTransactionsAdmin.IsDisposed)
             {
-                fTransactionsAdmin = new FormTransactionsAdmin(this);
+                fTransactionsAdmin = new FormTransactionsAdmin(this, sqlConnect);
                 fTransactionsAdmin.MdiParent = this;
                 this.pnl_transactionsAdmin.Controls.Add(fTransactionsAdmin);
                 fTransactionsAdmin.Show();
@@ -126,7 +126,7 @@ namespace _20232_DBD
             childFormClose();
             if (fUserAdmin == null || fUserAdmin.IsDisposed)
             {
-                fUserAdmin = new FormUserAdmin(this);
+                fUserAdmin = new FormUserAdmin(this, sqlConnect);
                 fUserAdmin.MdiParent = this;
                 this.pnl_userAdmin.Controls.Add(fUserAdmin);
                 fUserAdmin.Show();

@@ -66,6 +66,7 @@
             this.lb_username = new System.Windows.Forms.Label();
             this.lb_profile = new System.Windows.Forms.Label();
             this.pnl_filmSchedule = new System.Windows.Forms.Panel();
+            this.pnl_chooseSeat = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -88,7 +89,14 @@
             this.btn_today = new System.Windows.Forms.Button();
             this.lb_filmNameSchedule = new System.Windows.Forms.Label();
             this.lb_filmSchedule = new System.Windows.Forms.Label();
-            this.pnl_chooseSeat = new System.Windows.Forms.Panel();
+            this.pnl_home = new System.Windows.Forms.Panel();
+            this.btn_kiri = new System.Windows.Forms.Button();
+            this.btn_kanan = new System.Windows.Forms.Button();
+            this.btn_more = new System.Windows.Forms.Button();
+            this.lb_filmName = new System.Windows.Forms.Label();
+            this.lb_user = new System.Windows.Forms.Label();
+            this.lb_hello = new System.Windows.Forms.Label();
+            this.lb_nowShowing = new System.Windows.Forms.Label();
             this.pBox_backFilmSchedule = new System.Windows.Forms.PictureBox();
             this.pBox_filmPosterSchedule = new System.Windows.Forms.PictureBox();
             this.pBox_profileIcon = new System.Windows.Forms.PictureBox();
@@ -98,15 +106,7 @@
             this.pBox_backHistory = new System.Windows.Forms.PictureBox();
             this.pBox_backFilmInformation = new System.Windows.Forms.PictureBox();
             this.pBox_filmPosterInformation = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_kiri = new System.Windows.Forms.Button();
-            this.btn_kanan = new System.Windows.Forms.Button();
-            this.btn_more = new System.Windows.Forms.Button();
-            this.lb_filmName = new System.Windows.Forms.Label();
             this.pBox_filmPoster = new System.Windows.Forms.PictureBox();
-            this.lb_user = new System.Windows.Forms.Label();
-            this.lb_hello = new System.Windows.Forms.Label();
-            this.lb_nowShowing = new System.Windows.Forms.Label();
             this.menuStrip_home.SuspendLayout();
             this.pnl_more.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_transactionHistory)).BeginInit();
@@ -114,6 +114,7 @@
             this.pnl_profile.SuspendLayout();
             this.pnl_editProfile.SuspendLayout();
             this.pnl_filmSchedule.SuspendLayout();
+            this.pnl_home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_profileIcon)).BeginInit();
@@ -123,7 +124,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmInformation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPoster)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,7 +132,7 @@
             this.homeToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(73, 30);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
@@ -141,7 +141,7 @@
             this.historyToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.historyToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
             this.historyToolStripMenuItem.Text = "History";
             this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
             // 
@@ -150,7 +150,7 @@
             this.profileToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(77, 30);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.profileToolStripMenuItem.Text = "Profile";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
@@ -159,7 +159,7 @@
             this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logOutToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(90, 30);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(90, 26);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -358,10 +358,17 @@
             this.dgv_transactionHistory.AllowUserToDeleteRows = false;
             this.dgv_transactionHistory.AllowUserToResizeColumns = false;
             this.dgv_transactionHistory.AllowUserToResizeRows = false;
+            this.dgv_transactionHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_transactionHistory.BackgroundColor = System.Drawing.Color.GhostWhite;
-            this.dgv_transactionHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_transactionHistory.ColumnHeadersHeight = 34;
+            this.dgv_transactionHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_transactionHistory.Location = new System.Drawing.Point(93, 80);
+            this.dgv_transactionHistory.MultiSelect = false;
             this.dgv_transactionHistory.Name = "dgv_transactionHistory";
+            this.dgv_transactionHistory.ReadOnly = true;
+            this.dgv_transactionHistory.RowHeadersVisible = false;
             this.dgv_transactionHistory.RowHeadersWidth = 62;
             this.dgv_transactionHistory.RowTemplate.Height = 28;
             this.dgv_transactionHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -409,7 +416,7 @@
             this.pnl_profile.Controls.Add(this.pBox_backProfile);
             this.pnl_profile.Location = new System.Drawing.Point(-4, 12);
             this.pnl_profile.Name = "pnl_profile";
-            this.pnl_profile.Size = new System.Drawing.Size(889, 512);
+            this.pnl_profile.Size = new System.Drawing.Size(889, 506);
             this.pnl_profile.TabIndex = 52;
             this.pnl_profile.Visible = false;
             // 
@@ -583,6 +590,14 @@
             this.pnl_filmSchedule.Size = new System.Drawing.Size(894, 503);
             this.pnl_filmSchedule.TabIndex = 53;
             this.pnl_filmSchedule.Visible = false;
+            // 
+            // pnl_chooseSeat
+            // 
+            this.pnl_chooseSeat.Location = new System.Drawing.Point(-1, 15);
+            this.pnl_chooseSeat.Name = "pnl_chooseSeat";
+            this.pnl_chooseSeat.Size = new System.Drawing.Size(876, 488);
+            this.pnl_chooseSeat.TabIndex = 54;
+            this.pnl_chooseSeat.Visible = false;
             // 
             // button10
             // 
@@ -829,13 +844,99 @@
             this.lb_filmSchedule.Text = "Film Schedule";
             this.lb_filmSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnl_chooseSeat
+            // pnl_home
             // 
-            this.pnl_chooseSeat.Location = new System.Drawing.Point(-1, 15);
-            this.pnl_chooseSeat.Name = "pnl_chooseSeat";
-            this.pnl_chooseSeat.Size = new System.Drawing.Size(876, 494);
-            this.pnl_chooseSeat.TabIndex = 54;
-            this.pnl_chooseSeat.Visible = false;
+            this.pnl_home.Controls.Add(this.btn_kiri);
+            this.pnl_home.Controls.Add(this.btn_kanan);
+            this.pnl_home.Controls.Add(this.btn_more);
+            this.pnl_home.Controls.Add(this.lb_filmName);
+            this.pnl_home.Controls.Add(this.pBox_filmPoster);
+            this.pnl_home.Controls.Add(this.lb_user);
+            this.pnl_home.Controls.Add(this.lb_hello);
+            this.pnl_home.Controls.Add(this.lb_nowShowing);
+            this.pnl_home.Location = new System.Drawing.Point(-7, 17);
+            this.pnl_home.Name = "pnl_home";
+            this.pnl_home.Size = new System.Drawing.Size(885, 510);
+            this.pnl_home.TabIndex = 55;
+            // 
+            // btn_kiri
+            // 
+            this.btn_kiri.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_kiri.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_kiri.ForeColor = System.Drawing.Color.Black;
+            this.btn_kiri.Location = new System.Drawing.Point(42, 240);
+            this.btn_kiri.Name = "btn_kiri";
+            this.btn_kiri.Size = new System.Drawing.Size(91, 35);
+            this.btn_kiri.TabIndex = 44;
+            this.btn_kiri.Text = "<<";
+            this.btn_kiri.UseVisualStyleBackColor = false;
+            this.btn_kiri.Click += new System.EventHandler(this.btn_kiri_Click);
+            // 
+            // btn_kanan
+            // 
+            this.btn_kanan.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_kanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_kanan.ForeColor = System.Drawing.Color.Black;
+            this.btn_kanan.Location = new System.Drawing.Point(757, 240);
+            this.btn_kanan.Name = "btn_kanan";
+            this.btn_kanan.Size = new System.Drawing.Size(91, 35);
+            this.btn_kanan.TabIndex = 43;
+            this.btn_kanan.Text = ">>";
+            this.btn_kanan.UseVisualStyleBackColor = false;
+            this.btn_kanan.Click += new System.EventHandler(this.btn_kanan_Click);
+            // 
+            // btn_more
+            // 
+            this.btn_more.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_more.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_more.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.btn_more.Location = new System.Drawing.Point(374, 442);
+            this.btn_more.Name = "btn_more";
+            this.btn_more.Size = new System.Drawing.Size(132, 35);
+            this.btn_more.TabIndex = 42;
+            this.btn_more.Text = "More";
+            this.btn_more.UseVisualStyleBackColor = false;
+            this.btn_more.Click += new System.EventHandler(this.btn_more_Click);
+            // 
+            // lb_filmName
+            // 
+            this.lb_filmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_filmName.Location = new System.Drawing.Point(233, 412);
+            this.lb_filmName.Name = "lb_filmName";
+            this.lb_filmName.Size = new System.Drawing.Size(419, 26);
+            this.lb_filmName.TabIndex = 41;
+            this.lb_filmName.Text = "Film Name";
+            this.lb_filmName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_user
+            // 
+            this.lb_user.AutoSize = true;
+            this.lb_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_user.Location = new System.Drawing.Point(97, 34);
+            this.lb_user.Name = "lb_user";
+            this.lb_user.Size = new System.Drawing.Size(119, 25);
+            this.lb_user.TabIndex = 39;
+            this.lb_user.Text = "User Name";
+            // 
+            // lb_hello
+            // 
+            this.lb_hello.AutoSize = true;
+            this.lb_hello.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_hello.Location = new System.Drawing.Point(37, 34);
+            this.lb_hello.Name = "lb_hello";
+            this.lb_hello.Size = new System.Drawing.Size(61, 25);
+            this.lb_hello.TabIndex = 38;
+            this.lb_hello.Text = "Hello,";
+            // 
+            // lb_nowShowing
+            // 
+            this.lb_nowShowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nowShowing.Location = new System.Drawing.Point(331, 66);
+            this.lb_nowShowing.Name = "lb_nowShowing";
+            this.lb_nowShowing.Size = new System.Drawing.Size(225, 31);
+            this.lb_nowShowing.TabIndex = 37;
+            this.lb_nowShowing.Text = "Now Showing";
+            this.lb_nowShowing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pBox_backFilmSchedule
             // 
@@ -929,70 +1030,6 @@
             this.pBox_filmPosterInformation.TabIndex = 33;
             this.pBox_filmPosterInformation.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btn_kiri);
-            this.panel1.Controls.Add(this.btn_kanan);
-            this.panel1.Controls.Add(this.btn_more);
-            this.panel1.Controls.Add(this.lb_filmName);
-            this.panel1.Controls.Add(this.pBox_filmPoster);
-            this.panel1.Controls.Add(this.lb_user);
-            this.panel1.Controls.Add(this.lb_hello);
-            this.panel1.Controls.Add(this.lb_nowShowing);
-            this.panel1.Location = new System.Drawing.Point(-7, 17);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(885, 510);
-            this.panel1.TabIndex = 55;
-            // 
-            // btn_kiri
-            // 
-            this.btn_kiri.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_kiri.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_kiri.ForeColor = System.Drawing.Color.Black;
-            this.btn_kiri.Location = new System.Drawing.Point(42, 240);
-            this.btn_kiri.Name = "btn_kiri";
-            this.btn_kiri.Size = new System.Drawing.Size(91, 35);
-            this.btn_kiri.TabIndex = 44;
-            this.btn_kiri.Text = "<<";
-            this.btn_kiri.UseVisualStyleBackColor = false;
-            this.btn_kiri.Click += new System.EventHandler(this.btn_kiri_Click);
-            // 
-            // btn_kanan
-            // 
-            this.btn_kanan.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_kanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_kanan.ForeColor = System.Drawing.Color.Black;
-            this.btn_kanan.Location = new System.Drawing.Point(757, 240);
-            this.btn_kanan.Name = "btn_kanan";
-            this.btn_kanan.Size = new System.Drawing.Size(91, 35);
-            this.btn_kanan.TabIndex = 43;
-            this.btn_kanan.Text = ">>";
-            this.btn_kanan.UseVisualStyleBackColor = false;
-            this.btn_kanan.Click += new System.EventHandler(this.btn_kanan_Click);
-            // 
-            // btn_more
-            // 
-            this.btn_more.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_more.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_more.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.btn_more.Location = new System.Drawing.Point(374, 442);
-            this.btn_more.Name = "btn_more";
-            this.btn_more.Size = new System.Drawing.Size(132, 35);
-            this.btn_more.TabIndex = 42;
-            this.btn_more.Text = "More";
-            this.btn_more.UseVisualStyleBackColor = false;
-            this.btn_more.Click += new System.EventHandler(this.btn_more_Click);
-            // 
-            // lb_filmName
-            // 
-            this.lb_filmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_filmName.Location = new System.Drawing.Point(233, 412);
-            this.lb_filmName.Name = "lb_filmName";
-            this.lb_filmName.Size = new System.Drawing.Size(419, 26);
-            this.lb_filmName.TabIndex = 41;
-            this.lb_filmName.Text = "Film Name";
-            this.lb_filmName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pBox_filmPoster
             // 
             this.pBox_filmPoster.Location = new System.Drawing.Point(331, 104);
@@ -1001,36 +1038,6 @@
             this.pBox_filmPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBox_filmPoster.TabIndex = 40;
             this.pBox_filmPoster.TabStop = false;
-            // 
-            // lb_user
-            // 
-            this.lb_user.AutoSize = true;
-            this.lb_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_user.Location = new System.Drawing.Point(97, 34);
-            this.lb_user.Name = "lb_user";
-            this.lb_user.Size = new System.Drawing.Size(119, 25);
-            this.lb_user.TabIndex = 39;
-            this.lb_user.Text = "User Name";
-            // 
-            // lb_hello
-            // 
-            this.lb_hello.AutoSize = true;
-            this.lb_hello.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_hello.Location = new System.Drawing.Point(37, 34);
-            this.lb_hello.Name = "lb_hello";
-            this.lb_hello.Size = new System.Drawing.Size(61, 25);
-            this.lb_hello.TabIndex = 38;
-            this.lb_hello.Text = "Hello,";
-            // 
-            // lb_nowShowing
-            // 
-            this.lb_nowShowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_nowShowing.Location = new System.Drawing.Point(331, 66);
-            this.lb_nowShowing.Name = "lb_nowShowing";
-            this.lb_nowShowing.Size = new System.Drawing.Size(225, 31);
-            this.lb_nowShowing.TabIndex = 37;
-            this.lb_nowShowing.Text = "Now Showing";
-            this.lb_nowShowing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormMain
             // 
@@ -1042,7 +1049,7 @@
             this.Controls.Add(this.pnl_profile);
             this.Controls.Add(this.pnl_history);
             this.Controls.Add(this.pnl_more);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_home);
             this.IsMdiContainer = true;
             this.MaximumSize = new System.Drawing.Size(891, 574);
             this.Name = "FormMain";
@@ -1060,6 +1067,8 @@
             this.pnl_profile.PerformLayout();
             this.pnl_editProfile.ResumeLayout(false);
             this.pnl_filmSchedule.ResumeLayout(false);
+            this.pnl_home.ResumeLayout(false);
+            this.pnl_home.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_profileIcon)).EndInit();
@@ -1069,8 +1078,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmInformation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPoster)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1148,7 +1155,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnl_chooseSeat;
         private System.Windows.Forms.PictureBox pBox_filmPosterInformation;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_home;
         private System.Windows.Forms.Button btn_kiri;
         private System.Windows.Forms.Button btn_kanan;
         private System.Windows.Forms.Button btn_more;

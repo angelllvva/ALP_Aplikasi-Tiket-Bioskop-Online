@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_transactions = new System.Windows.Forms.Label();
             this.lb_line = new System.Windows.Forms.Label();
-            this.dgv_transactions = new System.Windows.Forms.DataGridView();
             this.lb_transactionsList = new System.Windows.Forms.Label();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.pnl_numCanceled = new System.Windows.Forms.Panel();
@@ -43,11 +41,12 @@
             this.pnl_numSucceed = new System.Windows.Forms.Panel();
             this.lb_numSucceed = new System.Windows.Forms.Label();
             this.lb_succeed = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_transactions)).BeginInit();
+            this.dgv_transactionHistory = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel.SuspendLayout();
             this.pnl_numCanceled.SuspendLayout();
             this.pnl_numDelayed.SuspendLayout();
             this.pnl_numSucceed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_transactionHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_transactions
@@ -70,53 +69,6 @@
             this.lb_line.Size = new System.Drawing.Size(803, 2);
             this.lb_line.TabIndex = 64;
             this.lb_line.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dgv_transactions
-            // 
-            this.dgv_transactions.AllowUserToAddRows = false;
-            this.dgv_transactions.AllowUserToDeleteRows = false;
-            this.dgv_transactions.AllowUserToResizeColumns = false;
-            this.dgv_transactions.AllowUserToResizeRows = false;
-            this.dgv_transactions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_transactions.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.dgv_transactions.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_transactions.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_transactions.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_transactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_transactions.ColumnHeadersHeight = 50;
-            this.dgv_transactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_transactions.EnableHeadersVisualStyles = false;
-            this.dgv_transactions.GridColor = System.Drawing.Color.White;
-            this.dgv_transactions.Location = new System.Drawing.Point(34, 235);
-            this.dgv_transactions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgv_transactions.MultiSelect = false;
-            this.dgv_transactions.Name = "dgv_transactions";
-            this.dgv_transactions.ReadOnly = true;
-            this.dgv_transactions.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_transactions.RowHeadersVisible = false;
-            this.dgv_transactions.RowHeadersWidth = 40;
-            this.dgv_transactions.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_transactions.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgv_transactions.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(255)))));
-            this.dgv_transactions.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_transactions.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgv_transactions.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgv_transactions.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_transactions.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_transactions.RowTemplate.DividerHeight = 3;
-            this.dgv_transactions.RowTemplate.Height = 40;
-            this.dgv_transactions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_transactions.Size = new System.Drawing.Size(803, 225);
-            this.dgv_transactions.TabIndex = 63;
             // 
             // lb_transactionsList
             // 
@@ -250,24 +202,47 @@
             this.lb_succeed.Text = "Succeed";
             this.lb_succeed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dgv_transactionHistory
+            // 
+            this.dgv_transactionHistory.AllowUserToAddRows = false;
+            this.dgv_transactionHistory.AllowUserToDeleteRows = false;
+            this.dgv_transactionHistory.AllowUserToResizeColumns = false;
+            this.dgv_transactionHistory.AllowUserToResizeRows = false;
+            this.dgv_transactionHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_transactionHistory.BackgroundColor = System.Drawing.Color.GhostWhite;
+            this.dgv_transactionHistory.ColumnHeadersHeight = 34;
+            this.dgv_transactionHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_transactionHistory.Location = new System.Drawing.Point(34, 235);
+            this.dgv_transactionHistory.MultiSelect = false;
+            this.dgv_transactionHistory.Name = "dgv_transactionHistory";
+            this.dgv_transactionHistory.ReadOnly = true;
+            this.dgv_transactionHistory.RowHeadersVisible = false;
+            this.dgv_transactionHistory.RowHeadersWidth = 62;
+            this.dgv_transactionHistory.RowTemplate.Height = 28;
+            this.dgv_transactionHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_transactionHistory.Size = new System.Drawing.Size(803, 225);
+            this.dgv_transactionHistory.TabIndex = 230;
+            // 
             // FormTransactionsAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 491);
+            this.Controls.Add(this.dgv_transactionHistory);
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.lb_transactions);
             this.Controls.Add(this.lb_line);
-            this.Controls.Add(this.dgv_transactions);
             this.Controls.Add(this.lb_transactionsList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormTransactionsAdmin";
             this.Text = "FormTransactionsAdmin";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_transactions)).EndInit();
             this.tableLayoutPanel.ResumeLayout(false);
             this.pnl_numCanceled.ResumeLayout(false);
             this.pnl_numDelayed.ResumeLayout(false);
             this.pnl_numSucceed.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_transactionHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -276,7 +251,6 @@
 
         private System.Windows.Forms.Label lb_transactions;
         private System.Windows.Forms.Label lb_line;
-        private System.Windows.Forms.DataGridView dgv_transactions;
         private System.Windows.Forms.Label lb_transactionsList;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Panel pnl_numCanceled;
@@ -288,5 +262,6 @@
         private System.Windows.Forms.Panel pnl_numSucceed;
         private System.Windows.Forms.Label lb_numSucceed;
         private System.Windows.Forms.Label lb_succeed;
+        private System.Windows.Forms.DataGridView dgv_transactionHistory;
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_schedule = new System.Windows.Forms.Label();
             this.date_startAt = new System.Windows.Forms.DateTimePicker();
             this.lb_startAt = new System.Windows.Forms.Label();
@@ -42,8 +41,8 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.lb_line = new System.Windows.Forms.Label();
             this.lb_scheduleList = new System.Windows.Forms.Label();
-            this.dgv_schedule = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_schedule)).BeginInit();
+            this.dgv_transactionHistory = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_transactionHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_schedule
@@ -179,59 +178,35 @@
             this.lb_scheduleList.Text = "Schedule List";
             this.lb_scheduleList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dgv_schedule
+            // dgv_transactionHistory
             // 
-            this.dgv_schedule.AllowUserToAddRows = false;
-            this.dgv_schedule.AllowUserToDeleteRows = false;
-            this.dgv_schedule.AllowUserToResizeColumns = false;
-            this.dgv_schedule.AllowUserToResizeRows = false;
-            this.dgv_schedule.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_transactionHistory.AllowUserToAddRows = false;
+            this.dgv_transactionHistory.AllowUserToDeleteRows = false;
+            this.dgv_transactionHistory.AllowUserToResizeColumns = false;
+            this.dgv_transactionHistory.AllowUserToResizeRows = false;
+            this.dgv_transactionHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_schedule.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.dgv_schedule.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_schedule.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_schedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_schedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_schedule.ColumnHeadersHeight = 50;
-            this.dgv_schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_schedule.EnableHeadersVisualStyles = false;
-            this.dgv_schedule.GridColor = System.Drawing.Color.White;
-            this.dgv_schedule.Location = new System.Drawing.Point(34, 235);
-            this.dgv_schedule.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgv_schedule.MultiSelect = false;
-            this.dgv_schedule.Name = "dgv_schedule";
-            this.dgv_schedule.ReadOnly = true;
-            this.dgv_schedule.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_schedule.RowHeadersVisible = false;
-            this.dgv_schedule.RowHeadersWidth = 40;
-            this.dgv_schedule.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_schedule.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgv_schedule.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(255)))));
-            this.dgv_schedule.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_schedule.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgv_schedule.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgv_schedule.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_schedule.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_schedule.RowTemplate.DividerHeight = 3;
-            this.dgv_schedule.RowTemplate.Height = 40;
-            this.dgv_schedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_schedule.Size = new System.Drawing.Size(803, 225);
-            this.dgv_schedule.TabIndex = 228;
+            this.dgv_transactionHistory.BackgroundColor = System.Drawing.Color.GhostWhite;
+            this.dgv_transactionHistory.ColumnHeadersHeight = 34;
+            this.dgv_transactionHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_transactionHistory.Location = new System.Drawing.Point(34, 235);
+            this.dgv_transactionHistory.MultiSelect = false;
+            this.dgv_transactionHistory.Name = "dgv_transactionHistory";
+            this.dgv_transactionHistory.ReadOnly = true;
+            this.dgv_transactionHistory.RowHeadersVisible = false;
+            this.dgv_transactionHistory.RowHeadersWidth = 62;
+            this.dgv_transactionHistory.RowTemplate.Height = 28;
+            this.dgv_transactionHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_transactionHistory.Size = new System.Drawing.Size(803, 225);
+            this.dgv_transactionHistory.TabIndex = 230;
             // 
             // FormScheduleAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 491);
-            this.Controls.Add(this.dgv_schedule);
+            this.Controls.Add(this.dgv_transactionHistory);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.lb_line);
@@ -248,7 +223,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormScheduleAdmin";
             this.Text = "FormScheduleAdmin";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_schedule)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_transactionHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,6 +244,6 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Label lb_line;
         private System.Windows.Forms.Label lb_scheduleList;
-        private System.Windows.Forms.DataGridView dgv_schedule;
+        private System.Windows.Forms.DataGridView dgv_transactionHistory;
     }
 }

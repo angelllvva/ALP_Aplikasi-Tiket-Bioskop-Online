@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +15,16 @@ namespace _20232_DBD
     {
         FormAdmin fAdmin;
 
-        public FormScheduleAdmin(FormAdmin _fAdmin)
+        MySqlConnection sqlConnect;
+        MySqlCommand sqlCommand;
+        MySqlDataAdapter sqlDataAdapter;
+        string sqlQuery;
+
+        public FormScheduleAdmin(FormAdmin _fAdmin, MySqlConnection _sqlConnect)
         {
             InitializeComponent();
             fAdmin = _fAdmin;
+            sqlConnect = _sqlConnect;
         }
     }
 }
