@@ -84,6 +84,15 @@ namespace _20232_DBD
             {
                 MessageBox.Show("Input your username & password");
             }
+            else if (tBox_username.Text == "admin" && tBox_password.Text == "admin")
+            {
+                tBox_username.Text = "";
+                tBox_password.Text = "";
+
+                // Masuk ke main menu admin
+                FormAdmin fAdmin = new FormAdmin(myConn);
+                fAdmin.ShowDialog();
+            }
             else if (countUsername == 0)
             {
                 lb_usernameNotFound.Visible = true;
@@ -106,9 +115,9 @@ namespace _20232_DBD
                 tBox_username.Text = "";
                 tBox_password.Text = "";
 
-                // Masuk ke menu Home
-                FormMain fHome = new FormMain(myConn);
-                fHome.ShowDialog();
+                // Masuk ke main menu user
+                FormMain fMain = new FormMain(myConn);
+                fMain.ShowDialog();
             }
         }
 

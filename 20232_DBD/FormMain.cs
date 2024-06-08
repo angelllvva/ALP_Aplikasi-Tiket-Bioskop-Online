@@ -121,8 +121,10 @@ namespace _20232_DBD
         private void btn_more_Click(object sender, EventArgs e)
         {
             pnl_more.Visible = true;
+            pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
             pnl_profile.Visible = false;
+            pnl_chooseSeat.Visible = false;
 
             // Menampilkan gambar poster film yang dipilih
             System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmName.Text}") as System.Drawing.Bitmap;
@@ -136,7 +138,7 @@ namespace _20232_DBD
             sqlDataAdapter.Fill(dt_informasiFilm);
 
             // Query untuk menampilkan nama aktor yang memainkan film
-            sqlQuery = $@"SELECT f.judul_film, a.nama_aktor
+            sqlQuery = $@"SELECT f.judul_film, a.nama_aktor, mf.peran_memerankan_film
                           FROM MEMERANKAN_FILM mf
                           JOIN FILM f
                             ON mf.id_film = f.id_film
@@ -154,11 +156,12 @@ namespace _20232_DBD
             {
                 if (i == 0)
                 {
-                    aktor = dt_aktorFilm.Rows[i][1].ToString();
+                    aktor = dt_aktorFilm.Rows[i][1].ToString() + " as " + dt_aktorFilm.Rows[i][2].ToString();
                 }
                 else
                 {
-                    aktor += ", " + dt_aktorFilm.Rows[i][1].ToString();
+                    aktor += @", 
+" + dt_aktorFilm.Rows[i][1].ToString() + " as " + dt_aktorFilm.Rows[i][2].ToString();
                 }
             }
 
@@ -204,6 +207,7 @@ namespace _20232_DBD
             pnl_filmSchedule.Visible = true;
             pnl_history.Visible = false;
             pnl_profile.Visible = false;
+            pnl_chooseSeat.Visible = false;
 
             lb_filmNameSchedule.Text = lb_filmNameInformation.Text;
 
@@ -479,6 +483,7 @@ namespace _20232_DBD
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = true;
             pnl_profile.Visible = false;
+            pnl_chooseSeat.Visible = false;
 
             // Query untuk menampilkan riwayat transaksi pengguna berdasarkan ID pengguna
             sqlQuery = $@"SELECT DISTINCT t.id_transaksi_booking AS 'Order ID', f.judul_film AS 'Judul Film',
@@ -520,6 +525,7 @@ namespace _20232_DBD
             pnl_history.Visible = false;
             pnl_profile.Visible = true;
             pnl_editProfile.Visible = false;
+            pnl_chooseSeat.Visible = false;
 
             // Mengambil data milik user yang sedang login
             sqlQuery = $@"SELECT username_pengguna, nama_pengguna, email_pengguna, nomor_telepon_pengguna
@@ -623,6 +629,7 @@ namespace _20232_DBD
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
             pnl_profile.Visible = false;
+            pnl_chooseSeat.Visible = false;
         }
 
         private void pBox_backFilmInformation_Click(object sender, EventArgs e)
@@ -631,6 +638,7 @@ namespace _20232_DBD
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
             pnl_profile.Visible = false;
+            pnl_chooseSeat.Visible = false;
         }
 
         private void pBox_backFilmSchedule_Click(object sender, EventArgs e)
@@ -639,6 +647,16 @@ namespace _20232_DBD
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
             pnl_profile.Visible = false;
+            pnl_chooseSeat.Visible = false;
+        }
+
+        private void pBox_backChooseSeat_Click(object sender, EventArgs e)
+        {
+            pnl_more.Visible = false;
+            pnl_filmSchedule.Visible = true;
+            pnl_history.Visible = false;
+            pnl_profile.Visible = false;
+            pnl_chooseSeat.Visible = false;
         }
 
         private void pBox_backHistory_Click(object sender, EventArgs e)
@@ -647,6 +665,7 @@ namespace _20232_DBD
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
             pnl_profile.Visible = false;
+            pnl_chooseSeat.Visible = false;
         }
 
         private void pBox_backProfile_Click(object sender, EventArgs e)
@@ -655,6 +674,7 @@ namespace _20232_DBD
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
             pnl_profile.Visible = false;
+            pnl_chooseSeat.Visible = false;
 
             tBox_name.Enabled = false;
             tBox_email.Enabled = false;
@@ -669,6 +689,108 @@ namespace _20232_DBD
                 // Jika karakter bukan angka, batalkan input
                 e.Handled = true;
             }
+        }
+
+        public void closeChildForm()
+        {
+            foreach(Control c in pnl_chooseSeat.Controls)
+            {
+                if(c is Form)
+                {
+                    this.pnl_chooseSeat.Controls.Remove(c);
+                }
+            }
+            pnl_chooseSeat.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
         }
     }
 }

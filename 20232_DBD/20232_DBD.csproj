@@ -62,6 +62,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChooseSeat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChooseSeat.Designer.cs">
+      <DependentUpon>FormChooseSeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFilmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFilmAdmin.Designer.cs">
+      <DependentUpon>FormFilmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHomeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHomeAdmin.Designer.cs">
+      <DependentUpon>FormHomeAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +97,12 @@
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormScheduleAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormScheduleAdmin.Designer.cs">
+      <DependentUpon>FormScheduleAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSignUp.cs">
       <SubType>Form</SubType>
@@ -86,19 +116,52 @@
     <Compile Include="FormTransactionDetail.Designer.cs">
       <DependentUpon>FormTransactionDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTransactionsAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransactionsAdmin.Designer.cs">
+      <DependentUpon>FormTransactionsAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserAdmin.Designer.cs">
+      <DependentUpon>FormUserAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChooseSeat.resx">
+      <DependentUpon>FormChooseSeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFilmAdmin.resx">
+      <DependentUpon>FormFilmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHomeAdmin.resx">
+      <DependentUpon>FormHomeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormScheduleAdmin.resx">
+      <DependentUpon>FormScheduleAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTransactionDetail.resx">
       <DependentUpon>FormTransactionDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransactionsAdmin.resx">
+      <DependentUpon>FormTransactionsAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserAdmin.resx">
+      <DependentUpon>FormUserAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
