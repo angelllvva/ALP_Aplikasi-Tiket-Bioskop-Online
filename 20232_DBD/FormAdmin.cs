@@ -32,6 +32,7 @@ namespace _20232_DBD
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
+            // Home page
             pnl_filmAdmin.Visible = false;
             pnl_scheduleAdmin.Visible = false;
             pnl_transactionsAdmin.Visible = false;
@@ -51,6 +52,7 @@ namespace _20232_DBD
             pnl_transactionsAdmin.Visible = false;
             pnl_userAdmin.Visible = false;
 
+            // Masuk ke form home admin
             childFormClose();
             if (fHomeAdmin == null || fHomeAdmin.IsDisposed)
             {
@@ -69,6 +71,7 @@ namespace _20232_DBD
             pnl_transactionsAdmin.Visible = false;
             pnl_userAdmin.Visible = false;
 
+            // Masuk ke form film admin
             childFormClose();
             if (fFilmAdmin == null || fFilmAdmin.IsDisposed)
             {
@@ -87,6 +90,7 @@ namespace _20232_DBD
             pnl_transactionsAdmin.Visible = false;
             pnl_userAdmin.Visible = false;
 
+            // Masuk ke form schedule admin
             childFormClose();
             if (fScheduleAdmin == null || fScheduleAdmin.IsDisposed)
             {
@@ -105,6 +109,7 @@ namespace _20232_DBD
             pnl_scheduleAdmin.Visible = false;
             pnl_userAdmin.Visible = false;
 
+            // Masuk ke form transactions admin
             childFormClose();
             if (fTransactionsAdmin == null || fTransactionsAdmin.IsDisposed)
             {
@@ -123,6 +128,7 @@ namespace _20232_DBD
             pnl_scheduleAdmin.Visible = false;
             pnl_transactionsAdmin.Visible = false;
 
+            // Masuk ke form user admin
             childFormClose();
             if (fUserAdmin == null || fUserAdmin.IsDisposed)
             {
@@ -144,6 +150,7 @@ namespace _20232_DBD
 
         private void logOutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            // Kembali ke halaman login
             this.Close();
         }
     }

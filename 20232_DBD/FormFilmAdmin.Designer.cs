@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_film = new System.Windows.Forms.Label();
             this.lb_line = new System.Windows.Forms.Label();
-            this.lb_filmList = new System.Windows.Forms.Label();
-            this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_add = new System.Windows.Forms.Button();
-            this.dgv_film = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_film)).BeginInit();
+            this.lb_ongoingFilmList = new System.Windows.Forms.Label();
+            this.dgv_ongoingFilm = new System.Windows.Forms.DataGridView();
+            this.dgv_upcomingFilm = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ongoingFilm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_upcomingFilm)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_film
@@ -45,7 +46,7 @@
             this.lb_film.Name = "lb_film";
             this.lb_film.Size = new System.Drawing.Size(850, 31);
             this.lb_film.TabIndex = 54;
-            this.lb_film.Text = "Film";
+            this.lb_film.Text = "Film List";
             this.lb_film.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_line
@@ -59,103 +60,103 @@
             this.lb_line.TabIndex = 59;
             this.lb_line.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lb_filmList
+            // lb_ongoingFilmList
             // 
-            this.lb_filmList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lb_filmList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_filmList.Location = new System.Drawing.Point(36, 94);
-            this.lb_filmList.Name = "lb_filmList";
-            this.lb_filmList.Size = new System.Drawing.Size(799, 25);
-            this.lb_filmList.TabIndex = 58;
-            this.lb_filmList.Text = "Film List";
-            this.lb_filmList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_ongoingFilmList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lb_ongoingFilmList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ongoingFilmList.Location = new System.Drawing.Point(36, 94);
+            this.lb_ongoingFilmList.Name = "lb_ongoingFilmList";
+            this.lb_ongoingFilmList.Size = new System.Drawing.Size(799, 25);
+            this.lb_ongoingFilmList.TabIndex = 58;
+            this.lb_ongoingFilmList.Text = "Ongoing Films";
+            this.lb_ongoingFilmList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btn_delete
+            // dgv_ongoingFilm
             // 
-            this.btn_delete.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_delete.Location = new System.Drawing.Point(707, 81);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(132, 35);
-            this.btn_delete.TabIndex = 222;
-            this.btn_delete.Text = "Delete";
-            this.btn_delete.UseVisualStyleBackColor = false;
-            // 
-            // btn_add
-            // 
-            this.btn_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.btn_add.Location = new System.Drawing.Point(570, 81);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(132, 35);
-            this.btn_add.TabIndex = 223;
-            this.btn_add.Text = "Add";
-            this.btn_add.UseVisualStyleBackColor = false;
-            // 
-            // dgv_film
-            // 
-            this.dgv_film.AllowUserToAddRows = false;
-            this.dgv_film.AllowUserToDeleteRows = false;
-            this.dgv_film.AllowUserToResizeColumns = false;
-            this.dgv_film.AllowUserToResizeRows = false;
-            this.dgv_film.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_ongoingFilm.AllowUserToAddRows = false;
+            this.dgv_ongoingFilm.AllowUserToDeleteRows = false;
+            this.dgv_ongoingFilm.AllowUserToResizeColumns = false;
+            this.dgv_ongoingFilm.AllowUserToResizeRows = false;
+            this.dgv_ongoingFilm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_film.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.dgv_film.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_film.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_film.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_film.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_film.ColumnHeadersHeight = 50;
-            this.dgv_film.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_film.EnableHeadersVisualStyles = false;
-            this.dgv_film.GridColor = System.Drawing.Color.White;
-            this.dgv_film.Location = new System.Drawing.Point(36, 136);
-            this.dgv_film.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgv_film.MultiSelect = false;
-            this.dgv_film.Name = "dgv_film";
-            this.dgv_film.ReadOnly = true;
-            this.dgv_film.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_film.RowHeadersVisible = false;
-            this.dgv_film.RowHeadersWidth = 40;
-            this.dgv_film.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_film.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgv_film.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(255)))));
-            this.dgv_film.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_film.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgv_film.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgv_film.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_film.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_film.RowTemplate.DividerHeight = 3;
-            this.dgv_film.RowTemplate.Height = 40;
-            this.dgv_film.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_film.Size = new System.Drawing.Size(803, 326);
-            this.dgv_film.TabIndex = 224;
+            this.dgv_ongoingFilm.BackgroundColor = System.Drawing.Color.GhostWhite;
+            this.dgv_ongoingFilm.ColumnHeadersHeight = 34;
+            this.dgv_ongoingFilm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_ongoingFilm.Location = new System.Drawing.Point(36, 133);
+            this.dgv_ongoingFilm.MultiSelect = false;
+            this.dgv_ongoingFilm.Name = "dgv_ongoingFilm";
+            this.dgv_ongoingFilm.ReadOnly = true;
+            this.dgv_ongoingFilm.RowHeadersVisible = false;
+            this.dgv_ongoingFilm.RowHeadersWidth = 62;
+            this.dgv_ongoingFilm.RowTemplate.Height = 28;
+            this.dgv_ongoingFilm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ongoingFilm.Size = new System.Drawing.Size(803, 146);
+            this.dgv_ongoingFilm.TabIndex = 232;
+            // 
+            // dgv_upcomingFilm
+            // 
+            this.dgv_upcomingFilm.AllowUserToAddRows = false;
+            this.dgv_upcomingFilm.AllowUserToDeleteRows = false;
+            this.dgv_upcomingFilm.AllowUserToResizeColumns = false;
+            this.dgv_upcomingFilm.AllowUserToResizeRows = false;
+            this.dgv_upcomingFilm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_upcomingFilm.BackgroundColor = System.Drawing.Color.GhostWhite;
+            this.dgv_upcomingFilm.ColumnHeadersHeight = 34;
+            this.dgv_upcomingFilm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_upcomingFilm.Location = new System.Drawing.Point(36, 329);
+            this.dgv_upcomingFilm.MultiSelect = false;
+            this.dgv_upcomingFilm.Name = "dgv_upcomingFilm";
+            this.dgv_upcomingFilm.ReadOnly = true;
+            this.dgv_upcomingFilm.RowHeadersVisible = false;
+            this.dgv_upcomingFilm.RowHeadersWidth = 62;
+            this.dgv_upcomingFilm.RowTemplate.Height = 28;
+            this.dgv_upcomingFilm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_upcomingFilm.Size = new System.Drawing.Size(803, 133);
+            this.dgv_upcomingFilm.TabIndex = 233;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.WindowText;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(36, 314);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(803, 2);
+            this.label1.TabIndex = 235;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(36, 287);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(799, 25);
+            this.label2.TabIndex = 234;
+            this.label2.Text = "Upcoming Films";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormFilmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 491);
-            this.Controls.Add(this.dgv_film);
-            this.Controls.Add(this.btn_add);
-            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dgv_upcomingFilm);
+            this.Controls.Add(this.dgv_ongoingFilm);
             this.Controls.Add(this.lb_line);
-            this.Controls.Add(this.lb_filmList);
+            this.Controls.Add(this.lb_ongoingFilmList);
             this.Controls.Add(this.lb_film);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormFilmAdmin";
             this.Text = "FormFilmAdmin";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_film)).EndInit();
+            this.Load += new System.EventHandler(this.FormFilmAdmin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ongoingFilm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_upcomingFilm)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,9 +165,10 @@
 
         private System.Windows.Forms.Label lb_film;
         private System.Windows.Forms.Label lb_line;
-        private System.Windows.Forms.Label lb_filmList;
-        private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.DataGridView dgv_film;
+        private System.Windows.Forms.Label lb_ongoingFilmList;
+        private System.Windows.Forms.DataGridView dgv_ongoingFilm;
+        private System.Windows.Forms.DataGridView dgv_upcomingFilm;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
