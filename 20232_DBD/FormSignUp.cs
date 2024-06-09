@@ -81,7 +81,6 @@ namespace _20232_DBD
                 }
             }
             
-
             //Pengecekan apakah password berisi minimal 8 karakter dan maksimal 16 karakter
             bool lengthPassword = false;
 
@@ -131,7 +130,7 @@ namespace _20232_DBD
             {
                 if (tBox_firstName.Text != "" && tBox_email.Text != "" && tBox_username.Text != "" && tBox_password.Text != "" && tBox_phoneNumber.Text != "")
                 {
-                    // Pengecekan apakah nama pengguna 1 suku kata atau lebih dari  1 suku kata dan membuat ID Pengguna serta Nama Pengguna
+                    // Pengecekan apakah nama pengguna 1 suku kata atau lebih dari 1 suku kata dan membuat ID Pengguna serta Nama Pengguna
                     string gabungNama = tBox_firstName.Text.ToUpper() + " " + tBox_lastName.Text.ToUpper();
                     string[] pisahNama = gabungNama.Split(' ');
 
@@ -197,6 +196,10 @@ namespace _20232_DBD
 
                     FormLogin fLogin = new FormLogin();
                     fLogin.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Please input all the starred fields");
                 }
             }
         }

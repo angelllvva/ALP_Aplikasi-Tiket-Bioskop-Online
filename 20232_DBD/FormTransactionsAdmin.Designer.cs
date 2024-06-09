@@ -42,6 +42,8 @@
             this.lb_numSucceed = new System.Windows.Forms.Label();
             this.lb_succeed = new System.Windows.Forms.Label();
             this.dgv_transactions = new System.Windows.Forms.DataGridView();
+            this.lb_admin = new System.Windows.Forms.Label();
+            this.lb_hello = new System.Windows.Forms.Label();
             this.tableLayoutPanel.SuspendLayout();
             this.pnl_numCanceled.SuspendLayout();
             this.pnl_numDelayed.SuspendLayout();
@@ -96,7 +98,7 @@
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 88F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(803, 103);
             this.tableLayoutPanel.TabIndex = 65;
             // 
@@ -225,11 +227,33 @@
             this.dgv_transactions.Size = new System.Drawing.Size(803, 225);
             this.dgv_transactions.TabIndex = 230;
             // 
+            // lb_admin
+            // 
+            this.lb_admin.AutoSize = true;
+            this.lb_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_admin.Location = new System.Drawing.Point(91, 24);
+            this.lb_admin.Name = "lb_admin";
+            this.lb_admin.Size = new System.Drawing.Size(73, 25);
+            this.lb_admin.TabIndex = 241;
+            this.lb_admin.Text = "Admin";
+            // 
+            // lb_hello
+            // 
+            this.lb_hello.AutoSize = true;
+            this.lb_hello.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_hello.Location = new System.Drawing.Point(29, 24);
+            this.lb_hello.Name = "lb_hello";
+            this.lb_hello.Size = new System.Drawing.Size(61, 25);
+            this.lb_hello.TabIndex = 240;
+            this.lb_hello.Text = "Hello,";
+            // 
             // FormTransactionsAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 491);
+            this.Controls.Add(this.lb_admin);
+            this.Controls.Add(this.lb_hello);
             this.Controls.Add(this.dgv_transactions);
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.lb_transactions);
@@ -245,6 +269,7 @@
             this.pnl_numSucceed.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_transactions)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -264,5 +289,7 @@
         private System.Windows.Forms.Label lb_numSucceed;
         private System.Windows.Forms.Label lb_succeed;
         private System.Windows.Forms.DataGridView dgv_transactions;
+        private System.Windows.Forms.Label lb_admin;
+        private System.Windows.Forms.Label lb_hello;
     }
 }

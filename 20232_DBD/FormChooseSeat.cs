@@ -284,6 +284,9 @@ namespace _20232_DBD
                 sqlQuery = $"INSERT INTO TRANSAKSI_BOOKING VALUES ('{idTransaksi}', '{_idPengguna}', '{_id}', '{methodSelected}', '{listSeat.Count}', 'Berhasil', '0')";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
+                sqlConnect.Close();
+                sqlConnect.Open();
+
                 MessageBox.Show("Payment Complete");
 
                 // Update status kursi di database
@@ -294,6 +297,9 @@ namespace _20232_DBD
                                     WHERE id_jadwal_tayang = '{_id}' AND nomor_kursi = '{listSeat[i]}'";
                     sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                     sqlCommand.ExecuteNonQuery();
+
+                    sqlConnect.Close();
+                    sqlConnect.Open();
                 }
 
                 this.Close();

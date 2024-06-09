@@ -246,7 +246,7 @@
             // 
             this.lb_admin.AutoSize = true;
             this.lb_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_admin.Location = new System.Drawing.Point(88, 24);
+            this.lb_admin.Location = new System.Drawing.Point(91, 24);
             this.lb_admin.Name = "lb_admin";
             this.lb_admin.Size = new System.Drawing.Size(73, 25);
             this.lb_admin.TabIndex = 52;

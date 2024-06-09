@@ -42,6 +42,8 @@
             this.lb_line = new System.Windows.Forms.Label();
             this.lb_scheduleList = new System.Windows.Forms.Label();
             this.dgv_schedule = new System.Windows.Forms.DataGridView();
+            this.lb_admin = new System.Windows.Forms.Label();
+            this.lb_hello = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_schedule)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,11 +203,33 @@
             this.dgv_schedule.Size = new System.Drawing.Size(803, 225);
             this.dgv_schedule.TabIndex = 230;
             // 
+            // lb_admin
+            // 
+            this.lb_admin.AutoSize = true;
+            this.lb_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_admin.Location = new System.Drawing.Point(91, 24);
+            this.lb_admin.Name = "lb_admin";
+            this.lb_admin.Size = new System.Drawing.Size(73, 25);
+            this.lb_admin.TabIndex = 241;
+            this.lb_admin.Text = "Admin";
+            // 
+            // lb_hello
+            // 
+            this.lb_hello.AutoSize = true;
+            this.lb_hello.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_hello.Location = new System.Drawing.Point(29, 24);
+            this.lb_hello.Name = "lb_hello";
+            this.lb_hello.Size = new System.Drawing.Size(61, 25);
+            this.lb_hello.TabIndex = 240;
+            this.lb_hello.Text = "Hello,";
+            // 
             // FormScheduleAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 491);
+            this.Controls.Add(this.lb_admin);
+            this.Controls.Add(this.lb_hello);
             this.Controls.Add(this.dgv_schedule);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_delete);
@@ -245,5 +269,7 @@
         private System.Windows.Forms.Label lb_line;
         private System.Windows.Forms.Label lb_scheduleList;
         private System.Windows.Forms.DataGridView dgv_schedule;
+        private System.Windows.Forms.Label lb_admin;
+        private System.Windows.Forms.Label lb_hello;
     }
 }

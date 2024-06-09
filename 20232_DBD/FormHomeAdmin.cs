@@ -100,7 +100,7 @@ FROM (SELECT jt.id_film, f.judul_film, (k.harga_kursi * COUNT(k.nomor_kursi)) AS
 		JOIN FILM f ON jt.id_film = f.id_film
 		GROUP BY k.id_jadwal_tayang
 		HAVING status_pemesanan_transaksi_booking = 'Berhasil') AS SQ2
-GROUP BY 1) AS SQ3), '*', ' ') AS 'Most Income',
+GROUP BY 1) AS SQ3), '*', ' ') AS 'Top Selling',
 IF(SUM(SQ.Total) = (SELECT MIN(SQ3.Total)
 FROM (SELECT SQ2.id_film, SUM(SQ2.Total) AS 'Total'
 FROM (SELECT jt.id_film, f.judul_film, (k.harga_kursi * COUNT(k.nomor_kursi)) AS 'Total', t.status_pemesanan_transaksi_booking AS 'Status'
@@ -110,7 +110,7 @@ FROM (SELECT jt.id_film, f.judul_film, (k.harga_kursi * COUNT(k.nomor_kursi)) AS
 		JOIN FILM f ON jt.id_film = f.id_film
 		GROUP BY k.id_jadwal_tayang
 		HAVING status_pemesanan_transaksi_booking = 'Berhasil') AS SQ2
-GROUP BY 1) AS SQ3), '*', ' ') AS 'Least Income'
+GROUP BY 1) AS SQ3), '*', ' ') AS 'Least Selling'
 FROM (SELECT jt.id_film, f.judul_film, (k.harga_kursi * COUNT(k.nomor_kursi)) AS 'Total', t.status_pemesanan_transaksi_booking AS 'Status'
 		FROM KURSI k
 		JOIN TRANSAKSI_BOOKING t ON k.id_jadwal_tayang = t.id_jadwal_tayang

@@ -20,6 +20,7 @@ namespace _20232_DBD
 
         FormHomeAdmin fHomeAdmin;
         FormFilmAdmin fFilmAdmin;
+        FormAddFilmAdmin fAddFilmAdmin;
         FormScheduleAdmin fScheduleAdmin;
         FormTransactionsAdmin fTransactionsAdmin;
         FormUserAdmin fUserAdmin;
@@ -34,6 +35,7 @@ namespace _20232_DBD
         {
             // Home page
             pnl_filmAdmin.Visible = false;
+            pnl_addFilmAdmin.Visible = false;
             pnl_scheduleAdmin.Visible = false;
             pnl_transactionsAdmin.Visible = false;
             pnl_userAdmin.Visible = false;
@@ -48,6 +50,7 @@ namespace _20232_DBD
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnl_filmAdmin.Visible = false;
+            pnl_addFilmAdmin.Visible = false;
             pnl_scheduleAdmin.Visible = false;
             pnl_transactionsAdmin.Visible = false;
             pnl_userAdmin.Visible = false;
@@ -67,6 +70,7 @@ namespace _20232_DBD
         private void filmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnl_homeAdmin.Visible = false;
+            pnl_addFilmAdmin.Visible = false;
             pnl_scheduleAdmin.Visible = false;
             pnl_transactionsAdmin.Visible = false;
             pnl_userAdmin.Visible = false;
@@ -87,6 +91,7 @@ namespace _20232_DBD
         {
             pnl_homeAdmin.Visible = false;
             pnl_filmAdmin.Visible = false;
+            pnl_addFilmAdmin.Visible = false;
             pnl_transactionsAdmin.Visible = false;
             pnl_userAdmin.Visible = false;
 
@@ -106,6 +111,7 @@ namespace _20232_DBD
         {
             pnl_homeAdmin.Visible = false;
             pnl_filmAdmin.Visible = false;
+            pnl_addFilmAdmin.Visible = false;
             pnl_scheduleAdmin.Visible = false;
             pnl_userAdmin.Visible = false;
 
@@ -125,6 +131,7 @@ namespace _20232_DBD
         {
             pnl_homeAdmin.Visible = false;
             pnl_filmAdmin.Visible = false;
+            pnl_addFilmAdmin.Visible = false;
             pnl_scheduleAdmin.Visible = false;
             pnl_transactionsAdmin.Visible = false;
 
@@ -152,6 +159,26 @@ namespace _20232_DBD
         {
             // Kembali ke halaman login
             this.Close();
+        }
+
+        private void addFilmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnl_homeAdmin.Visible = false;
+            pnl_filmAdmin.Visible = false;
+            pnl_scheduleAdmin.Visible = false;
+            pnl_transactionsAdmin.Visible = false;
+            pnl_userAdmin.Visible = false;
+
+            // Masuk ke form transactions admin
+            childFormClose();
+            if (fAddFilmAdmin == null || fAddFilmAdmin.IsDisposed)
+            {
+                fAddFilmAdmin = new FormAddFilmAdmin(this, sqlConnect);
+                fAddFilmAdmin.MdiParent = this;
+                this.pnl_addFilmAdmin.Controls.Add(fAddFilmAdmin);
+                fAddFilmAdmin.Show();
+            }
+            pnl_addFilmAdmin.Visible = true;
         }
     }
 }

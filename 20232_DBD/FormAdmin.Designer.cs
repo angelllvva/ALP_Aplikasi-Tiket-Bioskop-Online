@@ -31,6 +31,7 @@
             this.menuStrip_home = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFilmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +41,7 @@
             this.pnl_scheduleAdmin = new System.Windows.Forms.Panel();
             this.pnl_transactionsAdmin = new System.Windows.Forms.Panel();
             this.pnl_userAdmin = new System.Windows.Forms.Panel();
-            this.addFilmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnl_addFilmAdmin = new System.Windows.Forms.Panel();
             this.menuStrip_home.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.logOutToolStripMenuItem1});
             this.menuStrip_home.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_home.Name = "menuStrip_home";
-            this.menuStrip_home.Size = new System.Drawing.Size(869, 30);
+            this.menuStrip_home.Size = new System.Drawing.Size(869, 32);
             this.menuStrip_home.TabIndex = 29;
             this.menuStrip_home.Text = "menuStrip1";
             // 
@@ -77,9 +78,18 @@
             this.filmToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filmToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
             this.filmToolStripMenuItem.Name = "filmToolStripMenuItem";
-            this.filmToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
+            this.filmToolStripMenuItem.Size = new System.Drawing.Size(92, 26);
             this.filmToolStripMenuItem.Text = "Film List";
             this.filmToolStripMenuItem.Click += new System.EventHandler(this.filmToolStripMenuItem_Click);
+            // 
+            // addFilmToolStripMenuItem
+            // 
+            this.addFilmToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addFilmToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.addFilmToolStripMenuItem.Name = "addFilmToolStripMenuItem";
+            this.addFilmToolStripMenuItem.Size = new System.Drawing.Size(96, 28);
+            this.addFilmToolStripMenuItem.Text = "Add Film";
+            this.addFilmToolStripMenuItem.Click += new System.EventHandler(this.addFilmToolStripMenuItem_Click);
             // 
             // scheduleToolStripMenuItem
             // 
@@ -155,13 +165,13 @@
             this.pnl_userAdmin.Size = new System.Drawing.Size(910, 526);
             this.pnl_userAdmin.TabIndex = 37;
             // 
-            // addFilmToolStripMenuItem
+            // pnl_addFilmAdmin
             // 
-            this.addFilmToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addFilmToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.addFilmToolStripMenuItem.Name = "addFilmToolStripMenuItem";
-            this.addFilmToolStripMenuItem.Size = new System.Drawing.Size(96, 26);
-            this.addFilmToolStripMenuItem.Text = "Add Film";
+            this.pnl_addFilmAdmin.Location = new System.Drawing.Point(0, 27);
+            this.pnl_addFilmAdmin.Name = "pnl_addFilmAdmin";
+            this.pnl_addFilmAdmin.Size = new System.Drawing.Size(921, 673);
+            this.pnl_addFilmAdmin.TabIndex = 39;
+            this.pnl_addFilmAdmin.Visible = false;
             // 
             // FormAdmin
             // 
@@ -169,13 +179,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 518);
             this.Controls.Add(this.menuStrip_home);
+            this.Controls.Add(this.pnl_addFilmAdmin);
             this.Controls.Add(this.pnl_userAdmin);
             this.Controls.Add(this.pnl_transactionsAdmin);
             this.Controls.Add(this.pnl_scheduleAdmin);
             this.Controls.Add(this.pnl_filmAdmin);
             this.Controls.Add(this.pnl_homeAdmin);
             this.IsMdiContainer = true;
-            this.MaximumSize = new System.Drawing.Size(891, 574);
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdmin";
@@ -202,5 +212,6 @@
         private System.Windows.Forms.Panel pnl_transactionsAdmin;
         private System.Windows.Forms.Panel pnl_userAdmin;
         private System.Windows.Forms.ToolStripMenuItem addFilmToolStripMenuItem;
+        private System.Windows.Forms.Panel pnl_addFilmAdmin;
     }
 }

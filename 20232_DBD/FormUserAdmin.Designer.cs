@@ -32,6 +32,8 @@
             this.lb_line = new System.Windows.Forms.Label();
             this.lb_userList = new System.Windows.Forms.Label();
             this.dgv_user = new System.Windows.Forms.DataGridView();
+            this.lb_admin = new System.Windows.Forms.Label();
+            this.lb_hello = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,11 +92,33 @@
             this.dgv_user.Size = new System.Drawing.Size(803, 337);
             this.dgv_user.TabIndex = 227;
             // 
+            // lb_admin
+            // 
+            this.lb_admin.AutoSize = true;
+            this.lb_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_admin.Location = new System.Drawing.Point(91, 24);
+            this.lb_admin.Name = "lb_admin";
+            this.lb_admin.Size = new System.Drawing.Size(73, 25);
+            this.lb_admin.TabIndex = 241;
+            this.lb_admin.Text = "Admin";
+            // 
+            // lb_hello
+            // 
+            this.lb_hello.AutoSize = true;
+            this.lb_hello.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_hello.Location = new System.Drawing.Point(29, 24);
+            this.lb_hello.Name = "lb_hello";
+            this.lb_hello.Size = new System.Drawing.Size(61, 25);
+            this.lb_hello.TabIndex = 240;
+            this.lb_hello.Text = "Hello,";
+            // 
             // FormUserAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 491);
+            this.Controls.Add(this.lb_admin);
+            this.Controls.Add(this.lb_hello);
             this.Controls.Add(this.dgv_user);
             this.Controls.Add(this.lb_line);
             this.Controls.Add(this.lb_userList);
@@ -105,6 +129,7 @@
             this.Load += new System.EventHandler(this.FormUserAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -114,5 +139,7 @@
         private System.Windows.Forms.Label lb_line;
         private System.Windows.Forms.Label lb_userList;
         private System.Windows.Forms.DataGridView dgv_user;
+        private System.Windows.Forms.Label lb_admin;
+        private System.Windows.Forms.Label lb_hello;
     }
 }

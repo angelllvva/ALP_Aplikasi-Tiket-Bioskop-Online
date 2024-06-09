@@ -80,7 +80,12 @@ namespace _20232_DBD
             }
 
             // Mengambil data judul film untuk dimasukkan ke label film name
-            sqlQuery = "SELECT judul_film FROM FILM";
+            DateTime today = DateTime.Today;
+            string tanggalHariini = today.ToString("yyyy-MM-dd");
+            today = today.AddDays(4);
+            string tanggalOnGoingTerakhir = today.ToString("yyyy-MM-dd");
+
+            sqlQuery = $"SELECT judul_film FROM FILM WHERE end_date_film >= '{tanggalHariini}' && end_date_film <= '{tanggalOnGoingTerakhir}'";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             dt_judulFilm = new DataTable();
             sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
@@ -469,7 +474,7 @@ namespace _20232_DBD
             // Query untuk menampilkan jadwal tayang dari masing-masing film
             sqlQuery = $@"SELECT f.judul_film, jt.tanggal_jadwal_tayang, jt.jam_jadwal_tayang
                           FROM FILM f, JADWAL_TAYANG jt
-                          WHERE f.id_film = jt.id_film && f.judul_film = '{judulFilm}' && jt.tanggal_jadwal_tayang = '{tanggal}'
+                          WHERE f.id_film = jt.id_film && f.judul_film = '{judulFilm}' && jt.tanggal_jadwal_tayang = '{tanggal}' && jt.status_del = 0
                           ORDER BY 2, 3";
 
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);

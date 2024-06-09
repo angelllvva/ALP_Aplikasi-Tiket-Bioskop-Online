@@ -667,7 +667,7 @@
             // 
             this.pnl_chooseSeat.Location = new System.Drawing.Point(-1, 15);
             this.pnl_chooseSeat.Name = "pnl_chooseSeat";
-            this.pnl_chooseSeat.Size = new System.Drawing.Size(876, 497);
+            this.pnl_chooseSeat.Size = new System.Drawing.Size(876, 494);
             this.pnl_chooseSeat.TabIndex = 54;
             this.pnl_chooseSeat.Visible = false;
             // 
