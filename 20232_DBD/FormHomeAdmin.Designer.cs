@@ -80,10 +80,10 @@
             // tableLayoutPanel
             // 
             this.tableLayoutPanel.ColumnCount = 4;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.42341F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.533F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.03113F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.76339F));
             this.tableLayoutPanel.Controls.Add(this.pnl_numTicketsSold, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.pnl_numIncome, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.pnl_numFilms, 0, 0);
@@ -102,10 +102,10 @@
             this.pnl_numTicketsSold.Controls.Add(this.lb_numTicketsSold);
             this.pnl_numTicketsSold.Controls.Add(this.lb_ticketsSold);
             this.pnl_numTicketsSold.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_numTicketsSold.Location = new System.Drawing.Point(408, 0);
+            this.pnl_numTicketsSold.Location = new System.Drawing.Point(369, 0);
             this.pnl_numTicketsSold.Margin = new System.Windows.Forms.Padding(8, 0, 8, 8);
             this.pnl_numTicketsSold.Name = "pnl_numTicketsSold";
-            this.pnl_numTicketsSold.Size = new System.Drawing.Size(184, 95);
+            this.pnl_numTicketsSold.Size = new System.Drawing.Size(185, 95);
             this.pnl_numTicketsSold.TabIndex = 3;
             // 
             // lb_numTicketsSold
@@ -136,10 +136,10 @@
             this.pnl_numIncome.Controls.Add(this.lb_numIncome);
             this.pnl_numIncome.Controls.Add(this.lb_income);
             this.pnl_numIncome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_numIncome.Location = new System.Drawing.Point(608, 0);
+            this.pnl_numIncome.Location = new System.Drawing.Point(570, 0);
             this.pnl_numIncome.Margin = new System.Windows.Forms.Padding(8, 0, 0, 8);
             this.pnl_numIncome.Name = "pnl_numIncome";
-            this.pnl_numIncome.Size = new System.Drawing.Size(195, 95);
+            this.pnl_numIncome.Size = new System.Drawing.Size(233, 95);
             this.pnl_numIncome.TabIndex = 2;
             // 
             // lb_numIncome
@@ -148,7 +148,7 @@
             this.lb_numIncome.ForeColor = System.Drawing.Color.White;
             this.lb_numIncome.Location = new System.Drawing.Point(14, 14);
             this.lb_numIncome.Name = "lb_numIncome";
-            this.lb_numIncome.Size = new System.Drawing.Size(181, 31);
+            this.lb_numIncome.Size = new System.Drawing.Size(217, 31);
             this.lb_numIncome.TabIndex = 39;
             this.lb_numIncome.Text = "Num";
             this.lb_numIncome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,7 +173,7 @@
             this.pnl_numFilms.Location = new System.Drawing.Point(0, 0);
             this.pnl_numFilms.Margin = new System.Windows.Forms.Padding(0, 0, 8, 8);
             this.pnl_numFilms.Name = "pnl_numFilms";
-            this.pnl_numFilms.Size = new System.Drawing.Size(192, 95);
+            this.pnl_numFilms.Size = new System.Drawing.Size(156, 95);
             this.pnl_numFilms.TabIndex = 1;
             // 
             // lb_numFilms
@@ -204,10 +204,10 @@
             this.pnl_numUsers.Controls.Add(this.lb_numUsers);
             this.pnl_numUsers.Controls.Add(this.lb_users);
             this.pnl_numUsers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_numUsers.Location = new System.Drawing.Point(208, 0);
+            this.pnl_numUsers.Location = new System.Drawing.Point(172, 0);
             this.pnl_numUsers.Margin = new System.Windows.Forms.Padding(8, 0, 8, 8);
             this.pnl_numUsers.Name = "pnl_numUsers";
-            this.pnl_numUsers.Size = new System.Drawing.Size(184, 95);
+            this.pnl_numUsers.Size = new System.Drawing.Size(181, 95);
             this.pnl_numUsers.TabIndex = 0;
             // 
             // lb_numUsers

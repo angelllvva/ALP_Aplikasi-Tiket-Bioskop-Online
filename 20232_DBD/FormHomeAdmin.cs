@@ -24,6 +24,7 @@ namespace _20232_DBD
         DataTable dt_pengguna;
         DataTable dt_tiket;
         DataTable dt_pendapatan;
+        DataTable dt_overview;
 
         public FormHomeAdmin(FormAdmin _fAdmin, MySqlConnection _sqlConnect)
         {
@@ -87,6 +88,46 @@ namespace _20232_DBD
             sqlDataAdapter.Fill(dt_pendapatan);
 
             lb_numIncome.Text = dt_pendapatan.Rows[0][0].ToString();
+
+            // Memasukkan data ke dgv overview
+            sqlQuery = @"SELECT SQ.id_film AS 'Film ID', SQ.judul_film AS 'Film Name', CONCAT('Rp ', FORMAT(SUM(SQ.Total), '######')) AS 'Total Income',
+IF(SUM(SQ.Total) = (SELECT MAX(SQ3.Total)
+FROM (SELECT SQ2.id_film, SUM(SQ2.Total) AS 'Total'
+FROM (SELECT jt.id_film, f.judul_film, (k.harga_kursi * COUNT(k.nomor_kursi)) AS 'Total', t.status_pemesanan_transaksi_booking AS 'Status'
+		FROM KURSI k
+		JOIN TRANSAKSI_BOOKING t ON k.id_jadwal_tayang = t.id_jadwal_tayang
+		JOIN JADWAL_TAYANG jt ON k.id_jadwal_tayang = jt.id_jadwal_tayang
+		JOIN FILM f ON jt.id_film = f.id_film
+		GROUP BY k.id_jadwal_tayang
+		HAVING status_pemesanan_transaksi_booking = 'Berhasil') AS SQ2
+GROUP BY 1) AS SQ3), '*', ' ') AS 'Most Income',
+IF(SUM(SQ.Total) = (SELECT MIN(SQ3.Total)
+FROM (SELECT SQ2.id_film, SUM(SQ2.Total) AS 'Total'
+FROM (SELECT jt.id_film, f.judul_film, (k.harga_kursi * COUNT(k.nomor_kursi)) AS 'Total', t.status_pemesanan_transaksi_booking AS 'Status'
+		FROM KURSI k
+		JOIN TRANSAKSI_BOOKING t ON k.id_jadwal_tayang = t.id_jadwal_tayang
+		JOIN JADWAL_TAYANG jt ON k.id_jadwal_tayang = jt.id_jadwal_tayang
+		JOIN FILM f ON jt.id_film = f.id_film
+		GROUP BY k.id_jadwal_tayang
+		HAVING status_pemesanan_transaksi_booking = 'Berhasil') AS SQ2
+GROUP BY 1) AS SQ3), '*', ' ') AS 'Least Income'
+FROM (SELECT jt.id_film, f.judul_film, (k.harga_kursi * COUNT(k.nomor_kursi)) AS 'Total', t.status_pemesanan_transaksi_booking AS 'Status'
+		FROM KURSI k
+		JOIN TRANSAKSI_BOOKING t ON k.id_jadwal_tayang = t.id_jadwal_tayang
+		JOIN JADWAL_TAYANG jt ON k.id_jadwal_tayang = jt.id_jadwal_tayang
+		JOIN FILM f ON jt.id_film = f.id_film
+		GROUP BY k.id_jadwal_tayang
+		HAVING status_pemesanan_transaksi_booking = 'Berhasil') AS SQ
+GROUP BY 1
+ORDER BY 1 ASC";
+
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            dt_overview = new DataTable();
+            sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dt_overview);
+
+            dgv_home.DataSource = dt_overview;
+            dgv_home.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
