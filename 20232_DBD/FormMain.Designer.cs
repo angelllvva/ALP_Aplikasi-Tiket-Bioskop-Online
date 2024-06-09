@@ -37,6 +37,7 @@
             this.lb_castText = new System.Windows.Forms.Label();
             this.lb_cast = new System.Windows.Forms.Label();
             this.lb_filmInformation = new System.Windows.Forms.Label();
+            this.pBox_backFilmInformation = new System.Windows.Forms.PictureBox();
             this.btn_buyTicket = new System.Windows.Forms.Button();
             this.lb_genreText = new System.Windows.Forms.Label();
             this.lb_durationText = new System.Windows.Forms.Label();
@@ -47,14 +48,17 @@
             this.lb_duration = new System.Windows.Forms.Label();
             this.lb_genre = new System.Windows.Forms.Label();
             this.lb_filmNameInformation = new System.Windows.Forms.Label();
+            this.pBox_filmPosterInformation = new System.Windows.Forms.PictureBox();
             this.lb_transactionHistory = new System.Windows.Forms.Label();
             this.dgv_transactionHistory = new System.Windows.Forms.DataGridView();
             this.lb_doubleClick = new System.Windows.Forms.Label();
             this.pnl_history = new System.Windows.Forms.Panel();
+            this.pBox_backHistory = new System.Windows.Forms.PictureBox();
             this.pnl_profile = new System.Windows.Forms.Panel();
             this.pnl_editProfile = new System.Windows.Forms.Panel();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
+            this.pBox_profileIcon = new System.Windows.Forms.PictureBox();
             this.btn_editProfile = new System.Windows.Forms.Button();
             this.tBox_phoneNumber = new System.Windows.Forms.TextBox();
             this.lb_phoneNumber = new System.Windows.Forms.Label();
@@ -64,7 +68,10 @@
             this.lb_name = new System.Windows.Forms.Label();
             this.tBox_username = new System.Windows.Forms.TextBox();
             this.lb_username = new System.Windows.Forms.Label();
+            this.pBox_square = new System.Windows.Forms.PictureBox();
+            this.pBox_profilePicture = new System.Windows.Forms.PictureBox();
             this.lb_profile = new System.Windows.Forms.Label();
+            this.pBox_backProfile = new System.Windows.Forms.PictureBox();
             this.pnl_filmSchedule = new System.Windows.Forms.Panel();
             this.pnl_chooseSeat = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
@@ -89,41 +96,34 @@
             this.btn_today = new System.Windows.Forms.Button();
             this.lb_filmNameSchedule = new System.Windows.Forms.Label();
             this.lb_filmSchedule = new System.Windows.Forms.Label();
+            this.pBox_backFilmSchedule = new System.Windows.Forms.PictureBox();
+            this.pBox_filmPosterSchedule = new System.Windows.Forms.PictureBox();
             this.pnl_home = new System.Windows.Forms.Panel();
             this.btn_kiri = new System.Windows.Forms.Button();
             this.btn_kanan = new System.Windows.Forms.Button();
             this.btn_more = new System.Windows.Forms.Button();
             this.lb_filmName = new System.Windows.Forms.Label();
+            this.pBox_filmPoster = new System.Windows.Forms.PictureBox();
             this.lb_user = new System.Windows.Forms.Label();
             this.lb_hello = new System.Windows.Forms.Label();
             this.lb_nowShowing = new System.Windows.Forms.Label();
-            this.pBox_backFilmSchedule = new System.Windows.Forms.PictureBox();
-            this.pBox_filmPosterSchedule = new System.Windows.Forms.PictureBox();
-            this.pBox_profileIcon = new System.Windows.Forms.PictureBox();
-            this.pBox_square = new System.Windows.Forms.PictureBox();
-            this.pBox_profilePicture = new System.Windows.Forms.PictureBox();
-            this.pBox_backProfile = new System.Windows.Forms.PictureBox();
-            this.pBox_backHistory = new System.Windows.Forms.PictureBox();
-            this.pBox_backFilmInformation = new System.Windows.Forms.PictureBox();
-            this.pBox_filmPosterInformation = new System.Windows.Forms.PictureBox();
-            this.pBox_filmPoster = new System.Windows.Forms.PictureBox();
             this.menuStrip_home.SuspendLayout();
             this.pnl_more.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmInformation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_transactionHistory)).BeginInit();
             this.pnl_history.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).BeginInit();
             this.pnl_profile.SuspendLayout();
             this.pnl_editProfile.SuspendLayout();
-            this.pnl_filmSchedule.SuspendLayout();
-            this.pnl_home.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmSchedule)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_profileIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_square)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmInformation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).BeginInit();
+            this.pnl_filmSchedule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmSchedule)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterSchedule)).BeginInit();
+            this.pnl_home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPoster)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,18 +196,18 @@
             this.pnl_more.Controls.Add(this.lb_genre);
             this.pnl_more.Controls.Add(this.lb_filmNameInformation);
             this.pnl_more.Controls.Add(this.pBox_filmPosterInformation);
-            this.pnl_more.Location = new System.Drawing.Point(6, 39);
+            this.pnl_more.Location = new System.Drawing.Point(-4, 39);
             this.pnl_more.Name = "pnl_more";
-            this.pnl_more.Size = new System.Drawing.Size(869, 485);
+            this.pnl_more.Size = new System.Drawing.Size(879, 485);
             this.pnl_more.TabIndex = 39;
             this.pnl_more.Visible = false;
             // 
             // lb_castText
             // 
             this.lb_castText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_castText.Location = new System.Drawing.Point(577, 115);
+            this.lb_castText.Location = new System.Drawing.Point(587, 115);
             this.lb_castText.Name = "lb_castText";
-            this.lb_castText.Size = new System.Drawing.Size(258, 46);
+            this.lb_castText.Size = new System.Drawing.Size(245, 46);
             this.lb_castText.TabIndex = 47;
             this.lb_castText.Text = "Genre Text";
             // 
@@ -215,7 +215,7 @@
             // 
             this.lb_cast.AutoSize = true;
             this.lb_cast.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_cast.Location = new System.Drawing.Point(577, 90);
+            this.lb_cast.Location = new System.Drawing.Point(587, 90);
             this.lb_cast.Name = "lb_cast";
             this.lb_cast.Size = new System.Drawing.Size(50, 20);
             this.lb_cast.TabIndex = 46;
@@ -225,19 +225,30 @@
             // lb_filmInformation
             // 
             this.lb_filmInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_filmInformation.Location = new System.Drawing.Point(78, 10);
+            this.lb_filmInformation.Location = new System.Drawing.Point(88, 10);
             this.lb_filmInformation.Name = "lb_filmInformation";
             this.lb_filmInformation.Size = new System.Drawing.Size(225, 31);
             this.lb_filmInformation.TabIndex = 45;
             this.lb_filmInformation.Text = "Film Information";
             this.lb_filmInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pBox_backFilmInformation
+            // 
+            this.pBox_backFilmInformation.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
+            this.pBox_backFilmInformation.Location = new System.Drawing.Point(39, 14);
+            this.pBox_backFilmInformation.Name = "pBox_backFilmInformation";
+            this.pBox_backFilmInformation.Size = new System.Drawing.Size(29, 23);
+            this.pBox_backFilmInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_backFilmInformation.TabIndex = 44;
+            this.pBox_backFilmInformation.TabStop = false;
+            this.pBox_backFilmInformation.Click += new System.EventHandler(this.pBox_backFilmInformation_Click);
+            // 
             // btn_buyTicket
             // 
             this.btn_buyTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btn_buyTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_buyTicket.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.btn_buyTicket.Location = new System.Drawing.Point(361, 420);
+            this.btn_buyTicket.Location = new System.Drawing.Point(371, 420);
             this.btn_buyTicket.Name = "btn_buyTicket";
             this.btn_buyTicket.Size = new System.Drawing.Size(132, 35);
             this.btn_buyTicket.TabIndex = 43;
@@ -249,7 +260,7 @@
             // 
             this.lb_genreText.AutoSize = true;
             this.lb_genreText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_genreText.Location = new System.Drawing.Point(408, 90);
+            this.lb_genreText.Location = new System.Drawing.Point(418, 90);
             this.lb_genreText.Name = "lb_genreText";
             this.lb_genreText.Size = new System.Drawing.Size(88, 20);
             this.lb_genreText.TabIndex = 42;
@@ -260,7 +271,7 @@
             // 
             this.lb_durationText.AutoSize = true;
             this.lb_durationText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_durationText.Location = new System.Drawing.Point(424, 115);
+            this.lb_durationText.Location = new System.Drawing.Point(434, 115);
             this.lb_durationText.Name = "lb_durationText";
             this.lb_durationText.Size = new System.Drawing.Size(104, 20);
             this.lb_durationText.TabIndex = 41;
@@ -271,7 +282,7 @@
             // 
             this.lb_directorText.AutoSize = true;
             this.lb_directorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_directorText.Location = new System.Drawing.Point(419, 141);
+            this.lb_directorText.Location = new System.Drawing.Point(429, 141);
             this.lb_directorText.Name = "lb_directorText";
             this.lb_directorText.Size = new System.Drawing.Size(99, 20);
             this.lb_directorText.TabIndex = 40;
@@ -281,9 +292,9 @@
             // lb_descriptionText
             // 
             this.lb_descriptionText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_descriptionText.Location = new System.Drawing.Point(340, 191);
+            this.lb_descriptionText.Location = new System.Drawing.Point(350, 191);
             this.lb_descriptionText.Name = "lb_descriptionText";
-            this.lb_descriptionText.Size = new System.Drawing.Size(495, 169);
+            this.lb_descriptionText.Size = new System.Drawing.Size(482, 169);
             this.lb_descriptionText.TabIndex = 39;
             this.lb_descriptionText.Text = "Description Text";
             // 
@@ -291,7 +302,7 @@
             // 
             this.lb_description.AutoSize = true;
             this.lb_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_description.Location = new System.Drawing.Point(340, 166);
+            this.lb_description.Location = new System.Drawing.Point(350, 166);
             this.lb_description.Name = "lb_description";
             this.lb_description.Size = new System.Drawing.Size(97, 20);
             this.lb_description.TabIndex = 38;
@@ -302,7 +313,7 @@
             // 
             this.lb_director.AutoSize = true;
             this.lb_director.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_director.Location = new System.Drawing.Point(340, 141);
+            this.lb_director.Location = new System.Drawing.Point(350, 141);
             this.lb_director.Name = "lb_director";
             this.lb_director.Size = new System.Drawing.Size(73, 20);
             this.lb_director.TabIndex = 37;
@@ -313,7 +324,7 @@
             // 
             this.lb_duration.AutoSize = true;
             this.lb_duration.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_duration.Location = new System.Drawing.Point(340, 115);
+            this.lb_duration.Location = new System.Drawing.Point(350, 115);
             this.lb_duration.Name = "lb_duration";
             this.lb_duration.Size = new System.Drawing.Size(78, 20);
             this.lb_duration.TabIndex = 36;
@@ -324,7 +335,7 @@
             // 
             this.lb_genre.AutoSize = true;
             this.lb_genre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_genre.Location = new System.Drawing.Point(340, 90);
+            this.lb_genre.Location = new System.Drawing.Point(350, 90);
             this.lb_genre.Name = "lb_genre";
             this.lb_genre.Size = new System.Drawing.Size(62, 20);
             this.lb_genre.TabIndex = 35;
@@ -335,12 +346,21 @@
             // 
             this.lb_filmNameInformation.AutoSize = true;
             this.lb_filmNameInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_filmNameInformation.Location = new System.Drawing.Point(340, 56);
+            this.lb_filmNameInformation.Location = new System.Drawing.Point(350, 56);
             this.lb_filmNameInformation.Name = "lb_filmNameInformation";
             this.lb_filmNameInformation.Size = new System.Drawing.Size(114, 22);
             this.lb_filmNameInformation.TabIndex = 34;
             this.lb_filmNameInformation.Text = "FILM NAME";
             this.lb_filmNameInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pBox_filmPosterInformation
+            // 
+            this.pBox_filmPosterInformation.Location = new System.Drawing.Point(93, 60);
+            this.pBox_filmPosterInformation.Name = "pBox_filmPosterInformation";
+            this.pBox_filmPosterInformation.Size = new System.Drawing.Size(225, 300);
+            this.pBox_filmPosterInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_filmPosterInformation.TabIndex = 33;
+            this.pBox_filmPosterInformation.TabStop = false;
             // 
             // lb_transactionHistory
             // 
@@ -372,7 +392,7 @@
             this.dgv_transactionHistory.RowHeadersWidth = 62;
             this.dgv_transactionHistory.RowTemplate.Height = 28;
             this.dgv_transactionHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_transactionHistory.Size = new System.Drawing.Size(752, 379);
+            this.dgv_transactionHistory.Size = new System.Drawing.Size(752, 382);
             this.dgv_transactionHistory.TabIndex = 50;
             this.dgv_transactionHistory.DoubleClick += new System.EventHandler(this.dgv_transactionHistory_DoubleClick);
             // 
@@ -393,9 +413,20 @@
             this.pnl_history.Controls.Add(this.pBox_backHistory);
             this.pnl_history.Location = new System.Drawing.Point(-4, 12);
             this.pnl_history.Name = "pnl_history";
-            this.pnl_history.Size = new System.Drawing.Size(900, 509);
+            this.pnl_history.Size = new System.Drawing.Size(900, 515);
             this.pnl_history.TabIndex = 48;
             this.pnl_history.Visible = false;
+            // 
+            // pBox_backHistory
+            // 
+            this.pBox_backHistory.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
+            this.pBox_backHistory.Location = new System.Drawing.Point(39, 40);
+            this.pBox_backHistory.Name = "pBox_backHistory";
+            this.pBox_backHistory.Size = new System.Drawing.Size(29, 23);
+            this.pBox_backHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_backHistory.TabIndex = 48;
+            this.pBox_backHistory.TabStop = false;
+            this.pBox_backHistory.Click += new System.EventHandler(this.pBox_backHistory_Click);
             // 
             // pnl_profile
             // 
@@ -416,7 +447,7 @@
             this.pnl_profile.Controls.Add(this.pBox_backProfile);
             this.pnl_profile.Location = new System.Drawing.Point(-4, 12);
             this.pnl_profile.Name = "pnl_profile";
-            this.pnl_profile.Size = new System.Drawing.Size(889, 506);
+            this.pnl_profile.Size = new System.Drawing.Size(889, 509);
             this.pnl_profile.TabIndex = 52;
             this.pnl_profile.Visible = false;
             // 
@@ -456,6 +487,16 @@
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // pBox_profileIcon
+            // 
+            this.pBox_profileIcon.Image = global::_20232_DBD.Properties.Resources.Profile_Icon;
+            this.pBox_profileIcon.Location = new System.Drawing.Point(608, 80);
+            this.pBox_profileIcon.Name = "pBox_profileIcon";
+            this.pBox_profileIcon.Size = new System.Drawing.Size(237, 274);
+            this.pBox_profileIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_profileIcon.TabIndex = 93;
+            this.pBox_profileIcon.TabStop = false;
             // 
             // btn_editProfile
             // 
@@ -548,6 +589,26 @@
             this.lb_username.TabIndex = 83;
             this.lb_username.Text = "Username";
             // 
+            // pBox_square
+            // 
+            this.pBox_square.Image = global::_20232_DBD.Properties.Resources.Background_Login_Page;
+            this.pBox_square.Location = new System.Drawing.Point(226, 80);
+            this.pBox_square.Name = "pBox_square";
+            this.pBox_square.Size = new System.Drawing.Size(345, 401);
+            this.pBox_square.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_square.TabIndex = 92;
+            this.pBox_square.TabStop = false;
+            // 
+            // pBox_profilePicture
+            // 
+            this.pBox_profilePicture.Image = global::_20232_DBD.Properties.Resources.Profile;
+            this.pBox_profilePicture.Location = new System.Drawing.Point(93, 80);
+            this.pBox_profilePicture.Name = "pBox_profilePicture";
+            this.pBox_profilePicture.Size = new System.Drawing.Size(100, 100);
+            this.pBox_profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_profilePicture.TabIndex = 82;
+            this.pBox_profilePicture.TabStop = false;
+            // 
             // lb_profile
             // 
             this.lb_profile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -557,6 +618,17 @@
             this.lb_profile.TabIndex = 81;
             this.lb_profile.Text = "Profile";
             this.lb_profile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pBox_backProfile
+            // 
+            this.pBox_backProfile.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
+            this.pBox_backProfile.Location = new System.Drawing.Point(39, 40);
+            this.pBox_backProfile.Name = "pBox_backProfile";
+            this.pBox_backProfile.Size = new System.Drawing.Size(29, 23);
+            this.pBox_backProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_backProfile.TabIndex = 80;
+            this.pBox_backProfile.TabStop = false;
+            this.pBox_backProfile.Click += new System.EventHandler(this.pBox_backProfile_Click);
             // 
             // pnl_filmSchedule
             // 
@@ -595,7 +667,7 @@
             // 
             this.pnl_chooseSeat.Location = new System.Drawing.Point(-1, 15);
             this.pnl_chooseSeat.Name = "pnl_chooseSeat";
-            this.pnl_chooseSeat.Size = new System.Drawing.Size(876, 488);
+            this.pnl_chooseSeat.Size = new System.Drawing.Size(876, 497);
             this.pnl_chooseSeat.TabIndex = 54;
             this.pnl_chooseSeat.Visible = false;
             // 
@@ -844,6 +916,26 @@
             this.lb_filmSchedule.Text = "Film Schedule";
             this.lb_filmSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pBox_backFilmSchedule
+            // 
+            this.pBox_backFilmSchedule.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
+            this.pBox_backFilmSchedule.Location = new System.Drawing.Point(36, 37);
+            this.pBox_backFilmSchedule.Name = "pBox_backFilmSchedule";
+            this.pBox_backFilmSchedule.Size = new System.Drawing.Size(29, 23);
+            this.pBox_backFilmSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_backFilmSchedule.TabIndex = 51;
+            this.pBox_backFilmSchedule.TabStop = false;
+            this.pBox_backFilmSchedule.Click += new System.EventHandler(this.pBox_backFilmSchedule_Click);
+            // 
+            // pBox_filmPosterSchedule
+            // 
+            this.pBox_filmPosterSchedule.Location = new System.Drawing.Point(90, 83);
+            this.pBox_filmPosterSchedule.Name = "pBox_filmPosterSchedule";
+            this.pBox_filmPosterSchedule.Size = new System.Drawing.Size(225, 300);
+            this.pBox_filmPosterSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_filmPosterSchedule.TabIndex = 50;
+            this.pBox_filmPosterSchedule.TabStop = false;
+            // 
             // pnl_home
             // 
             this.pnl_home.Controls.Add(this.btn_kiri);
@@ -908,6 +1000,15 @@
             this.lb_filmName.Text = "Film Name";
             this.lb_filmName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pBox_filmPoster
+            // 
+            this.pBox_filmPoster.Location = new System.Drawing.Point(331, 104);
+            this.pBox_filmPoster.Name = "pBox_filmPoster";
+            this.pBox_filmPoster.Size = new System.Drawing.Size(225, 300);
+            this.pBox_filmPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_filmPoster.TabIndex = 40;
+            this.pBox_filmPoster.TabStop = false;
+            // 
             // lb_user
             // 
             this.lb_user.AutoSize = true;
@@ -938,107 +1039,6 @@
             this.lb_nowShowing.Text = "Now Showing";
             this.lb_nowShowing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pBox_backFilmSchedule
-            // 
-            this.pBox_backFilmSchedule.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
-            this.pBox_backFilmSchedule.Location = new System.Drawing.Point(36, 37);
-            this.pBox_backFilmSchedule.Name = "pBox_backFilmSchedule";
-            this.pBox_backFilmSchedule.Size = new System.Drawing.Size(29, 23);
-            this.pBox_backFilmSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_backFilmSchedule.TabIndex = 51;
-            this.pBox_backFilmSchedule.TabStop = false;
-            this.pBox_backFilmSchedule.Click += new System.EventHandler(this.pBox_backFilmSchedule_Click);
-            // 
-            // pBox_filmPosterSchedule
-            // 
-            this.pBox_filmPosterSchedule.Location = new System.Drawing.Point(90, 83);
-            this.pBox_filmPosterSchedule.Name = "pBox_filmPosterSchedule";
-            this.pBox_filmPosterSchedule.Size = new System.Drawing.Size(225, 300);
-            this.pBox_filmPosterSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_filmPosterSchedule.TabIndex = 50;
-            this.pBox_filmPosterSchedule.TabStop = false;
-            // 
-            // pBox_profileIcon
-            // 
-            this.pBox_profileIcon.Image = global::_20232_DBD.Properties.Resources.Profile_Icon;
-            this.pBox_profileIcon.Location = new System.Drawing.Point(608, 80);
-            this.pBox_profileIcon.Name = "pBox_profileIcon";
-            this.pBox_profileIcon.Size = new System.Drawing.Size(237, 274);
-            this.pBox_profileIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_profileIcon.TabIndex = 93;
-            this.pBox_profileIcon.TabStop = false;
-            // 
-            // pBox_square
-            // 
-            this.pBox_square.Image = global::_20232_DBD.Properties.Resources.Background_Login_Page;
-            this.pBox_square.Location = new System.Drawing.Point(226, 80);
-            this.pBox_square.Name = "pBox_square";
-            this.pBox_square.Size = new System.Drawing.Size(345, 401);
-            this.pBox_square.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_square.TabIndex = 92;
-            this.pBox_square.TabStop = false;
-            // 
-            // pBox_profilePicture
-            // 
-            this.pBox_profilePicture.Image = global::_20232_DBD.Properties.Resources.Profile;
-            this.pBox_profilePicture.Location = new System.Drawing.Point(93, 80);
-            this.pBox_profilePicture.Name = "pBox_profilePicture";
-            this.pBox_profilePicture.Size = new System.Drawing.Size(100, 100);
-            this.pBox_profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_profilePicture.TabIndex = 82;
-            this.pBox_profilePicture.TabStop = false;
-            // 
-            // pBox_backProfile
-            // 
-            this.pBox_backProfile.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
-            this.pBox_backProfile.Location = new System.Drawing.Point(39, 40);
-            this.pBox_backProfile.Name = "pBox_backProfile";
-            this.pBox_backProfile.Size = new System.Drawing.Size(29, 23);
-            this.pBox_backProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_backProfile.TabIndex = 80;
-            this.pBox_backProfile.TabStop = false;
-            this.pBox_backProfile.Click += new System.EventHandler(this.pBox_backProfile_Click);
-            // 
-            // pBox_backHistory
-            // 
-            this.pBox_backHistory.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
-            this.pBox_backHistory.Location = new System.Drawing.Point(39, 40);
-            this.pBox_backHistory.Name = "pBox_backHistory";
-            this.pBox_backHistory.Size = new System.Drawing.Size(29, 23);
-            this.pBox_backHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_backHistory.TabIndex = 48;
-            this.pBox_backHistory.TabStop = false;
-            this.pBox_backHistory.Click += new System.EventHandler(this.pBox_backHistory_Click);
-            // 
-            // pBox_backFilmInformation
-            // 
-            this.pBox_backFilmInformation.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
-            this.pBox_backFilmInformation.Location = new System.Drawing.Point(29, 14);
-            this.pBox_backFilmInformation.Name = "pBox_backFilmInformation";
-            this.pBox_backFilmInformation.Size = new System.Drawing.Size(29, 23);
-            this.pBox_backFilmInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_backFilmInformation.TabIndex = 44;
-            this.pBox_backFilmInformation.TabStop = false;
-            this.pBox_backFilmInformation.Click += new System.EventHandler(this.pBox_backFilmInformation_Click);
-            // 
-            // pBox_filmPosterInformation
-            // 
-            this.pBox_filmPosterInformation.Location = new System.Drawing.Point(83, 60);
-            this.pBox_filmPosterInformation.Name = "pBox_filmPosterInformation";
-            this.pBox_filmPosterInformation.Size = new System.Drawing.Size(225, 300);
-            this.pBox_filmPosterInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_filmPosterInformation.TabIndex = 33;
-            this.pBox_filmPosterInformation.TabStop = false;
-            // 
-            // pBox_filmPoster
-            // 
-            this.pBox_filmPoster.Location = new System.Drawing.Point(331, 104);
-            this.pBox_filmPoster.Name = "pBox_filmPoster";
-            this.pBox_filmPoster.Size = new System.Drawing.Size(225, 300);
-            this.pBox_filmPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_filmPoster.TabIndex = 40;
-            this.pBox_filmPoster.TabStop = false;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1060,24 +1060,24 @@
             this.menuStrip_home.PerformLayout();
             this.pnl_more.ResumeLayout(false);
             this.pnl_more.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmInformation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_transactionHistory)).EndInit();
             this.pnl_history.ResumeLayout(false);
             this.pnl_history.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).EndInit();
             this.pnl_profile.ResumeLayout(false);
             this.pnl_profile.PerformLayout();
             this.pnl_editProfile.ResumeLayout(false);
-            this.pnl_filmSchedule.ResumeLayout(false);
-            this.pnl_home.ResumeLayout(false);
-            this.pnl_home.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmSchedule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_profileIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_square)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmInformation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).EndInit();
+            this.pnl_filmSchedule.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backFilmSchedule)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterSchedule)).EndInit();
+            this.pnl_home.ResumeLayout(false);
+            this.pnl_home.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPoster)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

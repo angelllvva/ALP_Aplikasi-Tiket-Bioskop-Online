@@ -50,7 +50,7 @@
             this.lb_line.BackColor = System.Drawing.SystemColors.WindowText;
             this.lb_line.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lb_line.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_line.Location = new System.Drawing.Point(36, 121);
+            this.lb_line.Location = new System.Drawing.Point(36, 109);
             this.lb_line.Name = "lb_line";
             this.lb_line.Size = new System.Drawing.Size(803, 2);
             this.lb_line.TabIndex = 63;
@@ -60,7 +60,7 @@
             // 
             this.lb_userList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lb_userList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_userList.Location = new System.Drawing.Point(36, 94);
+            this.lb_userList.Location = new System.Drawing.Point(36, 81);
             this.lb_userList.Name = "lb_userList";
             this.lb_userList.Size = new System.Drawing.Size(799, 25);
             this.lb_userList.TabIndex = 62;
@@ -79,7 +79,7 @@
             this.dgv_user.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dgv_user.ColumnHeadersHeight = 34;
             this.dgv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_user.Location = new System.Drawing.Point(36, 136);
+            this.dgv_user.Location = new System.Drawing.Point(36, 124);
             this.dgv_user.MultiSelect = false;
             this.dgv_user.Name = "dgv_user";
             this.dgv_user.ReadOnly = true;
@@ -87,7 +87,7 @@
             this.dgv_user.RowHeadersWidth = 62;
             this.dgv_user.RowTemplate.Height = 28;
             this.dgv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_user.Size = new System.Drawing.Size(803, 326);
+            this.dgv_user.Size = new System.Drawing.Size(803, 337);
             this.dgv_user.TabIndex = 227;
             // 
             // FormUserAdmin

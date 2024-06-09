@@ -20,7 +20,7 @@ namespace _20232_DBD
 
         DataTable dt_kursi;
         DataTable dt_transaksi;
-        string idPengguna = FormMain.idPengguna;
+        string idPengguna = FormMain.idUser;
         string seats;
 
         public FormTransactionDetail(MySqlConnection conForm)

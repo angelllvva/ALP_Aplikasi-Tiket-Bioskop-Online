@@ -146,9 +146,9 @@
             // 
             this.lb_numIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_numIncome.ForeColor = System.Drawing.Color.White;
-            this.lb_numIncome.Location = new System.Drawing.Point(15, 14);
+            this.lb_numIncome.Location = new System.Drawing.Point(14, 14);
             this.lb_numIncome.Name = "lb_numIncome";
-            this.lb_numIncome.Size = new System.Drawing.Size(120, 31);
+            this.lb_numIncome.Size = new System.Drawing.Size(181, 31);
             this.lb_numIncome.TabIndex = 39;
             this.lb_numIncome.Text = "Num";
             this.lb_numIncome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -300,6 +300,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHomeAdmin";
             this.Text = "FormHomeAdmin";
+            this.Load += new System.EventHandler(this.FormHomeAdmin_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.pnl_numTicketsSold.ResumeLayout(false);
             this.pnl_numIncome.ResumeLayout(false);

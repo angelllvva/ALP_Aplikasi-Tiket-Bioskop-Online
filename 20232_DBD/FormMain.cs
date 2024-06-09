@@ -10,6 +10,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,9 +26,20 @@ namespace _20232_DBD
 
         string user = FormLogin.username_login;
         int count = 0;
-        public static string idPengguna;
+        public string idPengguna { get; set; }
+        public static string idUser;
         string aktor;
-        string tanggal;
+
+        //kirim variable ke form choose seat
+        public string tanggal { get; set; }
+        public string jam { get; set; }
+        public string judulFilm { get; set; }
+        public string id { get; set; }
+        public string picturename { get; set; }
+
+
+        public DataTable dt_orderConfirm { get; set; }
+        public DataTable dt_idJadwal { get; set; }
 
         DataTable dt_pengguna;
         DataTable dt_judulFilm;
@@ -36,12 +48,15 @@ namespace _20232_DBD
         DataTable dt_riwayatTransaksi;
         DataTable dt_profilUser;
         DataTable dt_jamTayang;
+        public DataTable dt_seat { get; set; }
+
+        List<string> listJam;
 
         public FormMain(MySqlConnection conForm)
         {
             InitializeComponent();
             sqlConnect = conForm;
-
+            idUser = idPengguna;
             tBox_phoneNumber.KeyPress += new KeyPressEventHandler(tBox_phoneNumber_KeyPress);
         }
 
@@ -76,8 +91,6 @@ namespace _20232_DBD
             // Menampilkan gambar film default (pertama kali muncul) saat form dibuka
             System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{dt_judulFilm.Rows[0][0].ToString()}") as System.Drawing.Bitmap;
             pBox_filmPoster.Image = image;
-
-            pnl_home.Visible = true;
         }
 
         private void btn_kanan_Click(object sender, EventArgs e)
@@ -86,7 +99,7 @@ namespace _20232_DBD
             if (count >= dt_judulFilm.Rows.Count - 1)
             {
                 lb_filmName.Text = dt_judulFilm.Rows[dt_judulFilm.Rows.Count - 1][0].ToString();
-                
+
                 System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmName.Text}") as System.Drawing.Bitmap;
                 pBox_filmPoster.Image = image;
             }
@@ -122,7 +135,6 @@ namespace _20232_DBD
 
         private void btn_more_Click(object sender, EventArgs e)
         {
-            pnl_home.Visible = false;
             pnl_more.Visible = true;
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
@@ -132,6 +144,8 @@ namespace _20232_DBD
             // Menampilkan gambar poster film yang dipilih
             System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmName.Text}") as System.Drawing.Bitmap;
             pBox_filmPosterInformation.Image = image;
+            //ambil string label untuk ConfiirmOrder
+            picturename = lb_filmName.Text;
 
             // Query untuk menampilkan informasi film berdasarkan judul film yang dipilih
             sqlQuery = $"SELECT judul_film, genre_film, CONCAT(durasi_film, ' menit'), sutradara_film, deskripsi_film FROM FILM WHERE judul_film = '{lb_filmName.Text}';";
@@ -206,7 +220,6 @@ namespace _20232_DBD
             lb_dateNext4Day.BackColor = Color.NavajoWhite;
 
             // Memunculkan jadwal tayang film yang dipilih
-            pnl_home.Visible = false;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = true;
             pnl_history.Visible = false;
@@ -238,14 +251,14 @@ namespace _20232_DBD
             btn_next4Day.Text = today.AddDays(4).DayOfWeek.ToString().ToUpper().Substring(0, 3);
 
             // Mengubah format tanggal dari 'dd MMM' menjadi 'yyyy-MM-dd'
-                // Parse string ke DateTime dengan format yang sesuai
-                DateTime parsedDate = DateTime.ParseExact(lb_dateToday.Text, "dd MMM", CultureInfo.InvariantCulture);
+            // Parse string ke DateTime dengan format yang sesuai
+            DateTime parsedDate = DateTime.ParseExact(lb_dateToday.Text, "dd MMM", CultureInfo.InvariantCulture);
 
-                // Menambahkan tahun yang diinginkan, misalkan 2024
-                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+            // Menambahkan tahun yang diinginkan, misalkan 2024
+            parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
 
-                // Mengubah format DateTime ke 'yyyy-MM-dd'
-                tanggal = parsedDate.ToString("yyyy-MM-dd");
+            // Mengubah format DateTime ke 'yyyy-MM-dd'
+            tanggal = parsedDate.ToString("yyyy-MM-dd");
 
             jadwalTayang(lb_filmNameSchedule.Text, tanggal);
         }
@@ -281,11 +294,11 @@ namespace _20232_DBD
             // Parse string ke DateTime dengan format yang sesuai
             DateTime parsedDate = DateTime.ParseExact(lb_dateToday.Text, "dd MMM", CultureInfo.InvariantCulture);
 
-                // Menambahkan tahun yang diinginkan, misalkan 2024
-                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+            // Menambahkan tahun yang diinginkan, misalkan 2024
+            parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
 
-                // Mengubah format DateTime ke 'yyyy-MM-dd'
-                tanggal = parsedDate.ToString("yyyy-MM-dd");
+            // Mengubah format DateTime ke 'yyyy-MM-dd'
+            tanggal = parsedDate.ToString("yyyy-MM-dd");
 
             jadwalTayang(lb_filmNameSchedule.Text, tanggal);
         }
@@ -321,11 +334,11 @@ namespace _20232_DBD
             // Parse string ke DateTime dengan format yang sesuai
             DateTime parsedDate = DateTime.ParseExact(lb_dateNextDay.Text, "dd MMM", CultureInfo.InvariantCulture);
 
-                // Menambahkan tahun yang diinginkan, misalkan 2024
-                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+            // Menambahkan tahun yang diinginkan, misalkan 2024
+            parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
 
-                // Mengubah format DateTime ke 'yyyy-MM-dd'
-                tanggal = parsedDate.ToString("yyyy-MM-dd");
+            // Mengubah format DateTime ke 'yyyy-MM-dd'
+            tanggal = parsedDate.ToString("yyyy-MM-dd");
 
             jadwalTayang(lb_filmNameSchedule.Text, tanggal);
         }
@@ -361,11 +374,11 @@ namespace _20232_DBD
             // Parse string ke DateTime dengan format yang sesuai
             DateTime parsedDate = DateTime.ParseExact(lb_dateNext2Day.Text, "dd MMM", CultureInfo.InvariantCulture);
 
-                // Menambahkan tahun yang diinginkan, misalkan 2024
-                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+            // Menambahkan tahun yang diinginkan, misalkan 2024
+            parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
 
-                // Mengubah format DateTime ke 'yyyy-MM-dd'
-                tanggal = parsedDate.ToString("yyyy-MM-dd");
+            // Mengubah format DateTime ke 'yyyy-MM-dd'
+            tanggal = parsedDate.ToString("yyyy-MM-dd");
 
             jadwalTayang(lb_filmNameSchedule.Text, tanggal);
         }
@@ -401,11 +414,11 @@ namespace _20232_DBD
             // Parse string ke DateTime dengan format yang sesuai
             DateTime parsedDate = DateTime.ParseExact(lb_dateNext3Day.Text, "dd MMM", CultureInfo.InvariantCulture);
 
-                // Menambahkan tahun yang diinginkan, misalkan 2024
-                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+            // Menambahkan tahun yang diinginkan, misalkan 2024
+            parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
 
-                // Mengubah format DateTime ke 'yyyy-MM-dd'
-                tanggal = parsedDate.ToString("yyyy-MM-dd");
+            // Mengubah format DateTime ke 'yyyy-MM-dd'
+            tanggal = parsedDate.ToString("yyyy-MM-dd");
 
             jadwalTayang(lb_filmNameSchedule.Text, tanggal);
         }
@@ -441,22 +454,23 @@ namespace _20232_DBD
             // Parse string ke DateTime dengan format yang sesuai
             DateTime parsedDate = DateTime.ParseExact(lb_dateNext4Day.Text, "dd MMM", CultureInfo.InvariantCulture);
 
-                // Menambahkan tahun yang diinginkan, misalkan 2024
-                parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
+            // Menambahkan tahun yang diinginkan, misalkan 2024
+            parsedDate = new DateTime(2024, parsedDate.Month, parsedDate.Day);
 
-                // Mengubah format DateTime ke 'yyyy-MM-dd'
-                tanggal = parsedDate.ToString("yyyy-MM-dd");
+            // Mengubah format DateTime ke 'yyyy-MM-dd'
+            tanggal = parsedDate.ToString("yyyy-MM-dd");
 
             jadwalTayang(lb_filmNameSchedule.Text, tanggal);
         }
 
         // Method untuk memanggil jam tayang berdasarkan judul film dan tanggal
-        private void jadwalTayang(string judulFilm, string tanggal)
+        public void jadwalTayang(string judulFilm, string tanggal)
         {
             // Query untuk menampilkan jadwal tayang dari masing-masing film
             sqlQuery = $@"SELECT f.judul_film, jt.tanggal_jadwal_tayang, jt.jam_jadwal_tayang
                           FROM FILM f, JADWAL_TAYANG jt
-                          WHERE f.id_film = jt.id_film && f.judul_film = '{judulFilm}' && jt.tanggal_jadwal_tayang = '{tanggal}'";
+                          WHERE f.id_film = jt.id_film && f.judul_film = '{judulFilm}' && jt.tanggal_jadwal_tayang = '{tanggal}'
+                          ORDER BY 2, 3";
 
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             dt_jamTayang = new DataTable();
@@ -464,15 +478,19 @@ namespace _20232_DBD
             sqlDataAdapter.Fill(dt_jamTayang);
 
             // Mengambil semua button film schedule yang ada di dalam form Designer
-            Button[] buttons = new Button[10] {button1, button2, button3, button4, button5, button6, button7, button8, button9, button10};
+            Button[] buttons = new Button[10] { button1, button2, button3, button4, button5, button6, button7, button8, button9, button10 };
 
             // Mendistribusikan data dari data table ke dalam masing-masing button
+            listJam = new List<string>();
             for (int i = 0; i < buttons.Length; i++)
             {
                 if (i < dt_jamTayang.Rows.Count)
                 {
                     buttons[i].Visible = true;
                     buttons[i].Text = dt_jamTayang.Rows[i][2].ToString().Substring(0, 5);
+
+                    //ambil variable jam
+                    listJam.Add(dt_jamTayang.Rows[i][2].ToString());
                 }
                 else
                 {
@@ -481,9 +499,52 @@ namespace _20232_DBD
             }
         }
 
+        void AmbilIdJadwal(string judulFilm, string tanggal, int indexJam)
+        {
+            //  Query untuk mengambil id_jadwal_tayang 
+            jam = listJam[indexJam];
+            sqlQuery = $@"SELECT id_jadwal_tayang, judul_film 
+                            FROM JADWAL_TAYANG jt, FILM f
+                            WHERE f.id_film = jt.id_film && f.judul_film = '{judulFilm}' && 
+                            jt.tanggal_jadwal_tayang = '{tanggal}' && jt.jam_jadwal_tayang = '{jam}'";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            dt_idJadwal = new DataTable();
+            sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dt_idJadwal);
+
+            for (int i = 0; i < dt_idJadwal.Rows.Count; i++)
+            {
+                id = dt_idJadwal.Rows[i][0].ToString();
+            }
+
+            //Cek kursi yang sudah penuh dari jadwal tayang
+            sqlQuery = $@"SELECT nomor_kursi, status_kursi 
+                            FROM KURSI 
+                            LEFT JOIN JADWAL_TAYANG on JADWAL_TAYANG.id_jadwal_tayang = KURSI.id_jadwal_tayang
+                            WHERE JADWAL_TAYANG.id_jadwal_tayang = '{id}' && KURSI.status_kursi = '1'";
+
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            dt_seat = new DataTable();
+            sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dt_seat);
+
+            // Query untuk mengambil data orderan sebagai dasar Confirm Order
+            sqlQuery = $@"SELECT judul_film, tanggal_jadwal_tayang, jam_jadwal_tayang, nama_studio 
+                            FROM STUDIO
+                            LEFT JOIN JADWAL_TAYANG 
+                                ON JADWAL_TAYANG.id_studio = STUDIO.id_studio
+                            LEFT JOIN FILM 
+                                ON FILM.id_film = JADWAL_TAYANG.id_film
+                            WHERE JADWAL_TAYANG.id_jadwal_tayang = '{id}'";
+
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            dt_orderConfirm = new DataTable();
+            sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dt_orderConfirm);
+        }
+
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnl_home.Visible = false;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = true;
@@ -502,7 +563,8 @@ namespace _20232_DBD
                              ON f.id_film = j.id_film
                           JOIN KURSI k
                              ON k.id_jadwal_tayang = j.id_jadwal_tayang
-                          WHERE id_pengguna = '{idPengguna}'";
+                          WHERE id_pengguna = '{idPengguna}'
+                          ORDER BY j.tanggal_jadwal_tayang";
 
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             dt_riwayatTransaksi = new DataTable();
@@ -525,7 +587,6 @@ namespace _20232_DBD
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnl_home.Visible = false;
             pnl_more.Visible = false;
             pnl_filmSchedule.Visible = false;
             pnl_history.Visible = false;
@@ -623,6 +684,132 @@ namespace _20232_DBD
             pnl_editProfile.Visible = false;
         }
 
+
+        public void closeChildForm()
+        {
+            foreach (Control c in pnl_chooseSeat.Controls)
+            {
+                if (c is Form)
+                {
+                    this.pnl_chooseSeat.Controls.Remove(c);
+                }
+            }
+            pnl_chooseSeat.Visible = false;
+        }
+
+        public string time { get; set; }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AmbilIdJadwal(lb_filmNameSchedule.Text, tanggal, 0);
+            time = button1.Text;
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this, sqlConnect);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AmbilIdJadwal(lb_filmNameSchedule.Text, tanggal, 1);
+            time = button2.Text;
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this, sqlConnect);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            AmbilIdJadwal(lb_filmNameSchedule.Text, tanggal, 2);
+            time = button3.Text;
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this, sqlConnect);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AmbilIdJadwal(lb_filmNameSchedule.Text, tanggal, 3);
+            time = button4.Text;
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this, sqlConnect);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AmbilIdJadwal(lb_filmNameSchedule.Text, tanggal, 4);
+            time = button5.Text;
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this, sqlConnect);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AmbilIdJadwal(lb_filmNameSchedule.Text, tanggal, 5);
+            time = button6.Text;
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this, sqlConnect);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AmbilIdJadwal(lb_filmNameSchedule.Text, tanggal, 6);
+            time = button7.Text;
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this, sqlConnect);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AmbilIdJadwal(lb_filmNameSchedule.Text, tanggal, 7);
+            time = button8.Text;
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this, sqlConnect);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            AmbilIdJadwal(lb_filmNameSchedule.Text, tanggal, 8);
+            time = button9.Text;
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this, sqlConnect);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            AmbilIdJadwal(lb_filmNameSchedule.Text, tanggal, 9);
+            time = button10.Text;
+            FormChooseSeat fChooseSeat = new FormChooseSeat(this, sqlConnect);
+            fChooseSeat.MdiParent = this;
+            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
+            fChooseSeat.Show();
+            pnl_chooseSeat.Visible = true;
+        }
+
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Kembali ke menu Login
@@ -700,108 +887,6 @@ namespace _20232_DBD
                 // Jika karakter bukan angka, batalkan input
                 e.Handled = true;
             }
-        }
-
-        public void closeChildForm()
-        {
-            foreach(Control c in pnl_chooseSeat.Controls)
-            {
-                if(c is Form)
-                {
-                    this.pnl_chooseSeat.Controls.Remove(c);
-                }
-            }
-            pnl_chooseSeat.Visible = false;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
-            fChooseSeat.MdiParent = this;
-            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
-            fChooseSeat.Show();
-            pnl_chooseSeat.Visible = true;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
-            fChooseSeat.MdiParent = this;
-            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
-            fChooseSeat.Show();
-            pnl_chooseSeat.Visible = true;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
-            fChooseSeat.MdiParent = this;
-            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
-            fChooseSeat.Show();
-            pnl_chooseSeat.Visible = true;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
-            fChooseSeat.MdiParent = this;
-            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
-            fChooseSeat.Show();
-            pnl_chooseSeat.Visible = true;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
-            fChooseSeat.MdiParent = this;
-            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
-            fChooseSeat.Show();
-            pnl_chooseSeat.Visible = true;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
-            fChooseSeat.MdiParent = this;
-            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
-            fChooseSeat.Show();
-            pnl_chooseSeat.Visible = true;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
-            fChooseSeat.MdiParent = this;
-            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
-            fChooseSeat.Show();
-            pnl_chooseSeat.Visible = true;
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
-            fChooseSeat.MdiParent = this;
-            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
-            fChooseSeat.Show();
-            pnl_chooseSeat.Visible = true;
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
-            fChooseSeat.MdiParent = this;
-            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
-            fChooseSeat.Show();
-            pnl_chooseSeat.Visible = true;
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            FormChooseSeat fChooseSeat = new FormChooseSeat(this);
-            fChooseSeat.MdiParent = this;
-            this.pnl_chooseSeat.Controls.Add(fChooseSeat);
-            fChooseSeat.Show();
-            pnl_chooseSeat.Visible = true;
         }
     }
 }

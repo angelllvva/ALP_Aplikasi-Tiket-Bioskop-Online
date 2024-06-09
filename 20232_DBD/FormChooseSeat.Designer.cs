@@ -29,72 +29,42 @@
         private void InitializeComponent()
         {
             this.btn_confirm = new System.Windows.Forms.Button();
-            this.btn_seatA1 = new System.Windows.Forms.Button();
-            this.btn_seatA2 = new System.Windows.Forms.Button();
-            this.btn_seatA3 = new System.Windows.Forms.Button();
-            this.btn_seatA4 = new System.Windows.Forms.Button();
-            this.btn_seatA5 = new System.Windows.Forms.Button();
-            this.btn_seatA6 = new System.Windows.Forms.Button();
-            this.btn_seatA7 = new System.Windows.Forms.Button();
-            this.btn_seatA8 = new System.Windows.Forms.Button();
-            this.btn_seatA9 = new System.Windows.Forms.Button();
-            this.btn_seatA10 = new System.Windows.Forms.Button();
-            this.btn_seatA11 = new System.Windows.Forms.Button();
-            this.btn_seatA12 = new System.Windows.Forms.Button();
-            this.btn_seatB1 = new System.Windows.Forms.Button();
-            this.btn_seatB2 = new System.Windows.Forms.Button();
-            this.btn_seatB3 = new System.Windows.Forms.Button();
-            this.btn_seatB4 = new System.Windows.Forms.Button();
-            this.btn_seatB5 = new System.Windows.Forms.Button();
-            this.btn_seatB6 = new System.Windows.Forms.Button();
-            this.btn_seatB7 = new System.Windows.Forms.Button();
-            this.btn_seatB8 = new System.Windows.Forms.Button();
-            this.btn_seatB9 = new System.Windows.Forms.Button();
-            this.btn_seatB10 = new System.Windows.Forms.Button();
-            this.btn_seatB11 = new System.Windows.Forms.Button();
-            this.btn_seatB12 = new System.Windows.Forms.Button();
-            this.btn_seatC1 = new System.Windows.Forms.Button();
-            this.btn_seatC2 = new System.Windows.Forms.Button();
-            this.btn_seatC3 = new System.Windows.Forms.Button();
-            this.btn_seatC4 = new System.Windows.Forms.Button();
-            this.btn_seatC5 = new System.Windows.Forms.Button();
-            this.btn_seatC6 = new System.Windows.Forms.Button();
-            this.btn_seatC7 = new System.Windows.Forms.Button();
-            this.btn_seatC8 = new System.Windows.Forms.Button();
-            this.btn_seatC9 = new System.Windows.Forms.Button();
-            this.btn_seatC10 = new System.Windows.Forms.Button();
-            this.btn_seatC11 = new System.Windows.Forms.Button();
-            this.btn_seatC12 = new System.Windows.Forms.Button();
-            this.btn_seatD1 = new System.Windows.Forms.Button();
-            this.btn_seatD2 = new System.Windows.Forms.Button();
-            this.btn_seatD3 = new System.Windows.Forms.Button();
-            this.btn_seatD4 = new System.Windows.Forms.Button();
-            this.btn_seatD5 = new System.Windows.Forms.Button();
-            this.btn_seatD6 = new System.Windows.Forms.Button();
-            this.btn_seatD7 = new System.Windows.Forms.Button();
-            this.btn_seatD8 = new System.Windows.Forms.Button();
-            this.btn_seatD9 = new System.Windows.Forms.Button();
-            this.btn_seatD10 = new System.Windows.Forms.Button();
-            this.btn_seatD11 = new System.Windows.Forms.Button();
-            this.btn_seatD12 = new System.Windows.Forms.Button();
-            this.btn_seatE1 = new System.Windows.Forms.Button();
-            this.btn_seatE2 = new System.Windows.Forms.Button();
-            this.btn_seatE3 = new System.Windows.Forms.Button();
-            this.btn_seatE4 = new System.Windows.Forms.Button();
-            this.btn_seatE5 = new System.Windows.Forms.Button();
-            this.btn_seatE6 = new System.Windows.Forms.Button();
-            this.btn_seatE7 = new System.Windows.Forms.Button();
-            this.btn_seatE8 = new System.Windows.Forms.Button();
-            this.btn_seatE9 = new System.Windows.Forms.Button();
-            this.btn_seatE10 = new System.Windows.Forms.Button();
-            this.btn_seatE11 = new System.Windows.Forms.Button();
-            this.btn_seatE12 = new System.Windows.Forms.Button();
             this.pnl_screen = new System.Windows.Forms.Panel();
             this.lb_screen = new System.Windows.Forms.Label();
             this.lb_chooseSeat = new System.Windows.Forms.Label();
             this.pBox_backChooseSeat = new System.Windows.Forms.PictureBox();
+            this.pnl_orderConfirmation = new System.Windows.Forms.Panel();
+            this.lb_filmNameOrderConfirmation = new System.Windows.Forms.Label();
+            this.pBox_filmPosterOrderConfirmation = new System.Windows.Forms.PictureBox();
+            this.panel_Payment = new System.Windows.Forms.Panel();
+            this.btn_payNow = new System.Windows.Forms.Button();
+            this.rBtn_ovo = new System.Windows.Forms.RadioButton();
+            this.rBtn_shopeePay = new System.Windows.Forms.RadioButton();
+            this.rBtn_gopay = new System.Windows.Forms.RadioButton();
+            this.rBtn_qris = new System.Windows.Forms.RadioButton();
+            this.rBtn_transferBank = new System.Windows.Forms.RadioButton();
+            this.lb_choose = new System.Windows.Forms.Label();
+            this.lb_paymentMethod = new System.Windows.Forms.Label();
+            this.lb_total = new System.Windows.Forms.Label();
+            this.lb_ticketPrice = new System.Windows.Forms.Label();
+            this.lb_seats = new System.Windows.Forms.Label();
+            this.lb_studio = new System.Windows.Forms.Label();
+            this.lb_judulTotal = new System.Windows.Forms.Label();
+            this.lb_judulTicketPrice = new System.Windows.Forms.Label();
+            this.lb_judulSeats = new System.Windows.Forms.Label();
+            this.lb_time = new System.Windows.Forms.Label();
+            this.lb_date = new System.Windows.Forms.Label();
+            this.lb_judulStudio = new System.Windows.Forms.Label();
+            this.lb_judulTime = new System.Windows.Forms.Label();
+            this.lb_judulDate = new System.Windows.Forms.Label();
+            this.lb_orderConfirmation = new System.Windows.Forms.Label();
+            this.pBox_backOrderConfirmation = new System.Windows.Forms.PictureBox();
             this.pnl_screen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backChooseSeat)).BeginInit();
+            this.pnl_orderConfirmation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterOrderConfirmation)).BeginInit();
+            this.panel_Payment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backOrderConfirmation)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_confirm
@@ -108,666 +78,7 @@
             this.btn_confirm.TabIndex = 221;
             this.btn_confirm.Text = "Confirm";
             this.btn_confirm.UseVisualStyleBackColor = false;
-            // 
-            // btn_seatA1
-            // 
-            this.btn_seatA1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA1.Location = new System.Drawing.Point(789, 359);
-            this.btn_seatA1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA1.Name = "btn_seatA1";
-            this.btn_seatA1.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA1.TabIndex = 220;
-            this.btn_seatA1.Text = "A1";
-            this.btn_seatA1.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA2
-            // 
-            this.btn_seatA2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA2.Location = new System.Drawing.Point(727, 359);
-            this.btn_seatA2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA2.Name = "btn_seatA2";
-            this.btn_seatA2.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA2.TabIndex = 219;
-            this.btn_seatA2.Text = "A2";
-            this.btn_seatA2.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA3
-            // 
-            this.btn_seatA3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA3.Location = new System.Drawing.Point(634, 359);
-            this.btn_seatA3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA3.Name = "btn_seatA3";
-            this.btn_seatA3.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA3.TabIndex = 218;
-            this.btn_seatA3.Text = "A3";
-            this.btn_seatA3.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA4
-            // 
-            this.btn_seatA4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA4.Location = new System.Drawing.Point(571, 359);
-            this.btn_seatA4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA4.Name = "btn_seatA4";
-            this.btn_seatA4.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA4.TabIndex = 217;
-            this.btn_seatA4.Text = "A4";
-            this.btn_seatA4.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA5
-            // 
-            this.btn_seatA5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA5.Location = new System.Drawing.Point(508, 359);
-            this.btn_seatA5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA5.Name = "btn_seatA5";
-            this.btn_seatA5.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA5.TabIndex = 216;
-            this.btn_seatA5.Text = "A5";
-            this.btn_seatA5.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA6
-            // 
-            this.btn_seatA6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA6.Location = new System.Drawing.Point(445, 359);
-            this.btn_seatA6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA6.Name = "btn_seatA6";
-            this.btn_seatA6.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA6.TabIndex = 215;
-            this.btn_seatA6.Text = "A6";
-            this.btn_seatA6.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA7
-            // 
-            this.btn_seatA7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA7.Location = new System.Drawing.Point(381, 359);
-            this.btn_seatA7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA7.Name = "btn_seatA7";
-            this.btn_seatA7.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA7.TabIndex = 214;
-            this.btn_seatA7.Text = "A7";
-            this.btn_seatA7.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA8
-            // 
-            this.btn_seatA8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA8.Location = new System.Drawing.Point(317, 359);
-            this.btn_seatA8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA8.Name = "btn_seatA8";
-            this.btn_seatA8.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA8.TabIndex = 213;
-            this.btn_seatA8.Text = "A8";
-            this.btn_seatA8.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA9
-            // 
-            this.btn_seatA9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA9.Location = new System.Drawing.Point(255, 359);
-            this.btn_seatA9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA9.Name = "btn_seatA9";
-            this.btn_seatA9.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA9.TabIndex = 212;
-            this.btn_seatA9.Text = "A9";
-            this.btn_seatA9.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA10
-            // 
-            this.btn_seatA10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA10.Location = new System.Drawing.Point(191, 359);
-            this.btn_seatA10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA10.Name = "btn_seatA10";
-            this.btn_seatA10.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA10.TabIndex = 211;
-            this.btn_seatA10.Text = "A10";
-            this.btn_seatA10.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA11
-            // 
-            this.btn_seatA11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA11.Location = new System.Drawing.Point(100, 359);
-            this.btn_seatA11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA11.Name = "btn_seatA11";
-            this.btn_seatA11.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA11.TabIndex = 210;
-            this.btn_seatA11.Text = "A11";
-            this.btn_seatA11.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatA12
-            // 
-            this.btn_seatA12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatA12.Location = new System.Drawing.Point(38, 359);
-            this.btn_seatA12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatA12.Name = "btn_seatA12";
-            this.btn_seatA12.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatA12.TabIndex = 209;
-            this.btn_seatA12.Text = "A12";
-            this.btn_seatA12.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB1
-            // 
-            this.btn_seatB1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB1.Location = new System.Drawing.Point(789, 294);
-            this.btn_seatB1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB1.Name = "btn_seatB1";
-            this.btn_seatB1.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB1.TabIndex = 208;
-            this.btn_seatB1.Text = "B1";
-            this.btn_seatB1.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB2
-            // 
-            this.btn_seatB2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB2.Location = new System.Drawing.Point(727, 294);
-            this.btn_seatB2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB2.Name = "btn_seatB2";
-            this.btn_seatB2.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB2.TabIndex = 207;
-            this.btn_seatB2.Text = "B2";
-            this.btn_seatB2.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB3
-            // 
-            this.btn_seatB3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB3.Location = new System.Drawing.Point(634, 294);
-            this.btn_seatB3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB3.Name = "btn_seatB3";
-            this.btn_seatB3.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB3.TabIndex = 206;
-            this.btn_seatB3.Text = "B3";
-            this.btn_seatB3.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB4
-            // 
-            this.btn_seatB4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB4.Location = new System.Drawing.Point(571, 294);
-            this.btn_seatB4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB4.Name = "btn_seatB4";
-            this.btn_seatB4.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB4.TabIndex = 205;
-            this.btn_seatB4.Text = "B4";
-            this.btn_seatB4.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB5
-            // 
-            this.btn_seatB5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB5.Location = new System.Drawing.Point(508, 294);
-            this.btn_seatB5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB5.Name = "btn_seatB5";
-            this.btn_seatB5.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB5.TabIndex = 204;
-            this.btn_seatB5.Text = "B5";
-            this.btn_seatB5.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB6
-            // 
-            this.btn_seatB6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB6.Location = new System.Drawing.Point(445, 294);
-            this.btn_seatB6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB6.Name = "btn_seatB6";
-            this.btn_seatB6.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB6.TabIndex = 203;
-            this.btn_seatB6.Text = "B6";
-            this.btn_seatB6.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB7
-            // 
-            this.btn_seatB7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB7.Location = new System.Drawing.Point(381, 294);
-            this.btn_seatB7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB7.Name = "btn_seatB7";
-            this.btn_seatB7.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB7.TabIndex = 202;
-            this.btn_seatB7.Text = "B7";
-            this.btn_seatB7.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB8
-            // 
-            this.btn_seatB8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB8.Location = new System.Drawing.Point(317, 294);
-            this.btn_seatB8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB8.Name = "btn_seatB8";
-            this.btn_seatB8.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB8.TabIndex = 201;
-            this.btn_seatB8.Text = "B8";
-            this.btn_seatB8.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB9
-            // 
-            this.btn_seatB9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB9.Location = new System.Drawing.Point(255, 294);
-            this.btn_seatB9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB9.Name = "btn_seatB9";
-            this.btn_seatB9.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB9.TabIndex = 200;
-            this.btn_seatB9.Text = "B9";
-            this.btn_seatB9.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB10
-            // 
-            this.btn_seatB10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB10.Location = new System.Drawing.Point(191, 294);
-            this.btn_seatB10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB10.Name = "btn_seatB10";
-            this.btn_seatB10.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB10.TabIndex = 199;
-            this.btn_seatB10.Text = "B10";
-            this.btn_seatB10.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB11
-            // 
-            this.btn_seatB11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB11.Location = new System.Drawing.Point(100, 294);
-            this.btn_seatB11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB11.Name = "btn_seatB11";
-            this.btn_seatB11.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB11.TabIndex = 198;
-            this.btn_seatB11.Text = "B11";
-            this.btn_seatB11.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatB12
-            // 
-            this.btn_seatB12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatB12.Location = new System.Drawing.Point(38, 294);
-            this.btn_seatB12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatB12.Name = "btn_seatB12";
-            this.btn_seatB12.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatB12.TabIndex = 197;
-            this.btn_seatB12.Text = "B12";
-            this.btn_seatB12.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC1
-            // 
-            this.btn_seatC1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC1.Location = new System.Drawing.Point(789, 230);
-            this.btn_seatC1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC1.Name = "btn_seatC1";
-            this.btn_seatC1.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC1.TabIndex = 196;
-            this.btn_seatC1.Text = "C1";
-            this.btn_seatC1.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC2
-            // 
-            this.btn_seatC2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC2.Location = new System.Drawing.Point(727, 230);
-            this.btn_seatC2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC2.Name = "btn_seatC2";
-            this.btn_seatC2.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC2.TabIndex = 195;
-            this.btn_seatC2.Text = "C2";
-            this.btn_seatC2.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC3
-            // 
-            this.btn_seatC3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC3.Location = new System.Drawing.Point(634, 230);
-            this.btn_seatC3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC3.Name = "btn_seatC3";
-            this.btn_seatC3.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC3.TabIndex = 194;
-            this.btn_seatC3.Text = "C3";
-            this.btn_seatC3.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC4
-            // 
-            this.btn_seatC4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC4.Location = new System.Drawing.Point(571, 230);
-            this.btn_seatC4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC4.Name = "btn_seatC4";
-            this.btn_seatC4.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC4.TabIndex = 193;
-            this.btn_seatC4.Text = "C4";
-            this.btn_seatC4.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC5
-            // 
-            this.btn_seatC5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC5.Location = new System.Drawing.Point(508, 230);
-            this.btn_seatC5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC5.Name = "btn_seatC5";
-            this.btn_seatC5.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC5.TabIndex = 192;
-            this.btn_seatC5.Text = "C5";
-            this.btn_seatC5.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC6
-            // 
-            this.btn_seatC6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC6.Location = new System.Drawing.Point(445, 230);
-            this.btn_seatC6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC6.Name = "btn_seatC6";
-            this.btn_seatC6.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC6.TabIndex = 191;
-            this.btn_seatC6.Text = "C6";
-            this.btn_seatC6.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC7
-            // 
-            this.btn_seatC7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC7.Location = new System.Drawing.Point(381, 230);
-            this.btn_seatC7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC7.Name = "btn_seatC7";
-            this.btn_seatC7.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC7.TabIndex = 190;
-            this.btn_seatC7.Text = "C7";
-            this.btn_seatC7.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC8
-            // 
-            this.btn_seatC8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC8.Location = new System.Drawing.Point(317, 230);
-            this.btn_seatC8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC8.Name = "btn_seatC8";
-            this.btn_seatC8.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC8.TabIndex = 189;
-            this.btn_seatC8.Text = "C8";
-            this.btn_seatC8.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC9
-            // 
-            this.btn_seatC9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC9.Location = new System.Drawing.Point(255, 230);
-            this.btn_seatC9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC9.Name = "btn_seatC9";
-            this.btn_seatC9.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC9.TabIndex = 188;
-            this.btn_seatC9.Text = "C9";
-            this.btn_seatC9.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC10
-            // 
-            this.btn_seatC10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC10.Location = new System.Drawing.Point(191, 230);
-            this.btn_seatC10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC10.Name = "btn_seatC10";
-            this.btn_seatC10.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC10.TabIndex = 187;
-            this.btn_seatC10.Text = "C10";
-            this.btn_seatC10.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC11
-            // 
-            this.btn_seatC11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC11.Location = new System.Drawing.Point(100, 230);
-            this.btn_seatC11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC11.Name = "btn_seatC11";
-            this.btn_seatC11.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC11.TabIndex = 186;
-            this.btn_seatC11.Text = "C11";
-            this.btn_seatC11.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatC12
-            // 
-            this.btn_seatC12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatC12.Location = new System.Drawing.Point(38, 230);
-            this.btn_seatC12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatC12.Name = "btn_seatC12";
-            this.btn_seatC12.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatC12.TabIndex = 185;
-            this.btn_seatC12.Text = "C12";
-            this.btn_seatC12.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD1
-            // 
-            this.btn_seatD1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD1.Location = new System.Drawing.Point(789, 165);
-            this.btn_seatD1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD1.Name = "btn_seatD1";
-            this.btn_seatD1.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD1.TabIndex = 184;
-            this.btn_seatD1.Text = "D1";
-            this.btn_seatD1.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD2
-            // 
-            this.btn_seatD2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD2.Location = new System.Drawing.Point(727, 165);
-            this.btn_seatD2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD2.Name = "btn_seatD2";
-            this.btn_seatD2.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD2.TabIndex = 183;
-            this.btn_seatD2.Text = "D2";
-            this.btn_seatD2.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD3
-            // 
-            this.btn_seatD3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD3.Location = new System.Drawing.Point(634, 165);
-            this.btn_seatD3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD3.Name = "btn_seatD3";
-            this.btn_seatD3.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD3.TabIndex = 182;
-            this.btn_seatD3.Text = "D3";
-            this.btn_seatD3.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD4
-            // 
-            this.btn_seatD4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD4.Location = new System.Drawing.Point(571, 165);
-            this.btn_seatD4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD4.Name = "btn_seatD4";
-            this.btn_seatD4.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD4.TabIndex = 181;
-            this.btn_seatD4.Text = "D4";
-            this.btn_seatD4.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD5
-            // 
-            this.btn_seatD5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD5.Location = new System.Drawing.Point(508, 165);
-            this.btn_seatD5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD5.Name = "btn_seatD5";
-            this.btn_seatD5.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD5.TabIndex = 180;
-            this.btn_seatD5.Text = "D5";
-            this.btn_seatD5.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD6
-            // 
-            this.btn_seatD6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD6.Location = new System.Drawing.Point(445, 165);
-            this.btn_seatD6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD6.Name = "btn_seatD6";
-            this.btn_seatD6.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD6.TabIndex = 179;
-            this.btn_seatD6.Text = "D6";
-            this.btn_seatD6.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD7
-            // 
-            this.btn_seatD7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD7.Location = new System.Drawing.Point(381, 165);
-            this.btn_seatD7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD7.Name = "btn_seatD7";
-            this.btn_seatD7.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD7.TabIndex = 178;
-            this.btn_seatD7.Text = "D7";
-            this.btn_seatD7.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD8
-            // 
-            this.btn_seatD8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD8.Location = new System.Drawing.Point(317, 165);
-            this.btn_seatD8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD8.Name = "btn_seatD8";
-            this.btn_seatD8.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD8.TabIndex = 177;
-            this.btn_seatD8.Text = "D8";
-            this.btn_seatD8.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD9
-            // 
-            this.btn_seatD9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD9.Location = new System.Drawing.Point(255, 165);
-            this.btn_seatD9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD9.Name = "btn_seatD9";
-            this.btn_seatD9.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD9.TabIndex = 176;
-            this.btn_seatD9.Text = "D9";
-            this.btn_seatD9.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD10
-            // 
-            this.btn_seatD10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD10.Location = new System.Drawing.Point(191, 165);
-            this.btn_seatD10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD10.Name = "btn_seatD10";
-            this.btn_seatD10.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD10.TabIndex = 175;
-            this.btn_seatD10.Text = "D10";
-            this.btn_seatD10.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD11
-            // 
-            this.btn_seatD11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD11.Location = new System.Drawing.Point(100, 165);
-            this.btn_seatD11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD11.Name = "btn_seatD11";
-            this.btn_seatD11.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD11.TabIndex = 174;
-            this.btn_seatD11.Text = "D11";
-            this.btn_seatD11.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatD12
-            // 
-            this.btn_seatD12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatD12.Location = new System.Drawing.Point(38, 165);
-            this.btn_seatD12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatD12.Name = "btn_seatD12";
-            this.btn_seatD12.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatD12.TabIndex = 173;
-            this.btn_seatD12.Text = "D12";
-            this.btn_seatD12.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE1
-            // 
-            this.btn_seatE1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE1.Location = new System.Drawing.Point(789, 101);
-            this.btn_seatE1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE1.Name = "btn_seatE1";
-            this.btn_seatE1.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE1.TabIndex = 172;
-            this.btn_seatE1.Text = "E1";
-            this.btn_seatE1.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE2
-            // 
-            this.btn_seatE2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE2.Location = new System.Drawing.Point(727, 101);
-            this.btn_seatE2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE2.Name = "btn_seatE2";
-            this.btn_seatE2.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE2.TabIndex = 171;
-            this.btn_seatE2.Text = "E2";
-            this.btn_seatE2.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE3
-            // 
-            this.btn_seatE3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE3.Location = new System.Drawing.Point(634, 101);
-            this.btn_seatE3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE3.Name = "btn_seatE3";
-            this.btn_seatE3.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE3.TabIndex = 170;
-            this.btn_seatE3.Text = "E3";
-            this.btn_seatE3.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE4
-            // 
-            this.btn_seatE4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE4.Location = new System.Drawing.Point(571, 101);
-            this.btn_seatE4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE4.Name = "btn_seatE4";
-            this.btn_seatE4.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE4.TabIndex = 169;
-            this.btn_seatE4.Text = "E4";
-            this.btn_seatE4.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE5
-            // 
-            this.btn_seatE5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE5.Location = new System.Drawing.Point(508, 101);
-            this.btn_seatE5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE5.Name = "btn_seatE5";
-            this.btn_seatE5.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE5.TabIndex = 168;
-            this.btn_seatE5.Text = "E5";
-            this.btn_seatE5.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE6
-            // 
-            this.btn_seatE6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE6.Location = new System.Drawing.Point(445, 101);
-            this.btn_seatE6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE6.Name = "btn_seatE6";
-            this.btn_seatE6.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE6.TabIndex = 167;
-            this.btn_seatE6.Text = "E6";
-            this.btn_seatE6.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE7
-            // 
-            this.btn_seatE7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE7.Location = new System.Drawing.Point(381, 101);
-            this.btn_seatE7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE7.Name = "btn_seatE7";
-            this.btn_seatE7.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE7.TabIndex = 166;
-            this.btn_seatE7.Text = "E7";
-            this.btn_seatE7.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE8
-            // 
-            this.btn_seatE8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE8.Location = new System.Drawing.Point(317, 101);
-            this.btn_seatE8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE8.Name = "btn_seatE8";
-            this.btn_seatE8.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE8.TabIndex = 165;
-            this.btn_seatE8.Text = "E8";
-            this.btn_seatE8.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE9
-            // 
-            this.btn_seatE9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE9.Location = new System.Drawing.Point(255, 101);
-            this.btn_seatE9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE9.Name = "btn_seatE9";
-            this.btn_seatE9.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE9.TabIndex = 164;
-            this.btn_seatE9.Text = "E9";
-            this.btn_seatE9.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE10
-            // 
-            this.btn_seatE10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE10.Location = new System.Drawing.Point(191, 101);
-            this.btn_seatE10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE10.Name = "btn_seatE10";
-            this.btn_seatE10.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE10.TabIndex = 163;
-            this.btn_seatE10.Text = "E10";
-            this.btn_seatE10.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE11
-            // 
-            this.btn_seatE11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE11.Location = new System.Drawing.Point(100, 101);
-            this.btn_seatE11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE11.Name = "btn_seatE11";
-            this.btn_seatE11.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE11.TabIndex = 162;
-            this.btn_seatE11.Text = "E11";
-            this.btn_seatE11.UseVisualStyleBackColor = true;
-            // 
-            // btn_seatE12
-            // 
-            this.btn_seatE12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_seatE12.Location = new System.Drawing.Point(38, 101);
-            this.btn_seatE12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_seatE12.Name = "btn_seatE12";
-            this.btn_seatE12.Size = new System.Drawing.Size(54, 55);
-            this.btn_seatE12.TabIndex = 161;
-            this.btn_seatE12.Text = "E12";
-            this.btn_seatE12.UseVisualStyleBackColor = true;
+            this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
             // 
             // pnl_screen
             // 
@@ -811,81 +122,336 @@
             this.pBox_backChooseSeat.TabStop = false;
             this.pBox_backChooseSeat.Click += new System.EventHandler(this.pBox_backChooseSeat_Click);
             // 
+            // pnl_orderConfirmation
+            // 
+            this.pnl_orderConfirmation.Controls.Add(this.lb_filmNameOrderConfirmation);
+            this.pnl_orderConfirmation.Controls.Add(this.pBox_filmPosterOrderConfirmation);
+            this.pnl_orderConfirmation.Controls.Add(this.panel_Payment);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_total);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_ticketPrice);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_seats);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_studio);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_judulTotal);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_judulTicketPrice);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_judulSeats);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_time);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_date);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_judulStudio);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_judulTime);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_judulDate);
+            this.pnl_orderConfirmation.Controls.Add(this.lb_orderConfirmation);
+            this.pnl_orderConfirmation.Controls.Add(this.pBox_backOrderConfirmation);
+            this.pnl_orderConfirmation.Location = new System.Drawing.Point(-4, -3);
+            this.pnl_orderConfirmation.Name = "pnl_orderConfirmation";
+            this.pnl_orderConfirmation.Size = new System.Drawing.Size(885, 502);
+            this.pnl_orderConfirmation.TabIndex = 222;
+            this.pnl_orderConfirmation.Visible = false;
+            // 
+            // lb_filmNameOrderConfirmation
+            // 
+            this.lb_filmNameOrderConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_filmNameOrderConfirmation.Location = new System.Drawing.Point(37, 386);
+            this.lb_filmNameOrderConfirmation.Name = "lb_filmNameOrderConfirmation";
+            this.lb_filmNameOrderConfirmation.Size = new System.Drawing.Size(229, 61);
+            this.lb_filmNameOrderConfirmation.TabIndex = 181;
+            this.lb_filmNameOrderConfirmation.Text = "FILM NAME";
+            this.lb_filmNameOrderConfirmation.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pBox_filmPosterOrderConfirmation
+            // 
+            this.pBox_filmPosterOrderConfirmation.Location = new System.Drawing.Point(41, 75);
+            this.pBox_filmPosterOrderConfirmation.Name = "pBox_filmPosterOrderConfirmation";
+            this.pBox_filmPosterOrderConfirmation.Size = new System.Drawing.Size(225, 300);
+            this.pBox_filmPosterOrderConfirmation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_filmPosterOrderConfirmation.TabIndex = 180;
+            this.pBox_filmPosterOrderConfirmation.TabStop = false;
+            // 
+            // panel_Payment
+            // 
+            this.panel_Payment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel_Payment.Controls.Add(this.btn_payNow);
+            this.panel_Payment.Controls.Add(this.rBtn_ovo);
+            this.panel_Payment.Controls.Add(this.rBtn_shopeePay);
+            this.panel_Payment.Controls.Add(this.rBtn_gopay);
+            this.panel_Payment.Controls.Add(this.rBtn_qris);
+            this.panel_Payment.Controls.Add(this.rBtn_transferBank);
+            this.panel_Payment.Controls.Add(this.lb_choose);
+            this.panel_Payment.Controls.Add(this.lb_paymentMethod);
+            this.panel_Payment.Location = new System.Drawing.Point(542, 0);
+            this.panel_Payment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel_Payment.MaximumSize = new System.Drawing.Size(892, 578);
+            this.panel_Payment.Name = "panel_Payment";
+            this.panel_Payment.Size = new System.Drawing.Size(339, 520);
+            this.panel_Payment.TabIndex = 177;
+            // 
+            // btn_payNow
+            // 
+            this.btn_payNow.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btn_payNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_payNow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_payNow.Location = new System.Drawing.Point(100, 340);
+            this.btn_payNow.Name = "btn_payNow";
+            this.btn_payNow.Size = new System.Drawing.Size(132, 35);
+            this.btn_payNow.TabIndex = 222;
+            this.btn_payNow.Text = "Pay Now";
+            this.btn_payNow.UseVisualStyleBackColor = false;
+            this.btn_payNow.Click += new System.EventHandler(this.btn_payNow_Click);
+            // 
+            // rBtn_ovo
+            // 
+            this.rBtn_ovo.AutoSize = true;
+            this.rBtn_ovo.ForeColor = System.Drawing.Color.White;
+            this.rBtn_ovo.Location = new System.Drawing.Point(67, 287);
+            this.rBtn_ovo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rBtn_ovo.Name = "rBtn_ovo";
+            this.rBtn_ovo.Size = new System.Drawing.Size(62, 24);
+            this.rBtn_ovo.TabIndex = 66;
+            this.rBtn_ovo.TabStop = true;
+            this.rBtn_ovo.Text = "Ovo";
+            this.rBtn_ovo.UseVisualStyleBackColor = true;
+            // 
+            // rBtn_shopeePay
+            // 
+            this.rBtn_shopeePay.AutoSize = true;
+            this.rBtn_shopeePay.ForeColor = System.Drawing.Color.White;
+            this.rBtn_shopeePay.Location = new System.Drawing.Point(67, 253);
+            this.rBtn_shopeePay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rBtn_shopeePay.Name = "rBtn_shopeePay";
+            this.rBtn_shopeePay.Size = new System.Drawing.Size(120, 24);
+            this.rBtn_shopeePay.TabIndex = 65;
+            this.rBtn_shopeePay.TabStop = true;
+            this.rBtn_shopeePay.Text = "Shopee Pay";
+            this.rBtn_shopeePay.UseVisualStyleBackColor = true;
+            // 
+            // rBtn_gopay
+            // 
+            this.rBtn_gopay.AutoSize = true;
+            this.rBtn_gopay.ForeColor = System.Drawing.Color.White;
+            this.rBtn_gopay.Location = new System.Drawing.Point(67, 219);
+            this.rBtn_gopay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rBtn_gopay.Name = "rBtn_gopay";
+            this.rBtn_gopay.Size = new System.Drawing.Size(81, 24);
+            this.rBtn_gopay.TabIndex = 64;
+            this.rBtn_gopay.TabStop = true;
+            this.rBtn_gopay.Text = "Gopay";
+            this.rBtn_gopay.UseVisualStyleBackColor = true;
+            // 
+            // rBtn_qris
+            // 
+            this.rBtn_qris.AutoSize = true;
+            this.rBtn_qris.ForeColor = System.Drawing.Color.White;
+            this.rBtn_qris.Location = new System.Drawing.Point(67, 185);
+            this.rBtn_qris.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rBtn_qris.Name = "rBtn_qris";
+            this.rBtn_qris.Size = new System.Drawing.Size(79, 24);
+            this.rBtn_qris.TabIndex = 63;
+            this.rBtn_qris.TabStop = true;
+            this.rBtn_qris.Text = "Q-RIS";
+            this.rBtn_qris.UseVisualStyleBackColor = true;
+            // 
+            // rBtn_transferBank
+            // 
+            this.rBtn_transferBank.AutoSize = true;
+            this.rBtn_transferBank.ForeColor = System.Drawing.Color.White;
+            this.rBtn_transferBank.Location = new System.Drawing.Point(67, 151);
+            this.rBtn_transferBank.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rBtn_transferBank.Name = "rBtn_transferBank";
+            this.rBtn_transferBank.Size = new System.Drawing.Size(134, 24);
+            this.rBtn_transferBank.TabIndex = 62;
+            this.rBtn_transferBank.TabStop = true;
+            this.rBtn_transferBank.Text = "Transfer Bank";
+            this.rBtn_transferBank.UseVisualStyleBackColor = true;
+            // 
+            // lb_choose
+            // 
+            this.lb_choose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_choose.ForeColor = System.Drawing.Color.White;
+            this.lb_choose.Location = new System.Drawing.Point(0, 106);
+            this.lb_choose.Name = "lb_choose";
+            this.lb_choose.Size = new System.Drawing.Size(336, 20);
+            this.lb_choose.TabIndex = 60;
+            this.lb_choose.Text = "Choose Your Payment Method";
+            this.lb_choose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_paymentMethod
+            // 
+            this.lb_paymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_paymentMethod.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.lb_paymentMethod.Location = new System.Drawing.Point(3, 75);
+            this.lb_paymentMethod.Name = "lb_paymentMethod";
+            this.lb_paymentMethod.Size = new System.Drawing.Size(333, 31);
+            this.lb_paymentMethod.TabIndex = 60;
+            this.lb_paymentMethod.Text = "Payment Method";
+            this.lb_paymentMethod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_total
+            // 
+            this.lb_total.AutoSize = true;
+            this.lb_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_total.Location = new System.Drawing.Point(291, 319);
+            this.lb_total.MaximumSize = new System.Drawing.Size(525, 0);
+            this.lb_total.Name = "lb_total";
+            this.lb_total.Size = new System.Drawing.Size(75, 22);
+            this.lb_total.TabIndex = 176;
+            this.lb_total.Text = "TOTAL";
+            // 
+            // lb_ticketPrice
+            // 
+            this.lb_ticketPrice.AutoSize = true;
+            this.lb_ticketPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ticketPrice.Location = new System.Drawing.Point(405, 242);
+            this.lb_ticketPrice.Name = "lb_ticketPrice";
+            this.lb_ticketPrice.Size = new System.Drawing.Size(63, 20);
+            this.lb_ticketPrice.TabIndex = 175;
+            this.lb_ticketPrice.Text = "Isi data";
+            // 
+            // lb_seats
+            // 
+            this.lb_seats.AutoSize = true;
+            this.lb_seats.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_seats.Location = new System.Drawing.Point(359, 208);
+            this.lb_seats.Name = "lb_seats";
+            this.lb_seats.Size = new System.Drawing.Size(63, 20);
+            this.lb_seats.TabIndex = 174;
+            this.lb_seats.Text = "Isi data";
+            // 
+            // lb_studio
+            // 
+            this.lb_studio.AutoSize = true;
+            this.lb_studio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_studio.Location = new System.Drawing.Point(363, 174);
+            this.lb_studio.Name = "lb_studio";
+            this.lb_studio.Size = new System.Drawing.Size(63, 20);
+            this.lb_studio.TabIndex = 173;
+            this.lb_studio.Text = "Isi data";
+            // 
+            // lb_judulTotal
+            // 
+            this.lb_judulTotal.AutoSize = true;
+            this.lb_judulTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_judulTotal.Location = new System.Drawing.Point(291, 294);
+            this.lb_judulTotal.MaximumSize = new System.Drawing.Size(525, 0);
+            this.lb_judulTotal.Name = "lb_judulTotal";
+            this.lb_judulTotal.Size = new System.Drawing.Size(59, 20);
+            this.lb_judulTotal.TabIndex = 172;
+            this.lb_judulTotal.Text = "Total :";
+            // 
+            // lb_judulTicketPrice
+            // 
+            this.lb_judulTicketPrice.AutoSize = true;
+            this.lb_judulTicketPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_judulTicketPrice.Location = new System.Drawing.Point(291, 242);
+            this.lb_judulTicketPrice.MaximumSize = new System.Drawing.Size(525, 0);
+            this.lb_judulTicketPrice.Name = "lb_judulTicketPrice";
+            this.lb_judulTicketPrice.Size = new System.Drawing.Size(108, 20);
+            this.lb_judulTicketPrice.TabIndex = 171;
+            this.lb_judulTicketPrice.Text = "Ticket Price :";
+            // 
+            // lb_judulSeats
+            // 
+            this.lb_judulSeats.AutoSize = true;
+            this.lb_judulSeats.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_judulSeats.Location = new System.Drawing.Point(291, 208);
+            this.lb_judulSeats.MaximumSize = new System.Drawing.Size(525, 0);
+            this.lb_judulSeats.Name = "lb_judulSeats";
+            this.lb_judulSeats.Size = new System.Drawing.Size(62, 20);
+            this.lb_judulSeats.TabIndex = 170;
+            this.lb_judulSeats.Text = "Seats :";
+            // 
+            // lb_time
+            // 
+            this.lb_time.AutoSize = true;
+            this.lb_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_time.Location = new System.Drawing.Point(353, 140);
+            this.lb_time.Name = "lb_time";
+            this.lb_time.Size = new System.Drawing.Size(63, 20);
+            this.lb_time.TabIndex = 169;
+            this.lb_time.Text = "Isi data";
+            // 
+            // lb_date
+            // 
+            this.lb_date.AutoSize = true;
+            this.lb_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_date.Location = new System.Drawing.Point(352, 107);
+            this.lb_date.Name = "lb_date";
+            this.lb_date.Size = new System.Drawing.Size(63, 20);
+            this.lb_date.TabIndex = 168;
+            this.lb_date.Text = "Isi data";
+            // 
+            // lb_judulStudio
+            // 
+            this.lb_judulStudio.AutoSize = true;
+            this.lb_judulStudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_judulStudio.Location = new System.Drawing.Point(291, 174);
+            this.lb_judulStudio.Name = "lb_judulStudio";
+            this.lb_judulStudio.Size = new System.Drawing.Size(66, 20);
+            this.lb_judulStudio.TabIndex = 167;
+            this.lb_judulStudio.Text = "Studio :";
+            // 
+            // lb_judulTime
+            // 
+            this.lb_judulTime.AutoSize = true;
+            this.lb_judulTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_judulTime.Location = new System.Drawing.Point(291, 140);
+            this.lb_judulTime.Name = "lb_judulTime";
+            this.lb_judulTime.Size = new System.Drawing.Size(56, 20);
+            this.lb_judulTime.TabIndex = 166;
+            this.lb_judulTime.Text = "Time :";
+            // 
+            // lb_judulDate
+            // 
+            this.lb_judulDate.AutoSize = true;
+            this.lb_judulDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_judulDate.Location = new System.Drawing.Point(291, 107);
+            this.lb_judulDate.Name = "lb_judulDate";
+            this.lb_judulDate.Size = new System.Drawing.Size(55, 20);
+            this.lb_judulDate.TabIndex = 165;
+            this.lb_judulDate.Text = "Date :";
+            // 
+            // lb_orderConfirmation
+            // 
+            this.lb_orderConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_orderConfirmation.Location = new System.Drawing.Point(90, 20);
+            this.lb_orderConfirmation.Name = "lb_orderConfirmation";
+            this.lb_orderConfirmation.Size = new System.Drawing.Size(299, 31);
+            this.lb_orderConfirmation.TabIndex = 161;
+            this.lb_orderConfirmation.Text = "Order Confirmation";
+            this.lb_orderConfirmation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pBox_backOrderConfirmation
+            // 
+            this.pBox_backOrderConfirmation.Image = global::_20232_DBD.Properties.Resources.Arrow_1;
+            this.pBox_backOrderConfirmation.Location = new System.Drawing.Point(41, 25);
+            this.pBox_backOrderConfirmation.Name = "pBox_backOrderConfirmation";
+            this.pBox_backOrderConfirmation.Size = new System.Drawing.Size(29, 23);
+            this.pBox_backOrderConfirmation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_backOrderConfirmation.TabIndex = 160;
+            this.pBox_backOrderConfirmation.TabStop = false;
+            this.pBox_backOrderConfirmation.Click += new System.EventHandler(this.pBox_backOrderConfirmation_Click);
+            // 
             // FormChooseSeat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 491);
+            this.Controls.Add(this.pnl_orderConfirmation);
             this.Controls.Add(this.btn_confirm);
-            this.Controls.Add(this.btn_seatA1);
-            this.Controls.Add(this.btn_seatA2);
-            this.Controls.Add(this.btn_seatA3);
-            this.Controls.Add(this.btn_seatA4);
-            this.Controls.Add(this.btn_seatA5);
-            this.Controls.Add(this.btn_seatA6);
-            this.Controls.Add(this.btn_seatA7);
-            this.Controls.Add(this.btn_seatA8);
-            this.Controls.Add(this.btn_seatA9);
-            this.Controls.Add(this.btn_seatA10);
-            this.Controls.Add(this.btn_seatA11);
-            this.Controls.Add(this.btn_seatA12);
-            this.Controls.Add(this.btn_seatB1);
-            this.Controls.Add(this.btn_seatB2);
-            this.Controls.Add(this.btn_seatB3);
-            this.Controls.Add(this.btn_seatB4);
-            this.Controls.Add(this.btn_seatB5);
-            this.Controls.Add(this.btn_seatB6);
-            this.Controls.Add(this.btn_seatB7);
-            this.Controls.Add(this.btn_seatB8);
-            this.Controls.Add(this.btn_seatB9);
-            this.Controls.Add(this.btn_seatB10);
-            this.Controls.Add(this.btn_seatB11);
-            this.Controls.Add(this.btn_seatB12);
-            this.Controls.Add(this.btn_seatC1);
-            this.Controls.Add(this.btn_seatC2);
-            this.Controls.Add(this.btn_seatC3);
-            this.Controls.Add(this.btn_seatC4);
-            this.Controls.Add(this.btn_seatC5);
-            this.Controls.Add(this.btn_seatC6);
-            this.Controls.Add(this.btn_seatC7);
-            this.Controls.Add(this.btn_seatC8);
-            this.Controls.Add(this.btn_seatC9);
-            this.Controls.Add(this.btn_seatC10);
-            this.Controls.Add(this.btn_seatC11);
-            this.Controls.Add(this.btn_seatC12);
-            this.Controls.Add(this.btn_seatD1);
-            this.Controls.Add(this.btn_seatD2);
-            this.Controls.Add(this.btn_seatD3);
-            this.Controls.Add(this.btn_seatD4);
-            this.Controls.Add(this.btn_seatD5);
-            this.Controls.Add(this.btn_seatD6);
-            this.Controls.Add(this.btn_seatD7);
-            this.Controls.Add(this.btn_seatD8);
-            this.Controls.Add(this.btn_seatD9);
-            this.Controls.Add(this.btn_seatD10);
-            this.Controls.Add(this.btn_seatD11);
-            this.Controls.Add(this.btn_seatD12);
-            this.Controls.Add(this.btn_seatE1);
-            this.Controls.Add(this.btn_seatE2);
-            this.Controls.Add(this.btn_seatE3);
-            this.Controls.Add(this.btn_seatE4);
-            this.Controls.Add(this.btn_seatE5);
-            this.Controls.Add(this.btn_seatE6);
-            this.Controls.Add(this.btn_seatE7);
-            this.Controls.Add(this.btn_seatE8);
-            this.Controls.Add(this.btn_seatE9);
-            this.Controls.Add(this.btn_seatE10);
-            this.Controls.Add(this.btn_seatE11);
-            this.Controls.Add(this.btn_seatE12);
             this.Controls.Add(this.pnl_screen);
             this.Controls.Add(this.lb_chooseSeat);
             this.Controls.Add(this.pBox_backChooseSeat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormChooseSeat";
             this.Text = "FormChooseSeat";
+            this.Load += new System.EventHandler(this.FormChooseSeat_Load);
             this.pnl_screen.ResumeLayout(false);
             this.pnl_screen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backChooseSeat)).EndInit();
+            this.pnl_orderConfirmation.ResumeLayout(false);
+            this.pnl_orderConfirmation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterOrderConfirmation)).EndInit();
+            this.panel_Payment.ResumeLayout(false);
+            this.panel_Payment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_backOrderConfirmation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -893,69 +459,35 @@
         #endregion
 
         private System.Windows.Forms.Button btn_confirm;
-        private System.Windows.Forms.Button btn_seatA1;
-        private System.Windows.Forms.Button btn_seatA2;
-        private System.Windows.Forms.Button btn_seatA3;
-        private System.Windows.Forms.Button btn_seatA4;
-        private System.Windows.Forms.Button btn_seatA5;
-        private System.Windows.Forms.Button btn_seatA6;
-        private System.Windows.Forms.Button btn_seatA7;
-        private System.Windows.Forms.Button btn_seatA8;
-        private System.Windows.Forms.Button btn_seatA9;
-        private System.Windows.Forms.Button btn_seatA10;
-        private System.Windows.Forms.Button btn_seatA11;
-        private System.Windows.Forms.Button btn_seatA12;
-        private System.Windows.Forms.Button btn_seatB1;
-        private System.Windows.Forms.Button btn_seatB2;
-        private System.Windows.Forms.Button btn_seatB3;
-        private System.Windows.Forms.Button btn_seatB4;
-        private System.Windows.Forms.Button btn_seatB5;
-        private System.Windows.Forms.Button btn_seatB6;
-        private System.Windows.Forms.Button btn_seatB7;
-        private System.Windows.Forms.Button btn_seatB8;
-        private System.Windows.Forms.Button btn_seatB9;
-        private System.Windows.Forms.Button btn_seatB10;
-        private System.Windows.Forms.Button btn_seatB11;
-        private System.Windows.Forms.Button btn_seatB12;
-        private System.Windows.Forms.Button btn_seatC1;
-        private System.Windows.Forms.Button btn_seatC2;
-        private System.Windows.Forms.Button btn_seatC3;
-        private System.Windows.Forms.Button btn_seatC4;
-        private System.Windows.Forms.Button btn_seatC5;
-        private System.Windows.Forms.Button btn_seatC6;
-        private System.Windows.Forms.Button btn_seatC7;
-        private System.Windows.Forms.Button btn_seatC8;
-        private System.Windows.Forms.Button btn_seatC9;
-        private System.Windows.Forms.Button btn_seatC10;
-        private System.Windows.Forms.Button btn_seatC11;
-        private System.Windows.Forms.Button btn_seatC12;
-        private System.Windows.Forms.Button btn_seatD1;
-        private System.Windows.Forms.Button btn_seatD2;
-        private System.Windows.Forms.Button btn_seatD3;
-        private System.Windows.Forms.Button btn_seatD4;
-        private System.Windows.Forms.Button btn_seatD5;
-        private System.Windows.Forms.Button btn_seatD6;
-        private System.Windows.Forms.Button btn_seatD7;
-        private System.Windows.Forms.Button btn_seatD8;
-        private System.Windows.Forms.Button btn_seatD9;
-        private System.Windows.Forms.Button btn_seatD10;
-        private System.Windows.Forms.Button btn_seatD11;
-        private System.Windows.Forms.Button btn_seatD12;
-        private System.Windows.Forms.Button btn_seatE1;
-        private System.Windows.Forms.Button btn_seatE2;
-        private System.Windows.Forms.Button btn_seatE3;
-        private System.Windows.Forms.Button btn_seatE4;
-        private System.Windows.Forms.Button btn_seatE5;
-        private System.Windows.Forms.Button btn_seatE6;
-        private System.Windows.Forms.Button btn_seatE7;
-        private System.Windows.Forms.Button btn_seatE8;
-        private System.Windows.Forms.Button btn_seatE9;
-        private System.Windows.Forms.Button btn_seatE10;
-        private System.Windows.Forms.Button btn_seatE11;
-        private System.Windows.Forms.Button btn_seatE12;
         private System.Windows.Forms.Panel pnl_screen;
         private System.Windows.Forms.Label lb_screen;
         private System.Windows.Forms.Label lb_chooseSeat;
         private System.Windows.Forms.PictureBox pBox_backChooseSeat;
+        private System.Windows.Forms.Panel pnl_orderConfirmation;
+        private System.Windows.Forms.Label lb_orderConfirmation;
+        private System.Windows.Forms.PictureBox pBox_backOrderConfirmation;
+        private System.Windows.Forms.Panel panel_Payment;
+        private System.Windows.Forms.RadioButton rBtn_ovo;
+        private System.Windows.Forms.RadioButton rBtn_shopeePay;
+        private System.Windows.Forms.RadioButton rBtn_gopay;
+        private System.Windows.Forms.RadioButton rBtn_qris;
+        private System.Windows.Forms.RadioButton rBtn_transferBank;
+        private System.Windows.Forms.Label lb_choose;
+        private System.Windows.Forms.Label lb_paymentMethod;
+        private System.Windows.Forms.Label lb_total;
+        private System.Windows.Forms.Label lb_ticketPrice;
+        private System.Windows.Forms.Label lb_seats;
+        private System.Windows.Forms.Label lb_studio;
+        private System.Windows.Forms.Label lb_judulTotal;
+        private System.Windows.Forms.Label lb_judulTicketPrice;
+        private System.Windows.Forms.Label lb_judulSeats;
+        private System.Windows.Forms.Label lb_time;
+        private System.Windows.Forms.Label lb_date;
+        private System.Windows.Forms.Label lb_judulStudio;
+        private System.Windows.Forms.Label lb_judulTime;
+        private System.Windows.Forms.Label lb_judulDate;
+        private System.Windows.Forms.Button btn_payNow;
+        private System.Windows.Forms.Label lb_filmNameOrderConfirmation;
+        private System.Windows.Forms.PictureBox pBox_filmPosterOrderConfirmation;
     }
 }

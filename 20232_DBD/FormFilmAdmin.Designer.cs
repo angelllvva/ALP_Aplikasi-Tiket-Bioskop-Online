@@ -54,7 +54,7 @@
             this.lb_line.BackColor = System.Drawing.SystemColors.WindowText;
             this.lb_line.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lb_line.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_line.Location = new System.Drawing.Point(36, 121);
+            this.lb_line.Location = new System.Drawing.Point(36, 109);
             this.lb_line.Name = "lb_line";
             this.lb_line.Size = new System.Drawing.Size(803, 2);
             this.lb_line.TabIndex = 59;
@@ -64,7 +64,7 @@
             // 
             this.lb_ongoingFilmList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lb_ongoingFilmList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ongoingFilmList.Location = new System.Drawing.Point(36, 94);
+            this.lb_ongoingFilmList.Location = new System.Drawing.Point(36, 81);
             this.lb_ongoingFilmList.Name = "lb_ongoingFilmList";
             this.lb_ongoingFilmList.Size = new System.Drawing.Size(799, 25);
             this.lb_ongoingFilmList.TabIndex = 58;
@@ -83,7 +83,7 @@
             this.dgv_ongoingFilm.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dgv_ongoingFilm.ColumnHeadersHeight = 34;
             this.dgv_ongoingFilm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_ongoingFilm.Location = new System.Drawing.Point(36, 133);
+            this.dgv_ongoingFilm.Location = new System.Drawing.Point(36, 124);
             this.dgv_ongoingFilm.MultiSelect = false;
             this.dgv_ongoingFilm.Name = "dgv_ongoingFilm";
             this.dgv_ongoingFilm.ReadOnly = true;
@@ -132,7 +132,7 @@
             // 
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 287);
+            this.label2.Location = new System.Drawing.Point(36, 286);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(799, 25);
             this.label2.TabIndex = 234;
