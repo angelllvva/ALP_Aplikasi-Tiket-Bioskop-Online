@@ -266,7 +266,7 @@ namespace _20232_DBD
                         count++;
                     }
                 }
-
+                
                 if (count < 10)
                 {
                     idTransaksi += $"00{count}";

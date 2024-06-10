@@ -51,7 +51,6 @@
             this.pBox_filmPosterInformation = new System.Windows.Forms.PictureBox();
             this.lb_transactionHistory = new System.Windows.Forms.Label();
             this.dgv_transactionHistory = new System.Windows.Forms.DataGridView();
-            this.lb_doubleClick = new System.Windows.Forms.Label();
             this.pnl_history = new System.Windows.Forms.Panel();
             this.pBox_backHistory = new System.Windows.Forms.PictureBox();
             this.pnl_profile = new System.Windows.Forms.Panel();
@@ -392,21 +391,11 @@
             this.dgv_transactionHistory.RowHeadersWidth = 62;
             this.dgv_transactionHistory.RowTemplate.Height = 28;
             this.dgv_transactionHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_transactionHistory.Size = new System.Drawing.Size(752, 382);
+            this.dgv_transactionHistory.Size = new System.Drawing.Size(752, 406);
             this.dgv_transactionHistory.TabIndex = 50;
-            // 
-            // lb_doubleClick
-            // 
-            this.lb_doubleClick.AutoSize = true;
-            this.lb_doubleClick.Location = new System.Drawing.Point(89, 466);
-            this.lb_doubleClick.Name = "lb_doubleClick";
-            this.lb_doubleClick.Size = new System.Drawing.Size(278, 20);
-            this.lb_doubleClick.TabIndex = 51;
-            this.lb_doubleClick.Text = "*Double Click on a Row to See Details";
             // 
             // pnl_history
             // 
-            this.pnl_history.Controls.Add(this.lb_doubleClick);
             this.pnl_history.Controls.Add(this.dgv_transactionHistory);
             this.pnl_history.Controls.Add(this.lb_transactionHistory);
             this.pnl_history.Controls.Add(this.pBox_backHistory);
@@ -446,7 +435,7 @@
             this.pnl_profile.Controls.Add(this.pBox_backProfile);
             this.pnl_profile.Location = new System.Drawing.Point(-4, 12);
             this.pnl_profile.Name = "pnl_profile";
-            this.pnl_profile.Size = new System.Drawing.Size(889, 509);
+            this.pnl_profile.Size = new System.Drawing.Size(889, 512);
             this.pnl_profile.TabIndex = 52;
             this.pnl_profile.Visible = false;
             // 
@@ -658,7 +647,7 @@
             this.pnl_filmSchedule.Controls.Add(this.pBox_filmPosterSchedule);
             this.pnl_filmSchedule.Location = new System.Drawing.Point(-1, 15);
             this.pnl_filmSchedule.Name = "pnl_filmSchedule";
-            this.pnl_filmSchedule.Size = new System.Drawing.Size(894, 503);
+            this.pnl_filmSchedule.Size = new System.Drawing.Size(894, 506);
             this.pnl_filmSchedule.TabIndex = 53;
             this.pnl_filmSchedule.Visible = false;
             // 
@@ -666,7 +655,7 @@
             // 
             this.pnl_chooseSeat.Location = new System.Drawing.Point(-1, 15);
             this.pnl_chooseSeat.Name = "pnl_chooseSeat";
-            this.pnl_chooseSeat.Size = new System.Drawing.Size(876, 494);
+            this.pnl_chooseSeat.Size = new System.Drawing.Size(876, 488);
             this.pnl_chooseSeat.TabIndex = 54;
             this.pnl_chooseSeat.Visible = false;
             // 
@@ -1063,7 +1052,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPosterInformation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_transactionHistory)).EndInit();
             this.pnl_history.ResumeLayout(false);
-            this.pnl_history.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_backHistory)).EndInit();
             this.pnl_profile.ResumeLayout(false);
             this.pnl_profile.PerformLayout();
@@ -1105,7 +1093,6 @@
         private System.Windows.Forms.PictureBox pBox_backHistory;
         private System.Windows.Forms.Label lb_transactionHistory;
         private System.Windows.Forms.DataGridView dgv_transactionHistory;
-        private System.Windows.Forms.Label lb_doubleClick;
         private System.Windows.Forms.Panel pnl_history;
         private System.Windows.Forms.Panel pnl_profile;
         private System.Windows.Forms.Button btn_editProfile;
