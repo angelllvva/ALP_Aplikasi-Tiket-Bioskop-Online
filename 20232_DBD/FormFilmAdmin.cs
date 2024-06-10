@@ -62,7 +62,7 @@ namespace _20232_DBD
             // Menampilkan data film yang upcoming
             sqlQuery = $@"SELECT id_film AS 'Film ID', judul_film AS 'Film Name', genre_film AS 'Genre', durasi_film AS 'Duration', start_date_film AS 'Start Date', end_date_film AS 'End Date'
                             FROM FILM
-                            WHERE start_date_film >= '{tanggalUpComing}'";
+                            WHERE end_date_film >= '{tanggalUpComing}'";
 
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             dt_upcomingFilm = new DataTable();

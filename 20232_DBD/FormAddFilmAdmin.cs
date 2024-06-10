@@ -59,10 +59,7 @@ namespace _20232_DBD
 
             tBox_castName.Text = "";
             tBox_castCharacter.Text = "";
-
-            dt_cast.Clear();
-            dgv_cast.DataSource = dt_cast;
-
+            
             pBox_filmPoster.Image = null;
 
             dt_cast = new DataTable();
@@ -277,6 +274,7 @@ namespace _20232_DBD
         {
             if (tBox_castName.Text != "" && tBox_castCharacter.Text != "")
             {
+                // Pengecekan apakah peran dalam film yang akan diinput ada yang sama dengan yang ada di data table
                 int count = 0;
                 for (int i = 0; i < dt_cast.Rows.Count; i++)
                 {
@@ -379,6 +377,7 @@ namespace _20232_DBD
 
         private void btn_cancelFilmPoster_Click(object sender, EventArgs e)
         {
+            // Kembali ke menu add film
             pBox_filmPoster.Image = null;
             pnl_filmPoster.Visible = false;
         }
