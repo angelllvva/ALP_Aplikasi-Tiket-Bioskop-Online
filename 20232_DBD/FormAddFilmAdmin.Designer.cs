@@ -56,13 +56,14 @@
             this.lb_admin = new System.Windows.Forms.Label();
             this.lb_hello = new System.Windows.Forms.Label();
             this.pnl_filmPoster = new System.Windows.Forms.Panel();
-            this.btn_selectPoster = new System.Windows.Forms.Button();
             this.pBox_filmPoster = new System.Windows.Forms.PictureBox();
-            this.btn_openFile = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.lb_selectFilmPoster = new System.Windows.Forms.Label();
-            this.lb_filmNameExtend = new System.Windows.Forms.Label();
             this.pnl_filmPosterBG = new System.Windows.Forms.Panel();
+            this.lb_filmNameExtend = new System.Windows.Forms.Label();
+            this.lb_selectFilmPoster = new System.Windows.Forms.Label();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_openFile = new System.Windows.Forms.Button();
+            this.btn_selectPoster = new System.Windows.Forms.Button();
+            this.btn_cancelFilmPoster = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cast)).BeginInit();
             this.pnl_filmPoster.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_filmPoster)).BeginInit();
@@ -374,6 +375,7 @@
             // 
             // pnl_filmPoster
             // 
+            this.pnl_filmPoster.Controls.Add(this.btn_cancelFilmPoster);
             this.pnl_filmPoster.Controls.Add(this.pBox_filmPoster);
             this.pnl_filmPoster.Controls.Add(this.pnl_filmPosterBG);
             this.pnl_filmPoster.Controls.Add(this.lb_filmNameExtend);
@@ -386,19 +388,6 @@
             this.pnl_filmPoster.TabIndex = 240;
             this.pnl_filmPoster.Visible = false;
             // 
-            // btn_selectPoster
-            // 
-            this.btn_selectPoster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_selectPoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_selectPoster.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.btn_selectPoster.Location = new System.Drawing.Point(707, 427);
-            this.btn_selectPoster.Name = "btn_selectPoster";
-            this.btn_selectPoster.Size = new System.Drawing.Size(132, 35);
-            this.btn_selectPoster.TabIndex = 241;
-            this.btn_selectPoster.Text = "Select Poster";
-            this.btn_selectPoster.UseVisualStyleBackColor = false;
-            this.btn_selectPoster.Click += new System.EventHandler(this.btn_selectPoster_Click);
-            // 
             // pBox_filmPoster
             // 
             this.pBox_filmPoster.Location = new System.Drawing.Point(225, 88);
@@ -409,18 +398,33 @@
             this.pBox_filmPoster.TabStop = false;
             this.pBox_filmPoster.Visible = false;
             // 
-            // btn_openFile
+            // pnl_filmPosterBG
             // 
-            this.btn_openFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_openFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_openFile.ForeColor = System.Drawing.Color.NavajoWhite;
-            this.btn_openFile.Location = new System.Drawing.Point(481, 87);
-            this.btn_openFile.Name = "btn_openFile";
-            this.btn_openFile.Size = new System.Drawing.Size(132, 35);
-            this.btn_openFile.TabIndex = 242;
-            this.btn_openFile.Text = "Open File";
-            this.btn_openFile.UseVisualStyleBackColor = false;
-            this.btn_openFile.Click += new System.EventHandler(this.btn_openFile_Click);
+            this.pnl_filmPosterBG.BackColor = System.Drawing.Color.GhostWhite;
+            this.pnl_filmPosterBG.Location = new System.Drawing.Point(225, 88);
+            this.pnl_filmPosterBG.Name = "pnl_filmPosterBG";
+            this.pnl_filmPosterBG.Size = new System.Drawing.Size(225, 300);
+            this.pnl_filmPosterBG.TabIndex = 246;
+            // 
+            // lb_filmNameExtend
+            // 
+            this.lb_filmNameExtend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_filmNameExtend.Location = new System.Drawing.Point(221, 402);
+            this.lb_filmNameExtend.Name = "lb_filmNameExtend";
+            this.lb_filmNameExtend.Size = new System.Drawing.Size(229, 61);
+            this.lb_filmNameExtend.TabIndex = 245;
+            this.lb_filmNameExtend.Text = "FILM NAME";
+            this.lb_filmNameExtend.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lb_selectFilmPoster
+            // 
+            this.lb_selectFilmPoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_selectFilmPoster.Location = new System.Drawing.Point(14, 49);
+            this.lb_selectFilmPoster.Name = "lb_selectFilmPoster";
+            this.lb_selectFilmPoster.Size = new System.Drawing.Size(850, 31);
+            this.lb_selectFilmPoster.TabIndex = 244;
+            this.lb_selectFilmPoster.Text = "Select Film Poster";
+            this.lb_selectFilmPoster.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_save
             // 
@@ -435,33 +439,44 @@
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // lb_selectFilmPoster
+            // btn_openFile
             // 
-            this.lb_selectFilmPoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_selectFilmPoster.Location = new System.Drawing.Point(14, 49);
-            this.lb_selectFilmPoster.Name = "lb_selectFilmPoster";
-            this.lb_selectFilmPoster.Size = new System.Drawing.Size(850, 31);
-            this.lb_selectFilmPoster.TabIndex = 244;
-            this.lb_selectFilmPoster.Text = "Select Film Poster";
-            this.lb_selectFilmPoster.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_openFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_openFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_openFile.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.btn_openFile.Location = new System.Drawing.Point(481, 87);
+            this.btn_openFile.Name = "btn_openFile";
+            this.btn_openFile.Size = new System.Drawing.Size(132, 35);
+            this.btn_openFile.TabIndex = 242;
+            this.btn_openFile.Text = "Open File";
+            this.btn_openFile.UseVisualStyleBackColor = false;
+            this.btn_openFile.Click += new System.EventHandler(this.btn_openFile_Click);
             // 
-            // lb_filmNameExtend
+            // btn_selectPoster
             // 
-            this.lb_filmNameExtend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_filmNameExtend.Location = new System.Drawing.Point(221, 402);
-            this.lb_filmNameExtend.Name = "lb_filmNameExtend";
-            this.lb_filmNameExtend.Size = new System.Drawing.Size(229, 61);
-            this.lb_filmNameExtend.TabIndex = 245;
-            this.lb_filmNameExtend.Text = "FILM NAME";
-            this.lb_filmNameExtend.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_selectPoster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_selectPoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_selectPoster.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.btn_selectPoster.Location = new System.Drawing.Point(707, 427);
+            this.btn_selectPoster.Name = "btn_selectPoster";
+            this.btn_selectPoster.Size = new System.Drawing.Size(132, 35);
+            this.btn_selectPoster.TabIndex = 241;
+            this.btn_selectPoster.Text = "Select Poster";
+            this.btn_selectPoster.UseVisualStyleBackColor = false;
+            this.btn_selectPoster.Click += new System.EventHandler(this.btn_selectPoster_Click);
             // 
-            // pnl_filmPosterBG
+            // btn_cancelFilmPoster
             // 
-            this.pnl_filmPosterBG.BackColor = System.Drawing.Color.GhostWhite;
-            this.pnl_filmPosterBG.Location = new System.Drawing.Point(225, 88);
-            this.pnl_filmPosterBG.Name = "pnl_filmPosterBG";
-            this.pnl_filmPosterBG.Size = new System.Drawing.Size(225, 300);
-            this.pnl_filmPosterBG.TabIndex = 246;
+            this.btn_cancelFilmPoster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_cancelFilmPoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelFilmPoster.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.btn_cancelFilmPoster.Location = new System.Drawing.Point(481, 353);
+            this.btn_cancelFilmPoster.Name = "btn_cancelFilmPoster";
+            this.btn_cancelFilmPoster.Size = new System.Drawing.Size(132, 35);
+            this.btn_cancelFilmPoster.TabIndex = 247;
+            this.btn_cancelFilmPoster.Text = "Cancel";
+            this.btn_cancelFilmPoster.UseVisualStyleBackColor = false;
+            this.btn_cancelFilmPoster.Click += new System.EventHandler(this.btn_cancelFilmPoster_Click);
             // 
             // FormAddFilmAdmin
             // 
@@ -546,5 +561,6 @@
         private System.Windows.Forms.Button btn_openFile;
         private System.Windows.Forms.Label lb_filmNameExtend;
         private System.Windows.Forms.Panel pnl_filmPosterBG;
+        private System.Windows.Forms.Button btn_cancelFilmPoster;
     }
 }

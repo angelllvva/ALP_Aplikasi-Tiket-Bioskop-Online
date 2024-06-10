@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,10 +24,13 @@ namespace _20232_DBD
         string sqlQuery;
 
         DataTable dt_cast;
+        DataTable dt_film;
         DataTable dt_idFilm1SukuKata;
         DataTable dt_idFilmLebihDari1SukuKata;
 
         string idFilm;
+
+        OpenFileDialog openFileDialog;
 
         public FormAddFilmAdmin(FormAdmin _fAdmin, MySqlConnection _sqlConnect)
         {
@@ -92,88 +98,113 @@ namespace _20232_DBD
             }
             else if (tBox_filmName.Text != "" && cmb_genre.Text != "" && tBox_duration.Text != "" && tBox_director.Text != "" && tBox_description.Text != "" && startDate >= today && endDate >= startDate && dgv_cast.Rows.Count != 0 && pBox_filmPoster.Image != null)
             {
-                // Pengecekan apakah judul film 1 suku kata atau lebih dari 1 suku kata dan membuat ID Film
-                string[] filmName = tBox_filmName.Text.Split(' ');
+                // Pengecekan pakah ada judul film yang sama di dalam database
+                sqlQuery = "SELECT judul_film FROM FILM";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                dt_film = new DataTable();
+                sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlDataAdapter.Fill(dt_film);
 
-                if (filmName.Length == 1)
+                int count = 0;
+                for (int i = 0; i < dt_film.Rows.Count; i++)
                 {
-                    string idFilm1SukuKata = filmName[0].Substring(0, 2);
-
-                    sqlQuery = $"SELECT COUNT(id_film) FROM FILM WHERE id_film LIKE '{idFilm1SukuKata}%'";
-                    dt_idFilm1SukuKata = new DataTable();
-                    sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                    sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
-                    sqlDataAdapter.Fill(dt_idFilm1SukuKata);
-
-                    int idFilm1SukuKataTerakhir = Convert.ToInt32(dt_idFilm1SukuKata.Rows[0][0]) + 1;
-
-                    if (idFilm1SukuKataTerakhir < 10)
+                    if (tBox_filmName.Text == dt_film.Rows[i][0].ToString())
                     {
-                        idFilm = $"{idFilm1SukuKata}00{idFilm1SukuKataTerakhir}";
+                        count++;
+                        break;
                     }
-                    else if (idFilm1SukuKataTerakhir < 100)
-                    {
-                        idFilm = $"{idFilm1SukuKata}0{idFilm1SukuKataTerakhir}";
-                    }
-                    else
-                    {
-                        idFilm = $"{idFilm1SukuKata}{idFilm1SukuKataTerakhir}";
-                    }
+                }
+
+                if (count != 0)
+                {
+                    MessageBox.Show("Film with the same name has already exist");
                 }
                 else
                 {
-                    string idFilmLebihDari1SukuKata = filmName[0].Substring(0, 1) + filmName[1].Substring(0, 1);
+                    // Pengecekan apakah judul film 1 suku kata atau lebih dari 1 suku kata dan membuat ID Film
+                    string[] filmName = tBox_filmName.Text.Split(' ');
 
-                    sqlQuery = $"SELECT COUNT(id_film) FROM FILM WHERE id_film LIKE '{idFilmLebihDari1SukuKata}%'";
-                    dt_idFilmLebihDari1SukuKata = new DataTable();
-                    sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                    sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
-                    sqlDataAdapter.Fill(dt_idFilmLebihDari1SukuKata);
-
-                    int idFilmLebihDari1SukuKataTerakhir = Convert.ToInt32(dt_idFilmLebihDari1SukuKata.Rows[0][0]) + 1;
-
-                    if (idFilmLebihDari1SukuKataTerakhir < 10)
+                    if (filmName.Length == 1)
                     {
-                        idFilm = $"{idFilmLebihDari1SukuKata}00{idFilmLebihDari1SukuKataTerakhir}";
-                    }
-                    else if (idFilmLebihDari1SukuKataTerakhir < 100)
-                    {
-                        idFilm = $"{idFilmLebihDari1SukuKata}0{idFilmLebihDari1SukuKataTerakhir}";
+                        string idFilm1SukuKata = filmName[0].Substring(0, 2);
+
+                        sqlQuery = $"SELECT COUNT(id_film) FROM FILM WHERE id_film LIKE '{idFilm1SukuKata}%'";
+                        dt_idFilm1SukuKata = new DataTable();
+                        sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                        sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+                        sqlDataAdapter.Fill(dt_idFilm1SukuKata);
+
+                        int idFilm1SukuKataTerakhir = Convert.ToInt32(dt_idFilm1SukuKata.Rows[0][0]) + 1;
+
+                        if (idFilm1SukuKataTerakhir < 10)
+                        {
+                            idFilm = $"{idFilm1SukuKata}00{idFilm1SukuKataTerakhir}";
+                        }
+                        else if (idFilm1SukuKataTerakhir < 100)
+                        {
+                            idFilm = $"{idFilm1SukuKata}0{idFilm1SukuKataTerakhir}";
+                        }
+                        else
+                        {
+                            idFilm = $"{idFilm1SukuKata}{idFilm1SukuKataTerakhir}";
+                        }
                     }
                     else
                     {
-                        idFilm = $"{idFilmLebihDari1SukuKata}{idFilmLebihDari1SukuKataTerakhir}";
+                        string idFilmLebihDari1SukuKata = filmName[0].Substring(0, 1) + filmName[1].Substring(0, 1);
+
+                        sqlQuery = $"SELECT COUNT(id_film) FROM FILM WHERE id_film LIKE '{idFilmLebihDari1SukuKata}%'";
+                        dt_idFilmLebihDari1SukuKata = new DataTable();
+                        sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                        sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+                        sqlDataAdapter.Fill(dt_idFilmLebihDari1SukuKata);
+
+                        int idFilmLebihDari1SukuKataTerakhir = Convert.ToInt32(dt_idFilmLebihDari1SukuKata.Rows[0][0]) + 1;
+
+                        if (idFilmLebihDari1SukuKataTerakhir < 10)
+                        {
+                            idFilm = $"{idFilmLebihDari1SukuKata}00{idFilmLebihDari1SukuKataTerakhir}";
+                        }
+                        else if (idFilmLebihDari1SukuKataTerakhir < 100)
+                        {
+                            idFilm = $"{idFilmLebihDari1SukuKata}0{idFilmLebihDari1SukuKataTerakhir}";
+                        }
+                        else
+                        {
+                            idFilm = $"{idFilmLebihDari1SukuKata}{idFilmLebihDari1SukuKataTerakhir}";
+                        }
                     }
+
+                    string start_date = startDate.ToString("yyyy-MM-dd");
+                    string end_date = endDate.ToString("yyyy-MM-dd");
+
+                    // Memasukkan data film ke dalam database
+                    sqlQuery = $@"INSERT INTO FILM VALUES ('{idFilm.ToUpper()}', '{tBox_filmName.Text.ToUpper()}', '{cmb_genre.Text}', '{tBox_duration.Text}', '{tBox_director.Text}', '{tBox_description.Text}', '{start_date}', '{end_date}', 0);";
+                    sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
+                    sqlConnect.Open();
+
+                    MessageBox.Show("Succesfully added film");
+
+                    // Reset semua teks
+                    tBox_filmName.Text = "";
+                    cmb_genre.Text = "";
+                    tBox_duration.Text = "";
+                    tBox_director.Text = "";
+                    tBox_description.Text = "";
+
+                    date_startDate.Value = today;
+                    date_endDate.Value = today;
+
+                    tBox_castName.Text = "";
+                    tBox_castCharacter.Text = "";
+
+                    dt_cast.Clear();
+                    dgv_cast.DataSource = dt_cast;
+
+                    pBox_filmPoster.Image = null;
                 }
-
-                string start_date = startDate.ToString("yyyy-MM-dd");
-                string end_date = endDate.ToString("yyyy-MM-dd");
-
-                //sqlQuery = $@"INSERT INTO FILM VALUES ('{idFilm.ToUpper()}', '{tBox_filmName.Text.ToUpper()}', '{cmb_genre.Text}', '{tBox_duration.Text}', '{tBox_director.Text}', '{tBox_description.Text}', '{start_date}', '{end_date}', 0);";
-                //sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                //sqlCommand.ExecuteNonQuery();
-                //sqlConnect.Close();
-                //sqlConnect.Open();
-
-                MessageBox.Show("Succesfully added film");
-
-                // Reset semua teks
-                tBox_filmName.Text = "";
-                cmb_genre.Text = "";
-                tBox_duration.Text = "";
-                tBox_director.Text = "";
-                tBox_description.Text = "";
-
-                date_startDate.Value = today;
-                date_endDate.Value = today;
-
-                tBox_castName.Text = "";
-                tBox_castCharacter.Text = "";
-
-                dt_cast.Clear();
-                dgv_cast.DataSource = dt_cast;
-
-                pBox_filmPoster.Image = null;
             }
         }
 
@@ -320,7 +351,7 @@ namespace _20232_DBD
         private void btn_openFile_Click(object sender, EventArgs e)
         {
             // Membuat dan mengkonfigurasi OpenFileDialog
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.jpg)|*.jpg";
             openFileDialog.ShowDialog();
 
@@ -332,8 +363,23 @@ namespace _20232_DBD
         private void btn_save_Click(object sender, EventArgs e)
         {
             // Menyimpan gambar ke resource
+            if (pBox_filmPoster.Image != null)
+            {
+                File.Copy(openFileDialog.FileName, Path.Combine(@"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources", Path.GetFileName($"{lb_filmNameExtend.Text}.jpg")), true);
+                MessageBox.Show("Succesfully saved film poster");
 
-            // Kembali ke add film
+                // Kembali ke add film
+                pnl_filmPoster.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Please insert the film poster");
+            }
+        }
+
+        private void btn_cancelFilmPoster_Click(object sender, EventArgs e)
+        {
+            pBox_filmPoster.Image = null;
             pnl_filmPoster.Visible = false;
         }
 
