@@ -41,7 +41,23 @@ namespace _20232_DBD
 
         private void FormAddFilmAdmin_Load(object sender, EventArgs e)
         {
+            tBox_filmName.Text = "";
             cmb_genre.Text = "";
+            tBox_duration.Text = "";
+            tBox_director.Text = "";
+            tBox_description.Text = "";
+
+            DateTime today = DateTime.Today;
+            date_startDate.Value = today;
+            date_endDate.Value = today;
+
+            tBox_castName.Text = "";
+            tBox_castCharacter.Text = "";
+
+            dt_cast.Clear();
+            dgv_cast.DataSource = dt_cast;
+
+            pBox_filmPoster.Image = null;
 
             dt_cast = new DataTable();
             dt_cast.Columns.Add("Cast Name");

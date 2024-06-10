@@ -22,6 +22,7 @@ namespace _20232_DBD
         DataTable dt_transaksi;
         string idPengguna = FormMain.idUser;
         string seats;
+        int indexRow = FormMain.indexRow;
 
         public FormTransactionDetail(MySqlConnection conForm)
         {
@@ -81,14 +82,14 @@ namespace _20232_DBD
             }
 
             // Memasukkan masing-masing informasi ke dalam label
-            lb_orderIDText.Text = dt_transaksi.Rows[0][0].ToString();
-            lb_filmNameText.Text = dt_transaksi.Rows[0][1].ToString();
-            lb_dateText.Text = dt_transaksi.Rows[0][2].ToString();
-            lb_timeText.Text = dt_transaksi.Rows[0][3].ToString();
-            lb_studioText.Text = dt_transaksi.Rows[0][4].ToString();
+            lb_orderIDText.Text = dt_transaksi.Rows[indexRow][0].ToString();
+            lb_filmNameText.Text = dt_transaksi.Rows[indexRow][1].ToString();
+            lb_dateText.Text = dt_transaksi.Rows[indexRow][2].ToString();
+            lb_timeText.Text = dt_transaksi.Rows[indexRow][3].ToString();
+            lb_studioText.Text = dt_transaksi.Rows[indexRow][4].ToString();
             lb_seatsText.Text = seats;
-            lb_totalPriceText.Text = dt_transaksi.Rows[0][5].ToString();
-            lb_statusText.Text = dt_transaksi.Rows[0][6].ToString();
+            lb_totalPriceText.Text = dt_transaksi.Rows[indexRow][5].ToString();
+            lb_statusText.Text = dt_transaksi.Rows[indexRow][6].ToString();
         }
     }
 }

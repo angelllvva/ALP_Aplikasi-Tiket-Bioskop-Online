@@ -29,6 +29,7 @@ namespace _20232_DBD
         public string idPengguna { get; set; }
         public static string idUser;
         string aktor;
+        public static int indexRow;
 
         //kirim variable ke form choose seat
         public string tanggal { get; set; }
@@ -56,7 +57,6 @@ namespace _20232_DBD
         {
             InitializeComponent();
             sqlConnect = conForm;
-            idUser = idPengguna;
             tBox_phoneNumber.KeyPress += new KeyPressEventHandler(tBox_phoneNumber_KeyPress);
         }
 
@@ -78,6 +78,8 @@ namespace _20232_DBD
                     break;
                 }
             }
+
+            idUser = idPengguna;
 
             // Mengambil data judul film untuk dimasukkan ke label film name
             DateTime today = DateTime.Today;
@@ -585,6 +587,9 @@ namespace _20232_DBD
 
         private void dgv_transactionHistory_DoubleClick(object sender, EventArgs e)
         {
+            DataGridViewRow selectedRow = dgv_transactionHistory.CurrentRow;
+            indexRow = selectedRow.Index;
+
             // Menampilkan detail transaksi
             FormTransactionDetail fTransactionDetail = new FormTransactionDetail(sqlConnect);
             fTransactionDetail.ShowDialog();

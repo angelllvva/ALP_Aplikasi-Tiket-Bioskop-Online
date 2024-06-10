@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.lb_schedule = new System.Windows.Forms.Label();
-            this.date_startAt = new System.Windows.Forms.DateTimePicker();
             this.lb_startAt = new System.Windows.Forms.Label();
             this.cmb_studio = new System.Windows.Forms.ComboBox();
             this.lb_studio = new System.Windows.Forms.Label();
-            this.tBox_filmTitle = new System.Windows.Forms.TextBox();
             this.lb_filmTitle = new System.Windows.Forms.Label();
             this.tBox_idSchedule = new System.Windows.Forms.TextBox();
             this.lb_idSchedule = new System.Windows.Forms.Label();
@@ -44,6 +42,9 @@
             this.dgv_schedule = new System.Windows.Forms.DataGridView();
             this.lb_admin = new System.Windows.Forms.Label();
             this.lb_hello = new System.Windows.Forms.Label();
+            this.cmb_filmTitle = new System.Windows.Forms.ComboBox();
+            this.date_timeStart = new System.Windows.Forms.DateTimePicker();
+            this.date_startAt = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_schedule)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,14 +57,6 @@
             this.lb_schedule.TabIndex = 55;
             this.lb_schedule.Text = "Schedule";
             this.lb_schedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // date_startAt
-            // 
-            this.date_startAt.Location = new System.Drawing.Point(535, 129);
-            this.date_startAt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.date_startAt.Name = "date_startAt";
-            this.date_startAt.Size = new System.Drawing.Size(300, 26);
-            this.date_startAt.TabIndex = 73;
             // 
             // lb_startAt
             // 
@@ -96,14 +89,6 @@
             this.lb_studio.Text = "Studio :";
             this.lb_studio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tBox_filmTitle
-            // 
-            this.tBox_filmTitle.Location = new System.Drawing.Point(153, 129);
-            this.tBox_filmTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tBox_filmTitle.Name = "tBox_filmTitle";
-            this.tBox_filmTitle.Size = new System.Drawing.Size(199, 26);
-            this.tBox_filmTitle.TabIndex = 69;
-            // 
             // lb_filmTitle
             // 
             this.lb_filmTitle.AutoSize = true;
@@ -117,6 +102,7 @@
             // 
             // tBox_idSchedule
             // 
+            this.tBox_idSchedule.Enabled = false;
             this.tBox_idSchedule.Location = new System.Drawing.Point(153, 91);
             this.tBox_idSchedule.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBox_idSchedule.Name = "tBox_idSchedule";
@@ -223,11 +209,41 @@
             this.lb_hello.TabIndex = 240;
             this.lb_hello.Text = "Hello,";
             // 
+            // cmb_filmTitle
+            // 
+            this.cmb_filmTitle.FormattingEnabled = true;
+            this.cmb_filmTitle.Location = new System.Drawing.Point(153, 129);
+            this.cmb_filmTitle.Name = "cmb_filmTitle";
+            this.cmb_filmTitle.Size = new System.Drawing.Size(199, 28);
+            this.cmb_filmTitle.TabIndex = 242;
+            // 
+            // date_timeStart
+            // 
+            this.date_timeStart.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.date_timeStart.Location = new System.Drawing.Point(729, 129);
+            this.date_timeStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.date_timeStart.Name = "date_timeStart";
+            this.date_timeStart.Size = new System.Drawing.Size(104, 26);
+            this.date_timeStart.TabIndex = 244;
+            this.date_timeStart.Value = new System.DateTime(2024, 6, 9, 16, 43, 0, 0);
+            // 
+            // date_startAt
+            // 
+            this.date_startAt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_startAt.Location = new System.Drawing.Point(535, 129);
+            this.date_startAt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.date_startAt.Name = "date_startAt";
+            this.date_startAt.Size = new System.Drawing.Size(181, 26);
+            this.date_startAt.TabIndex = 243;
+            // 
             // FormScheduleAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 491);
+            this.Controls.Add(this.date_timeStart);
+            this.Controls.Add(this.date_startAt);
+            this.Controls.Add(this.cmb_filmTitle);
             this.Controls.Add(this.lb_admin);
             this.Controls.Add(this.lb_hello);
             this.Controls.Add(this.dgv_schedule);
@@ -235,11 +251,9 @@
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.lb_line);
             this.Controls.Add(this.lb_scheduleList);
-            this.Controls.Add(this.date_startAt);
             this.Controls.Add(this.lb_startAt);
             this.Controls.Add(this.cmb_studio);
             this.Controls.Add(this.lb_studio);
-            this.Controls.Add(this.tBox_filmTitle);
             this.Controls.Add(this.lb_filmTitle);
             this.Controls.Add(this.tBox_idSchedule);
             this.Controls.Add(this.lb_idSchedule);
@@ -247,6 +261,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormScheduleAdmin";
             this.Text = "FormScheduleAdmin";
+            this.Load += new System.EventHandler(this.FormScheduleAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_schedule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,11 +271,9 @@
         #endregion
 
         private System.Windows.Forms.Label lb_schedule;
-        private System.Windows.Forms.DateTimePicker date_startAt;
         private System.Windows.Forms.Label lb_startAt;
         private System.Windows.Forms.ComboBox cmb_studio;
         private System.Windows.Forms.Label lb_studio;
-        private System.Windows.Forms.TextBox tBox_filmTitle;
         private System.Windows.Forms.Label lb_filmTitle;
         private System.Windows.Forms.TextBox tBox_idSchedule;
         private System.Windows.Forms.Label lb_idSchedule;
@@ -271,5 +284,8 @@
         private System.Windows.Forms.DataGridView dgv_schedule;
         private System.Windows.Forms.Label lb_admin;
         private System.Windows.Forms.Label lb_hello;
+        private System.Windows.Forms.ComboBox cmb_filmTitle;
+        private System.Windows.Forms.DateTimePicker date_timeStart;
+        private System.Windows.Forms.DateTimePicker date_startAt;
     }
 }
