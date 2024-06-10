@@ -96,8 +96,7 @@ namespace _20232_DBD
             lb_filmName.Text = dt_judulFilm.Rows[0][0].ToString();
 
             // Menampilkan gambar film default (pertama kali muncul) saat form dibuka
-            System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{dt_judulFilm.Rows[0][0].ToString()}") as System.Drawing.Bitmap;
-            pBox_filmPoster.Image = image;
+            pBox_filmPoster.Image = new Bitmap($"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources\\{dt_judulFilm.Rows[0][0].ToString()}.jpg");
         }
 
         private void btn_kanan_Click(object sender, EventArgs e)
@@ -106,17 +105,15 @@ namespace _20232_DBD
             if (count >= dt_judulFilm.Rows.Count - 1)
             {
                 lb_filmName.Text = dt_judulFilm.Rows[dt_judulFilm.Rows.Count - 1][0].ToString();
-
-                System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmName.Text}") as System.Drawing.Bitmap;
-                pBox_filmPoster.Image = image;
+                
+                pBox_filmPoster.Image = new Bitmap($"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources\\{lb_filmName.Text}.jpg");
             }
             else
             {
                 count++;
                 lb_filmName.Text = dt_judulFilm.Rows[count][0].ToString();
 
-                System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmName.Text}") as System.Drawing.Bitmap;
-                pBox_filmPoster.Image = image;
+                pBox_filmPoster.Image = new Bitmap($"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources\\{lb_filmName.Text}.jpg");
             }
         }
 
@@ -127,16 +124,14 @@ namespace _20232_DBD
             {
                 lb_filmName.Text = dt_judulFilm.Rows[0][0].ToString();
 
-                System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmName.Text}") as System.Drawing.Bitmap;
-                pBox_filmPoster.Image = image;
+                pBox_filmPoster.Image = new Bitmap($"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources\\{lb_filmName.Text}.jpg");
             }
             else
             {
                 count--;
                 lb_filmName.Text = dt_judulFilm.Rows[count][0].ToString();
 
-                System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmName.Text}") as System.Drawing.Bitmap;
-                pBox_filmPoster.Image = image;
+                pBox_filmPoster.Image = new Bitmap($"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources\\{lb_filmName.Text}.jpg");
             }
         }
 
@@ -149,8 +144,7 @@ namespace _20232_DBD
             pnl_chooseSeat.Visible = false;
 
             // Menampilkan gambar poster film yang dipilih
-            System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmName.Text}") as System.Drawing.Bitmap;
-            pBox_filmPosterInformation.Image = image;
+            pBox_filmPosterInformation.Image = pBox_filmPoster.Image = new Bitmap($"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources\\{lb_filmName.Text}.jpg"); ;
             //ambil string label untuk ConfiirmOrder
             picturename = lb_filmName.Text;
 
@@ -235,8 +229,7 @@ namespace _20232_DBD
 
             lb_filmNameSchedule.Text = lb_filmNameInformation.Text;
 
-            System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{lb_filmNameSchedule.Text}") as System.Drawing.Bitmap;
-            pBox_filmPosterSchedule.Image = image;
+            pBox_filmPosterSchedule.Image = new Bitmap($"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources\\{lb_filmNameSchedule.Text}.jpg");
 
             DateTime today = DateTime.Today;
 
@@ -583,16 +576,6 @@ namespace _20232_DBD
 
             // Membuat lebar kolom data grid view menyesuaikan dengan lebar data grid view secara keseluruhan
             dgv_transactionHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
-        private void dgv_transactionHistory_DoubleClick(object sender, EventArgs e)
-        {
-            DataGridViewRow selectedRow = dgv_transactionHistory.CurrentRow;
-            indexRow = selectedRow.Index;
-
-            // Menampilkan detail transaksi
-            FormTransactionDetail fTransactionDetail = new FormTransactionDetail(sqlConnect);
-            fTransactionDetail.ShowDialog();
         }
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)

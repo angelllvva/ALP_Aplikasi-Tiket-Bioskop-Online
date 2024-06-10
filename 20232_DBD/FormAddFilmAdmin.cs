@@ -25,6 +25,7 @@ namespace _20232_DBD
 
         DataTable dt_cast;
         DataTable dt_film;
+        DataTable dt_checkFilm;
         DataTable dt_idFilm1SukuKata;
         DataTable dt_idFilmLebihDari1SukuKata;
 
@@ -105,7 +106,7 @@ namespace _20232_DBD
                 int count = 0;
                 for (int i = 0; i < dt_film.Rows.Count; i++)
                 {
-                    if (tBox_filmName.Text == dt_film.Rows[i][0].ToString())
+                    if (tBox_filmName.Text.ToUpper() == dt_film.Rows[i][0].ToString())
                     {
                         count++;
                         break;
@@ -278,7 +279,7 @@ namespace _20232_DBD
                 int count = 0;
                 for (int i = 0; i < dt_cast.Rows.Count; i++)
                 {
-                    if (tBox_castCharacter.Text.Contains(dt_cast.Rows[i][1].ToString()))
+                    if (tBox_castCharacter.Text.ToUpper().Contains(dt_cast.Rows[i][1].ToString().ToUpper()))
                     {
                         count++;
                         break;
@@ -338,11 +339,34 @@ namespace _20232_DBD
             {
                 MessageBox.Show("Please input the film name first");
             }
-            else
+            else if (tBox_filmName.Text != "")
             {
-                pnl_filmPoster.Visible = true;
-                pBox_filmPoster.Visible = false;
-                lb_filmNameExtend.Text = tBox_filmName.Text.ToUpper();
+                sqlQuery = "SELECT judul_film FROM FILM";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                dt_checkFilm = new DataTable();
+                sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlDataAdapter.Fill(dt_checkFilm);
+
+                // Pengecekan apakah ada film yang sama di database
+                int count = 0;
+                for (int i = 0; i < dt_checkFilm.Rows.Count; i++)
+                {
+                    if (tBox_filmName.Text.ToUpper() == dt_checkFilm.Rows[i][0].ToString())
+                    {
+                        count++;
+                        break;
+                    }
+                }
+                if (count != 0)
+                {
+                    MessageBox.Show("Film with the same name has already exist");
+                }
+                else
+                {
+                    pnl_filmPoster.Visible = true;
+                    pBox_filmPoster.Visible = false;
+                    lb_filmNameExtend.Text = tBox_filmName.Text.ToUpper();
+                }
             }
         }
 

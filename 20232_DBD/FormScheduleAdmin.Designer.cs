@@ -77,6 +77,7 @@
             this.cmb_studio.Name = "cmb_studio";
             this.cmb_studio.Size = new System.Drawing.Size(167, 28);
             this.cmb_studio.TabIndex = 71;
+            this.cmb_studio.SelectedIndexChanged += new System.EventHandler(this.cmb_studio_SelectedIndexChanged);
             // 
             // lb_studio
             // 
@@ -131,6 +132,7 @@
             this.btn_add.TabIndex = 227;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_delete
             // 
@@ -143,6 +145,7 @@
             this.btn_delete.TabIndex = 226;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // lb_line
             // 
@@ -216,6 +219,7 @@
             this.cmb_filmTitle.Name = "cmb_filmTitle";
             this.cmb_filmTitle.Size = new System.Drawing.Size(199, 28);
             this.cmb_filmTitle.TabIndex = 242;
+            this.cmb_filmTitle.SelectedIndexChanged += new System.EventHandler(this.cmb_filmTitle_SelectedIndexChanged);
             // 
             // date_timeStart
             // 
@@ -226,6 +230,7 @@
             this.date_timeStart.Size = new System.Drawing.Size(104, 26);
             this.date_timeStart.TabIndex = 244;
             this.date_timeStart.Value = new System.DateTime(2024, 6, 9, 16, 43, 0, 0);
+            this.date_timeStart.ValueChanged += new System.EventHandler(this.date_TimeStart_ValueChanged);
             // 
             // date_startAt
             // 
@@ -235,6 +240,8 @@
             this.date_startAt.Name = "date_startAt";
             this.date_startAt.Size = new System.Drawing.Size(181, 26);
             this.date_startAt.TabIndex = 243;
+            this.date_startAt.Value = new System.DateTime(2024, 6, 11, 0, 0, 0, 0);
+            this.date_startAt.ValueChanged += new System.EventHandler(this.date_startAt_ValueChanged);
             // 
             // FormScheduleAdmin
             // 

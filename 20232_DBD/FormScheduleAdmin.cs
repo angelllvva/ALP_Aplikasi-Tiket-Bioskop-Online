@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,7 +38,7 @@ namespace _20232_DBD
 
         private void FormScheduleAdmin_Load(object sender, EventArgs e)
         {
-            //Isi DGV
+            // Isi DGV
             dtJadwal = new DataTable();
             sqlQuery = $"SELECT j.id_jadwal_tayang AS 'ID Jadwal Tayang', " +
                 $" f.judul_film AS 'Judul Film', s.nama_studio AS 'Studio', " +
@@ -51,6 +52,7 @@ namespace _20232_DBD
             sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
             sqlDataAdapter.Fill(dtJadwal);
             dgv_schedule.DataSource = dtJadwal;
+            dgv_schedule.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             //Isi Combo Box Studio
             dtStudio = new DataTable();
@@ -112,7 +114,28 @@ namespace _20232_DBD
 
         private void date_startAt_ValueChanged(object sender, EventArgs e)
         {
-            SetIDJadwal();
+            // Cek apakah tanggal yang dipilih lebih kecil dari tanggal hari ini
+
+            // Ambil tanggal yang dipilih
+            DateTime selectedDate = date_startAt.Value;
+
+            // Ambil tanggal hari ini tanpa waktu (hanya tanggal saja)
+            DateTime today = DateTime.Today;
+            string tanggal = today.ToString("yyyy-MM-dd");
+
+            // Periksa apakah tanggal yang dipilih lebih kecil daripada tanggal hari ini
+            if (selectedDate < today)
+            {
+                // Tampilkan pesan peringatan
+                MessageBox.Show($"Date must not be before {tanggal}");
+
+                // Atur kembali nilai DateTimePicker ke tanggal hari ini
+                date_startAt.Value = today;
+            }
+            else
+            {
+                SetIDJadwal();
+            }
         }
 
         private void date_TimeStart_ValueChanged(object sender, EventArgs e)

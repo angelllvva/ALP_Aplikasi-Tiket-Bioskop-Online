@@ -394,7 +394,6 @@
             this.dgv_transactionHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_transactionHistory.Size = new System.Drawing.Size(752, 382);
             this.dgv_transactionHistory.TabIndex = 50;
-            this.dgv_transactionHistory.DoubleClick += new System.EventHandler(this.dgv_transactionHistory_DoubleClick);
             // 
             // lb_doubleClick
             // 

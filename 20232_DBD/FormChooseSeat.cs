@@ -169,8 +169,8 @@ namespace _20232_DBD
         private void btn_confirm_Click(object sender, EventArgs e)
         {
             //Nampilin Posterr
-            System.Drawing.Bitmap image = Properties.Resources.ResourceManager.GetObject($"{_pboxConfirmOrder}") as System.Drawing.Bitmap;
-            pBox_filmPosterOrderConfirmation.Image = image;
+
+            pBox_filmPosterOrderConfirmation.Image = new Bitmap($"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources\\{_pboxConfirmOrder}.jpg");
 
             //masukan seat dipilih dan total harga ke order confirm
             for (int i = 0; i < buttonList.Count; i++)
