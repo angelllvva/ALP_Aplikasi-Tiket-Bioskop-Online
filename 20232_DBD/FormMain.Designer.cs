@@ -131,7 +131,7 @@
             this.homeToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(73, 30);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
@@ -140,7 +140,7 @@
             this.historyToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.historyToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
             this.historyToolStripMenuItem.Text = "History";
             this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
             // 
@@ -149,7 +149,7 @@
             this.profileToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(77, 30);
             this.profileToolStripMenuItem.Text = "Profile";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
@@ -158,7 +158,7 @@
             this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logOutToolStripMenuItem.ForeColor = System.Drawing.Color.NavajoWhite;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(90, 26);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(90, 30);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -174,7 +174,7 @@
             this.logOutToolStripMenuItem});
             this.menuStrip_home.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_home.Name = "menuStrip_home";
-            this.menuStrip_home.Size = new System.Drawing.Size(869, 30);
+            this.menuStrip_home.Size = new System.Drawing.Size(869, 36);
             this.menuStrip_home.TabIndex = 28;
             this.menuStrip_home.Text = "menuStrip1";
             // 

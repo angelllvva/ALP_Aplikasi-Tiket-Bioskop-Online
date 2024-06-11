@@ -35,7 +35,7 @@ namespace _20232_DBD
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            string lokasi_id_rsa = "C:/TEMP/id_rsa";
+            string lokasi_id_rsa = "C:/TEMP/id_rsa"; //path file private key RSA yang digunakan untuk autentikasi SSH
             var key = new PrivateKeyFile(lokasi_id_rsa, "isb_mantap");
             var method = new PrivateKeyAuthenticationMethod("indramar", key);
             ConnectionInfo conn = new ConnectionInfo("indramaryati.xyz", 64000, "indramar", method);
