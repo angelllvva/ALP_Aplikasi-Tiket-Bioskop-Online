@@ -144,12 +144,12 @@ namespace _20232_DBD
             pnl_chooseSeat.Visible = false;
 
             // Menampilkan gambar poster film yang dipilih
-            pBox_filmPosterInformation.Image = pBox_filmPoster.Image = new Bitmap($"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources\\{lb_filmName.Text}.jpg"); ;
+            pBox_filmPosterInformation.Image = new Bitmap($"E:\\uni\\ALP_Aplikasi Tiket Bioskop\\20232_DBD\\Resources\\{lb_filmName.Text}.jpg");
             //ambil string label untuk ConfiirmOrder
             picturename = lb_filmName.Text;
 
             // Query untuk menampilkan informasi film berdasarkan judul film yang dipilih
-            sqlQuery = $"SELECT judul_film, genre_film, CONCAT(durasi_film, ' menit'), sutradara_film, deskripsi_film FROM FILM WHERE judul_film = '{lb_filmName.Text}';";
+            sqlQuery = $"SELECT judul_film, genre_film, CONCAT(durasi_film, ' menit'), sutradara_film, deskripsi_film FROM FILM WHERE judul_film = '{lb_filmName.Text}'";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             dt_informasiFilm = new DataTable();
             sqlDataAdapter = new MySqlDataAdapter(sqlCommand);
@@ -652,6 +652,7 @@ namespace _20232_DBD
                     sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                     sqlCommand.ExecuteNonQuery();
                     sqlConnect.Close();
+                    sqlConnect.Open();
 
                     tBox_name.Enabled = false;
                     tBox_email.Enabled = false;
